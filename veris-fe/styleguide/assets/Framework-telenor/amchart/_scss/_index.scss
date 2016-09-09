@@ -1,0 +1,246 @@
+// ----------------------------------------------------------------
+// styling for charts made with AmChart.js
+
+.amchart-color-blue { background: $color-telenor-blue; }
+.amchart-color-green { background: $color-telenor-green; }
+.amchart-color-yellow { background: $color-telenor-yellow; }
+.amchart-color-red { background: $color-telenor-red; }
+.amchart-color-purple { background: $color-telenor-purple; }
+.amchart-color-grey { background: $color-steel-grey; }
+.amchart-average-line {
+	width: 15px;
+	top: -4px;
+	left: -5px;
+	content: "";
+	display: inline-block;
+	position: relative;
+	border-top: 1px dashed $color-stone-grey;
+}
+
+.amchart {
+  position: relative;
+
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+	.with-action {
+		cursor: pointer;
+	}
+
+  em {
+    display: block;
+    font-style: normal;
+    font-size: 1.1em;
+  }
+}
+
+.amchart-small {
+  margin: auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+
+  .amchart-doughnut-title,
+  .amchart-doughnut-text,
+  .amchart-doughnut-caption {
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 1em;
+    width: 100%;
+    z-index: 1;
+    line-height: 1.6;
+  }
+
+  .amchart-doughnut-title {
+    font-weight: 300;
+    font-size: 30px;
+    color: $color-graphite-black;
+    top: 37%;
+  }
+
+  .amchart-doughnut-text {
+   @extend %text-size--13;
+    color: $color-stone-grey;
+    bottom: 40%;
+  }
+
+  .amchart-doughnut-caption {
+    @extend %text-size--16;
+    color: $color-stone-grey;
+    bottom: 1%;
+  }
+}
+
+.amchart-chart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  > div {
+    z-index: 2;
+  }
+}
+
+.amchart-double {
+  height: 500px;
+
+  .amchart-chart {
+    height: 50%;
+  }
+}
+
+.amchart-small-legend {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+@include at-least($bp-medium + 1) {
+  .amchart-double {
+    width: 400px;
+    height: 250px;
+
+    .amchart-chart {
+      width: 62.5%;
+      height: 100%;
+    }
+  }
+
+  .amchart-small-legend {
+    width: 40%;
+    right: 0;
+    left: auto;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.amchart-small-title,
+.amchart-small-text,
+.amchart-small-caption {
+  display: block;
+  text-align: center;
+  position: absolute;
+  height: 1em;
+  width: 100%;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+.amchart-small-title {
+  font-weight: 300;
+  font-size: 30px;
+  color: $color-graphite-black;
+  top: 37%;
+}
+
+.amchart-small-text {
+  @extend %text-size--13;
+  color: $color-stone-grey;
+  bottom: 40%;
+}
+
+.amchart-small-caption {
+  @extend %text-size--16;
+  color: $color-stone-grey;
+  bottom: 1%;
+}
+
+.amchart-clickable:hover {
+  cursor: pointer;
+}
+
+
+// ----------------------------------------------------------------
+// line charts
+
+.amchart-line {
+  position: relative;
+  height: 300px;
+}
+
+.amchart-line-chart {
+  height: 100%;
+}
+
+
+// ----------------------------------------------------------------
+// bar charts
+
+.amchart-bars {
+  position: relative;
+  height: 300px;
+}
+
+.amchart-bars-chart {
+  height: 100%;
+  line-height: 1.7;
+}
+
+.amchart-bars-legends {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.amchart-bars-legend {
+  @extend %text-size--13;
+  color: $color-stone-grey;
+  float: left;
+  margin-left: 1em;
+}
+
+.amchart-bullet,
+.amchart-guide {
+  display: block;
+  float: left;
+  width: 6px;
+  height: 6px;
+  margin: 4px 8px 0 0;
+  border-radius: 100%;
+}
+
+.amchart-guide {
+  height: 0;
+  width: 2em;
+  margin-top: 7px;
+  border-top: 1px dashed $color-stone-grey;
+  border-radius: 0;
+}
+
+@include at-least($bp-xsmall) {
+  .amchart-bars-legends {
+    display: block;
+  }
+
+  .amchart-bars-chart {
+    padding-top: 20px;
+  }
+}
+
+@include at-least($bp-medium) {
+  .amchart-bars {
+    height: 400px;
+  }
+
+  .amchart-bars-legends {
+    left: auto;
+    right: 10px;
+  }
+
+  .amchart-bars-legend {
+    margin-left: 2em;
+  }
+}

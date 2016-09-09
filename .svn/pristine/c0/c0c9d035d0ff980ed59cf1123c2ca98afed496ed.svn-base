@@ -1,0 +1,11 @@
+	<div class="message message--<%= messageType || 'alert' %>" data-component="message">
+		<div class="message__inner trailer leader" data-element="messageContent">
+			<span class="message__icon icon icon-<%= messageType || 'alert' %>-no-bg"></span>
+			<div class="text-size--13 message__text">
+				<p data-element="messageText"><%= messageText %></p>
+			</div>
+			<button class="message__close" data-component="element" data-alias="messageClose">
+				<span class="icon-remove"></span>
+			</button>
+		</div>
+	</div>

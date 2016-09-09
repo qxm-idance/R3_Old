@@ -1,0 +1,246 @@
+/**
+name: Form search
+type: ui
+desc: >
+	# Disabling
+
+	1. You can disable search element by adding 'disabled' attribute to 'input:search' and to 'button.form-search__submit'
+
+	# Modifiers
+
+	1. --small: Small search
+
+	2. --large: Large search
+
+examples:
+	- name: Default search
+	  tmpl:
+	  	  include: search.html
+	- name: Small search
+	  tmpl:
+	  	  include: search-small.html
+	- name: Large search
+	  tmpl:
+	  	  include: search-large.html
+	- name: Disabled search
+	  tmpl:
+	  	  include: search-disabled.html
+	- name: Inline search
+	  tmpl:
+	  	  include: search-inline.html
+	- name: Inline small search
+	  tmpl:
+	  	  include: search-inline-small.html
+	- name: Inline large search
+	  tmpl:
+	  	  include: search-inline-large.html
+	- name: Negative search
+	  tmpl:
+	  	  include: search-negative.html
+	- name: Negative inline search
+	  tmpl:
+	  	  include: search-inline-negative.html
+*/
+
+.form-search {
+
+	@extend .form-item;
+
+	position: relative;
+
+	input {
+		outline: none;
+		-webkit-appearance: none;
+	}
+
+	input[type="text"],
+	input[type="search"] {
+		padding-right: 56px;
+	}
+
+	&__submit {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		outline: none;
+		transition: $transition-form-all;
+		width: $base-button-size;
+		padding: 0;
+		text-align: center;
+		background-color: $color-paper-white;
+		border-radius: 0 $radius-form-input $radius-form-input 0;
+		border: $border-form-input;
+		color: $color-stone-grey;
+		line-height: $base-button-size;
+
+		.icon-search {
+			display: inline-block;
+
+			&:before {
+				vertical-align: middle;
+			}
+		}
+
+		&:disabled {
+			border-color: $color-smoke-grey;
+			color: $color-smoke-grey;
+		}
+	}
+
+	&__clear {
+		@extend %text-size--16;
+		border: none;
+		background: transparent;
+		outline: none;
+		padding: 0 $xsmall-spacing-unit;
+		position: absolute;
+		opacity: 1;
+		transition: opacity .1s ease;
+		right: $base-button-size;
+		top: 0;
+		bottom: 0;
+		color: $color-steel-grey;
+
+		&:before {
+			font-size: 20px;
+			height: 32px;
+			line-height: 32px;
+		}
+	}
+
+	input:not([disabled]):hover,
+	input:not([disabled]):hover ~ .form-search__submit {
+		border: $border-form-input-hover;
+		border-left: $border-form-input;
+	}
+
+	input:disabled ~ .form-search__clear {
+		display: none;
+	}
+
+	input:focus ~ .form-search__submit {
+		background-color: $color-telenor-blue;
+		border: $border-form-input-focus;
+		color: $color-white;
+	}
+
+
+	// ----------------------------------------------------------------
+	// empty state
+
+	&.is-empty .form-search__clear {
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	// ----------------------------------------------------------------
+	// inline
+
+	&.form-search--inline {
+
+		.form-search__clear {
+			right: 8px;
+		}
+
+		input {
+			padding-left: 35px;
+		}
+
+		&:before {
+			@extend %icon-base-styles;
+			@include icon-search;
+
+			font-size: 20px;
+			position: absolute;
+			top: 11px;
+			left: 10px;
+			color: $color-stone-grey;
+		}
+
+		&.form-item--small {
+			input {
+				padding-left: 30px;
+			}
+			&:before {
+				top: 9px;
+				font-size: 14px;
+			}
+		}
+
+		&.form-item--large {
+			input {
+				padding-left: 50px;
+				padding-right: $small-spacing-unit;
+			}
+			&:before {
+				top: 17px;
+				font-size: 30px;
+			}
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// negative search
+
+	.section--negative & {
+
+		.form-search__submit {
+			border-color: transparent;
+			border-left: $border-form-input;
+			border-radius: 0 $radius-form-input $radius-form-input 0;
+		}
+
+		input:focus ~ .form-search__submit {
+			background-color: $color-paper-white;
+			border: $border-form-negative-input-focus;
+			color: $color-black;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// small
+
+	&.form-item--small {
+		@extend %text-size--13;
+
+		input {
+			padding-bottom: 7px;
+			height: $small-button-size;
+		}
+
+		// small button
+		.form-search__submit {
+			width: $small-button-size;
+			line-height: $small-button-size - 2px;
+		}
+
+		// small clear
+		.form-search__clear {
+			right: $small-button-size;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// large
+
+	&.form-item--large {
+		//@include at-least($bp-small) {
+		@extend %text-size--30;
+
+		input {
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-right: 80px;
+			height: $small-button-size * 2;
+			font-style: italic;
+		}
+
+		// large button
+		.form-search__submit {
+			width: $small-button-size * 2;
+			line-height: $small-button-size * 2 - 2px;
+		}
+		//}
+	}
+}

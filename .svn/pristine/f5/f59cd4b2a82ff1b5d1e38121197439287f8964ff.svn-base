@@ -1,0 +1,26 @@
+.chart-info-panel {
+
+  @extend %text-size--11;
+
+  &--white {
+    background-color: $color-white;
+  }
+
+  // ----------------------------------------------------------------
+  // list
+
+  ul {
+    li {
+      display: inline-block;
+      margin-left: $small-spacing-unit;
+
+      li:first-child {
+        margin-left: 0;
+      }
+
+      .status-dot {
+        margin: 0 $xsmall-spacing-unit;
+      }
+    }
+  }
+}

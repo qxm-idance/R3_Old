@@ -1,0 +1,134 @@
+/**
+name: Toggle filter
+type: ui
+desc: >
+	# Structure
+
+	1. filter toggle needs required structure
+
+	# Icons
+
+	1. position of icons changed by changing class 'icon-left' to 'icon-right'
+
+	2. by default flter toggle has plus icon, and can be changed to minus icon by adding class 'is-expanded' to button with class 'filter-toggle'. in case of using toggle filter in collapse this class adding by js
+
+	3. icons have to sizes: default and the large one. it can be changed by adding class 'filter-toggle--large' to button with class 'filter-toggle'
+
+examples:
+	-
+		name: Filter toggle plus (default closed state for using in collapse)
+		tmpl: >
+			<button class="filter-toggle">
+				<span class="filter-toggle__label icon-left">
+					<span class="filter-toggle__text">default title</span>
+				</span>
+			</button>
+	-
+		name: Filter toggle minus (opened state for using in collapse)
+		tmpl: >
+			<button class="filter-toggle is-expanded">
+				<span class="filter-toggle__label icon-left">
+					<span class="filter-toggle__text">default title</span>
+				</span>
+			</button>
+	-
+		name: Filter toggle with icon on the right
+		tmpl: >
+			<button class="filter-toggle">
+				<span class="filter-toggle__label icon-right">
+					<span class="filter-toggle__text">default title</span>
+				</span>
+			</button>
+	-
+		name: Filter toggle large
+		tmpl: >
+			<button class="filter-toggle filter-toggle--large">
+				<span class="filter-toggle__label icon-left">
+					<span class="filter-toggle__text">default title</span>
+				</span>
+			</button>
+	-
+		name: Filter toggle (how it using with collapse)
+		tmpl: >
+			<div class="clear padding-leader--xsmall padding-trailer--xsmall">
+				<button class="filter-toggle" data-component="collapse" data-alias="filterToggle">
+					<span class="filter-toggle__label icon-left">
+						<span class="filter-toggle__text">default title</span>
+					</span>
+				</button>
+			</div>
+			<div class="collapse__target collapse--closed" data-element="filterToggle:collapseTarget">
+				<div class="padding-whole border" data-element="filterToggle:collapseContent">
+					<p>lorem ipsum dolor sit amet</p>
+					<p>lorem ipsum dolor sit amet</p>
+					<p>lorem ipsum dolor sit amet</p>
+				</div>
+			</div>
+*/
+
+.filter-toggle {
+	$root: &;
+
+	display: inline-block;
+	background: none;
+	border: 0;
+	padding: 0;
+	color: $color-graphite-black;
+	outline: none;
+	text-align: left;
+
+	&__label {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+
+		#{$root}--large & {
+			line-height: 24px;
+		}
+
+		&:before {
+			@include icon-list-expand;
+			font-size: 18px;
+			position: absolute;
+			top: 0;
+
+			#{$root}.is-expanded & {
+				@include icon-list-collapse;
+			}
+
+			#{$root}--large & {
+				font-size: 24px;
+				top: -1px;
+			}
+		}
+
+		&.icon-left {
+			padding-left: 20px;
+
+			#{$root}--large & {
+				padding-left: 30px;
+			}
+
+			&:before {
+				left: 0;
+			}
+		}
+
+		&.icon-right {
+			padding-right: 20px;
+
+			#{$root}--large & {
+				padding-right: 26px;
+			}
+
+			&:before {
+				right: 0;
+			}
+		}
+	}
+
+	&__text {
+		display: inline-block;
+		vertical-align: top;
+	}
+}

@@ -1,0 +1,3 @@
+<div class="tooltip" data-component="tooltip" id="<%= +new Date %>">
+	<p><%= tooltipText %></p>
+</div>

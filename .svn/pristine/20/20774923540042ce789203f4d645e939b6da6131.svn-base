@@ -1,0 +1,14 @@
+<div class="section--negative box--blue padding-whole">
+	<ul class="form-item">
+		<li class="form-checkbox ">
+			<input type="checkbox" disabled checked name="cbs-negative-disabled-0"
+				   value="--some-value--" id="cbs-negative-disabled-0">
+			<label class="text--med" for="cbs-negative-disabled-0">Lorem ipsum bla bla 1</label>
+		</li>
+		<li class="form-checkbox ">
+			<input type="checkbox" disabled name="cbs-negative-disabled-1"
+				   value="--some-value--" id="cbs-negative-disabled-1">
+			<label class="text--med" for="cbs-negative-disabled-1">Lorem ipsum bla bla 2</label>
+		</li>
+	</ul>
+</div>

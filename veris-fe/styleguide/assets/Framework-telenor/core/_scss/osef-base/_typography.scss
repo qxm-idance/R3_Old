@@ -1,0 +1,41 @@
+/**
+name: Typography
+type: ui
+desc: >
+  # Description
+
+  There is a variable $text-sizes in settings.scss file.
+  $text-sizes contains main font sizes and line heights which we can't change,
+  and additional font sizes and line heights which we can change, add and remove.
+  It's simple to use, just add class text-size on text element, and modifier for your font size.
+  For example you need to text element with 30 font size, you should put class text-size--30.
+modifiers:
+  .text-regular: Telenor regular
+  .text-light: Telenor light
+  .text-bold: Telenor bold
+  .text-italic: Telenor italic
+  .text-normal: Telenor normal font-style
+  .text-size--: Text size from $text-sizes variable (see description)
+examples:
+  - name: Example for text font-size - 30 and Telenor Light (for another one see description on the css tab)
+    tmpl: >
+        <p class="text-size--30 text-light">Example text text-size--30 and Telenor Light<p>
+        <p class="text-size--16">Example text text-size--16 and Telenor Regular<p>
+*/
+
+%text-size,
+.text-size {
+	@include text-sizes();
+}
+
+@include until($bp-medium) {
+	.mobile-text-size {
+		@include text-sizes();
+	}
+}
+
+// font weights
+@include helpers(font-weight, text, $font-weight, false, default, responsive);
+
+// font styles
+@include helpers(font-style, text, $font-style, false, default, responsive);

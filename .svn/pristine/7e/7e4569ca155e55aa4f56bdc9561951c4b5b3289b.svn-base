@@ -1,0 +1,16 @@
+<div class="border box--greyed padding-whole">
+	<ul class="form-item">
+		<li class="form-radio form-radio--small">
+			<input type="radio" checked name="rad-small" id="rad-small-0" value="--some-value--">
+			<label for="rad-small-0">Lorem ipsum bla bla small 1</label>
+		</li>
+		<li class="form-radio form-radio--small">
+			<input type="radio" name="rad-small" id="rad-small-1" value="--some-value--">
+			<label for="rad-small-1">Lorem ipsum bla bla small 2</label>
+		</li>
+		<li class="form-radio form-radio--small">
+			<input type="radio" name="rad-small" id="rad-small-2" value="--some-value--">
+			<label for="rad-small-2">Lorem ipsum bla bla small 3</label>
+		</li>
+	</ul>
+</div>

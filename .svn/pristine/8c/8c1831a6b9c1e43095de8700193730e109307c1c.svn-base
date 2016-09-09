@@ -1,0 +1,22 @@
+/**
+name: Datepicker
+type: ui
+desc: >
+  Please add CSS description if needed!
+examples:
+- name: Datepicker single
+  tmpl:
+    include: single.html
+- name: Datepicker range
+  tmpl:
+    include: range.html
+- name: Datepicker single large
+  tmpl:
+    include: single-large.html
+- name: Datepicker disabled
+  tmpl:
+    include: disabled.html
+*/
+
+@import "./inputs";
+@import "./plugin";

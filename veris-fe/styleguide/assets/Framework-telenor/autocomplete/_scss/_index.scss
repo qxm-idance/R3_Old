@@ -1,0 +1,17 @@
+/**
+name: Autocomplete
+type: ui
+desc: No modifiers and mixins need it for this component 
+examples:
+	Remote loading:
+		<div class="form-item form-item--required" >
+			<input type="text" data-component="autocomplete" data-autocomplete-url="/data/autocomplete.json" data-extensions="type-watch" />
+		</div>
+	Static loading:
+		include: static-autocomplete.html
+*/
+.autocomplete {
+	position: relative;
+}
+
+

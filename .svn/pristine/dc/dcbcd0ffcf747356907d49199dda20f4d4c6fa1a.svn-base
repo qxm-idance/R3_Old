@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class=" js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+    <meta charset="UTF-8">
+    <link href="../assets/framework/css/all.css" rel="stylesheet" type="text/css">
+    <link href="../assets/doc/css/doc.css" rel="stylesheet" type="text/css">
+    <!-- highlight-->
+    <link href="../assets/doc/highlight/styles/github.css" rel="stylesheet" type="text/css">
+    <link href="../assets/doc/highlight/code.css" rel="stylesheet" type="text/css">
+    <script src="../assets/doc/highlight/highlight.pack.js" type="text/javascript"></script>
+    <script src="../assets/doc/js/jquery.js" type="text/javascript"></script>
+    <script></script>
+    <title>Date</title>
+</head>
+<body>
+    <div id="table-filters" class="sg-component mix is-approved  mobile-one-whole omega" style="display: inline-block;">
+    <div class="sg-component__header">
+        <h2 class="title--medium-small trailer--small">Table filters</h2>
+    </div>
+    <div class="sg-component__status mobile-one-whole omega">
+        <p class="mobile-one-half">
+            <a href="sgc_table-filters.html" target="_blank">
+                <span class="padding-toright--xsmall icon icon-64-tablet-mobile"></span>Open in new page</a>
+        </p>
+        <p class="mobile-one-half mobile-pull-right mobile-text-right">
+                    <span class="status-dot status-dot status-dot--green">Approved <a href="/v/0.7.0/#component-Table-filters">(0.7.0)</a>
+                    </span>
+        </p>
+    </div>
+
+    <!-- Markup -->
+    <div class="sg-component__markup mobile-one-whole omega  sg-component__markup--overflow">
+        <div class="block">
+            <div class="tablet-one-half">
+                <div class="sg-component__label">Date range</div>
+                <div class="block--filter box--greyed">
+                    <div class="form--daterange form-item--inline form-item--small" data-module="input.daterange" id="example-daterange" data-target="#example-table" data-target-column="0">
+                        <input class="form--daterange__start" type="date" value="2014-01-01" min="2000-01-01" max="2014-03-01" placeholder="From date">
+                        <input class="form--daterange__end" type="date" value="2014-01-18" min="2000-01-01" max="2014-03-01" placeholder="To date">
+                        <button class="no-js--hidden icon-clear" data-list-clear="" style="display: inline-block;">
+                            <span class="aria--visible">Clear filter</span>
+                        </button>
+                        <input class="form--daterange__range is-datepick" type="text" placeholder="Select dates range"></div>
+                </div>
+            </div>
+            <div class="tablet-one-half">
+                <div class="sg-component__label">Accordion multi filter</div>
+                <div class="block--filter box--greyed">
+                    <div class="form--daterange form-item--inline form-item--small" data-module="input.daterange" id="example-daterange" data-target="#example-table" data-target-column="0">
+                        <input class="form--daterange__start" type="date" value="2014-01-01" min="2000-01-01" max="2014-03-01" placeholder="From date">
+                        <input class="form--daterange__end" type="date" value="2014-01-18" min="2000-01-01" max="2014-03-01" placeholder="To date">
+                        <button class="no-js--hidden icon-clear" data-list-clear="" style="display: inline-block;">
+                            <span class="aria--visible">Clear filter</span>
+                        </button>
+                        <input class="form--daterange__range is-datepick" type="text" placeholder="Select dates range"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div class="datepick-popup" style="position: absolute; left: 50.5px; top: 200px;">
+        <div class="datepick datepick-multi noPrevNext picker-example-daterange" style="width: 446px;">
+            <div class="datepick-nav">
+                <a href="javascript:void(0)" title="Luk uden ændringer" class="datepick-cmd datepick-cmd-close ">Luk</a>
+                <a href="javascript:void(0)" title="Vis aktuel måned" class="datepick-cmd datepick-cmd-today ">Vælg en dato</a>
+            </div>
+            <div class="datepick-month-row">
+                <div class="datepick-month first">
+                    <div class="datepick-month-header">
+                        <a href="javascript:void(0)" title="Vis forrige måned" class="datepick-cmd datepick-cmd-prev ">&lt;Forrige</a>
+                        Juni 2013
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>
+                                <span class="datepick-dow-1" title="Mandag">Ma</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-2" title="Tirsdag">Ti</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-3" title="Onsdag">On</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-4" title="Torsdag">To</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-5" title="Fredag">Fr</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-6" title="Lørdag">Lø</span>
+                            </th>
+                            <th>
+                                <span class="datepick-dow-0" title="Søndag">Sø</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="dp1369627200000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1369713600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1369800000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1369886400000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1369972800000  datepick-other-month">&nbsp;</span></td>
+                            <td><a href="javascript:void(0)" class="dp1370059200000  datepick-selected  datepick-weekend" title="Vælg Lør, Jun 1">1</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370145600000  datepick-selected  datepick-weekend" title="Vælg Søn, Jun 2">2</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1370232000000  datepick-selected" title="Vælg Man, Jun 3">3</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370318400000  datepick-selected" title="Vælg Tir, Jun 4">4</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370404800000  datepick-selected" title="Vælg Ons, Jun 5">5</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370491200000  datepick-selected" title="Vælg Tor, Jun 6">6</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370577600000  datepick-selected" title="Vælg Fre, Jun 7">7</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370664000000  datepick-selected  datepick-weekend" title="Vælg Lør, Jun 8">8</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370750400000  datepick-selected  datepick-weekend" title="Vælg Søn, Jun 9">9</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1370836800000  datepick-selected" title="Vælg Man, Jun 10">10</a></td>
+                            <td><a href="javascript:void(0)" class="dp1370923200000  datepick-selected" title="Vælg Tir, Jun 11">11</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371009600000  datepick-selected" title="Vælg Ons, Jun 12">12</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371096000000  datepick-selected" title="Vælg Tor, Jun 13">13</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371182400000  datepick-selected" title="Vælg Fre, Jun 14">14</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371268800000  datepick-selected  datepick-weekend" title="Vælg Lør, Jun 15">15</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371355200000  datepick-selected  datepick-weekend" title="Vælg Søn, Jun 16">16</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1371441600000  datepick-selected" title="Vælg Man, Jun 17">17</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371528000000  datepick-selected" title="Vælg Tir, Jun 18">18</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371614400000  datepick-selected" title="Vælg Ons, Jun 19">19</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371700800000  datepick-selected" title="Vælg Tor, Jun 20">20</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371787200000  datepick-selected" title="Vælg Fre, Jun 21">21</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371873600000  datepick-selected  datepick-weekend" title="Vælg Lør, Jun 22">22</a></td>
+                            <td><a href="javascript:void(0)" class="dp1371960000000  datepick-selected  datepick-weekend" title="Vælg Søn, Jun 23">23</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1372046400000  datepick-selected" title="Vælg Man, Jun 24">24</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372132800000  datepick-selected" title="Vælg Tir, Jun 25">25</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372219200000  datepick-selected" title="Vælg Ons, Jun 26">26</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372305600000  datepick-selected" title="Vælg Tor, Jun 27">27</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372392000000  datepick-selected" title="Vælg Fre, Jun 28">28</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372478400000  datepick-selected  datepick-weekend" title="Vælg Lør, Jun 29">29</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372564800000  datepick-selected  datepick-weekend" title="Vælg Søn, Jun 30">30</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="dp1372651200000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372737600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372824000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372910400000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372996800000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1373083200000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1373169600000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="datepick-month last">
+                    <div class="datepick-month-header">
+                        Juli 2013
+                        <a href="javascript:void(0)" title="Vis næste måned" class="datepick-cmd datepick-cmd-next ">Næste&gt;</a>
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><span class="datepick-dow-1" title="Mandag">Ma</span></th>
+                            <th><span class="datepick-dow-2" title="Tirsdag">Ti</span></th>
+                            <th><span class="datepick-dow-3" title="Onsdag">On</span></th>
+                            <th><span class="datepick-dow-4" title="Torsdag">To</span></th>
+                            <th><span class="datepick-dow-5" title="Fredag">Fr</span></th>
+                            <th><span class="datepick-dow-6" title="Lørdag">Lø</span></th>
+                            <th><span class="datepick-dow-0" title="Søndag">Sø</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="dp1372046400000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372132800000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372219200000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372305600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372392000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372478400000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372564800000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1372651200000  datepick-selected"
+                                   title="Vælg Man, Jul 1">1</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372737600000  datepick-selected"
+                                   title="Vælg Tir, Jul 2">2</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372824000000  datepick-selected"
+                                   title="Vælg Ons, Jul 3">3</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372910400000  datepick-selected"
+                                   title="Vælg Tor, Jul 4">4</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372996800000  datepick-selected"
+                                   title="Vælg Fre, Jul 5">5</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373083200000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 6">6</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373169600000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 7">7</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1373256000000  datepick-selected"
+                                   title="Vælg Man, Jul 8">8</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373342400000  datepick-selected"
+                                   title="Vælg Tir, Jul 9">9</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373428800000  datepick-selected"
+                                   title="Vælg Ons, Jul 10">10</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373515200000  datepick-selected"
+                                   title="Vælg Tor, Jul 11">11</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373601600000  datepick-selected"
+                                   title="Vælg Fre, Jul 12">12</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373688000000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 13">13</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373774400000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 14">14</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1373860800000  datepick-selected"
+                                   title="Vælg Man, Jul 15">15</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373947200000  datepick-selected"
+                                   title="Vælg Tir, Jul 16">16</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374033600000  datepick-selected"
+                                   title="Vælg Ons, Jul 17">17</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374120000000  datepick-selected"
+                                   title="Vælg Tor, Jul 18">18</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374206400000  datepick-selected"
+                                   title="Vælg Fre, Jul 19">19</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374292800000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 20">20</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374379200000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 21">21</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1374465600000  datepick-selected"
+                                   title="Vælg Man, Jul 22">22</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374552000000  datepick-selected"
+                                   title="Vælg Tir, Jul 23">23</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374638400000  datepick-selected"
+                                   title="Vælg Ons, Jul 24">24</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374724800000  datepick-selected"
+                                   title="Vælg Tor, Jul 25">25</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374811200000  datepick-selected"
+                                   title="Vælg Fre, Jul 26">26</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374897600000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 27">27</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374984000000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 28">28</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1375070400000  datepick-selected"
+                                   title="Vælg Man, Jul 29">29</a></td>
+                            <td><a href="javascript:void(0)" class="dp1375156800000  datepick-selected"
+                                   title="Vælg Tir, Jul 30">30</a></td>
+                            <td><a href="javascript:void(0)" class="dp1375243200000  datepick-selected"
+                                   title="Vælg Ons, Jul 31">31</a></td>
+                            <td><span class="dp1375329600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375416000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375502400000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375588800000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="datepick-ctrl">
+                <button class="button button--action button--small button--stretch">Anvend</button>
+                <a href="javascript:void(0)" title="Nulstil den aktuelle dato" class="datepick-cmd datepick-cmd-clear ">Nulstil</a>
+            </div>
+            <div class="datepick-clear-fix"></div>
+        </div>
+    </div>
+    <div class="datepick-popup" style="position: absolute; left: 654.5px; top: 200px;">
+        <div class="datepick datepick-multi noPrevNext picker-example-daterange" style="width: 223px;">
+            <div class="datepick-nav">
+                <a href="javascript:void(0)" title="Luk uden ændringer" class="datepick-cmd datepick-cmd-close ">Luk</a>
+                <a href="javascript:void(0)" title="Vis aktuel måned" class="datepick-cmd datepick-cmd-today ">Vælg en dato</a>
+            </div>
+            <div class="datepick-month-row">
+                <div class="datepick-month last">
+                    <div class="datepick-month-header">
+                        <a href="javascript:void(0)" title="Vis næste måned" class="datepick-cmd datepick-cmd-prev ">Næste&gt;</a>
+                        Juli 2013
+                        <a href="javascript:void(0)" title="Vis næste måned" class="datepick-cmd datepick-cmd-next ">Næste&gt;</a>
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><span class="datepick-dow-1" title="Mandag">Ma</span></th>
+                            <th><span class="datepick-dow-2" title="Tirsdag">Ti</span></th>
+                            <th><span class="datepick-dow-3" title="Onsdag">On</span></th>
+                            <th><span class="datepick-dow-4" title="Torsdag">To</span></th>
+                            <th><span class="datepick-dow-5" title="Fredag">Fr</span></th>
+                            <th><span class="datepick-dow-6" title="Lørdag">Lø</span></th>
+                            <th><span class="datepick-dow-0" title="Søndag">Sø</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><span class="dp1372046400000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372132800000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372219200000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372305600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372392000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372478400000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1372564800000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1372651200000  datepick-selected"
+                                   title="Vælg Man, Jul 1">1</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372737600000  datepick-selected"
+                                   title="Vælg Tir, Jul 2">2</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372824000000  datepick-selected"
+                                   title="Vælg Ons, Jul 3">3</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372910400000  datepick-selected"
+                                   title="Vælg Tor, Jul 4">4</a></td>
+                            <td><a href="javascript:void(0)" class="dp1372996800000  datepick-selected"
+                                   title="Vælg Fre, Jul 5">5</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373083200000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 6">6</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373169600000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 7">7</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1373256000000  datepick-selected"
+                                   title="Vælg Man, Jul 8">8</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373342400000  datepick-selected"
+                                   title="Vælg Tir, Jul 9">9</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373428800000  datepick-selected"
+                                   title="Vælg Ons, Jul 10">10</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373515200000  datepick-selected"
+                                   title="Vælg Tor, Jul 11">11</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373601600000  datepick-selected"
+                                   title="Vælg Fre, Jul 12">12</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373688000000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 13">13</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373774400000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 14">14</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1373860800000  datepick-selected"
+                                   title="Vælg Man, Jul 15">15</a></td>
+                            <td><a href="javascript:void(0)" class="dp1373947200000  datepick-selected"
+                                   title="Vælg Tir, Jul 16">16</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374033600000  datepick-selected"
+                                   title="Vælg Ons, Jul 17">17</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374120000000  datepick-selected"
+                                   title="Vælg Tor, Jul 18">18</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374206400000  datepick-selected"
+                                   title="Vælg Fre, Jul 19">19</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374292800000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 20">20</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374379200000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 21">21</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1374465600000  datepick-selected"
+                                   title="Vælg Man, Jul 22">22</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374552000000  datepick-selected"
+                                   title="Vælg Tir, Jul 23">23</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374638400000  datepick-selected"
+                                   title="Vælg Ons, Jul 24">24</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374724800000  datepick-selected"
+                                   title="Vælg Tor, Jul 25">25</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374811200000  datepick-selected"
+                                   title="Vælg Fre, Jul 26">26</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374897600000  datepick-selected  datepick-weekend"
+                                   title="Vælg Lør, Jul 27">27</a></td>
+                            <td><a href="javascript:void(0)" class="dp1374984000000  datepick-selected  datepick-weekend"
+                                   title="Vælg Søn, Jul 28">28</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0)" class="dp1375070400000  datepick-selected"
+                                   title="Vælg Man, Jul 29">29</a></td>
+                            <td><a href="javascript:void(0)" class="dp1375156800000  datepick-selected"
+                                   title="Vælg Tir, Jul 30">30</a></td>
+                            <td><a href="javascript:void(0)" class="dp1375243200000  datepick-selected"
+                                   title="Vælg Ons, Jul 31">31</a></td>
+                            <td><span class="dp1375329600000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375416000000  datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375502400000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                            <td><span class="dp1375588800000  datepick-weekend datepick-other-month">&nbsp;</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="datepick-ctrl">
+                <button class="button button--action button--small button--stretch">Anvend</button>
+                <a href="javascript:void(0)" title="Nulstil den aktuelle dato" class="datepick-cmd datepick-cmd-clear ">Nulstil</a>
+            </div>
+            <div class="datepick-clear-fix"></div>
+        </div>
+    </div>
+</body>
+</html>

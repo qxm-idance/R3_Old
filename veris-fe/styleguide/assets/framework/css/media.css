@@ -1,0 +1,7 @@
+.media{
+    display: block;
+}
+.media__image {
+    float: left;
+    margin-right: 20px;
+}

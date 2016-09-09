@@ -1,0 +1,298 @@
+//Lists styles
+//--------------------------------------------
+
+// @base: .list
+// @variants:
+// - .list--default
+// - .list--check
+// - .list--check--bullet
+// - .list--check--small
+// - .list--divided
+// - .list--divided--blue
+// - .list--breadcrumbs
+// - .list--footer
+// - .list--numeric
+
+//  @modifiers:
+// - .list--inline
+// - .list--small
+// - .list--no-vertical-spacing
+
+//  @modifiers of color:
+// - .list--blue
+// - .list--white
+// - .list--grey
+// - .list--grey-dark
+.list {
+	li {
+		position: relative;
+		margin: 0 0 10px;
+
+		&:before {
+			@extend %icon-base-styles;
+			position: absolute;
+			left: 0;
+			top: 8px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	ul,
+	ol,
+	dl {
+		margin: 5px 0 0 10px;
+	}
+
+	dl {
+		dt {
+			float: left;
+			margin: 0 5px 10px 0;
+		}
+
+		dd {
+			margin: 0 0 10px;
+			overflow: hidden;
+		}
+	}
+
+	// list default
+	// ----------------------------------------------------------------
+	&--default {
+		li {
+			padding-left: 15px;
+
+			&:before {
+				@include icon-bullet-disc;
+				font-size: 7px;
+			}
+		}
+	}
+
+	// list check
+	// ----------------------------------------------------------------gray
+	&--check {
+		li {
+			padding-left: 25px;
+
+			&:before {
+				@include icon-check;
+				font-size: 13px;
+				top: 5px;
+			}
+		}
+
+		&--bullet {
+			li {
+				&:before {
+					@extend %icon-vertical-align;
+					@include icon-bullet-check-negative;
+					font-size: 20px;
+					top: 50%;
+					margin-top: -3px;
+				}
+			}
+		}
+
+		&--small {
+			@extend %text-size--13;
+
+			li {
+				padding-left: 20px;
+				margin-bottom: 5px;
+
+				&:before {
+					font-size: 9px;
+					top: 5px;
+				}
+			}
+		}
+	}
+
+	// list divided
+	// ----------------------------------------------------------------
+	&--divided {
+		li + li,
+		li + li:last-child {
+			border-left: 2px solid $color-graphite-black;
+			margin: 0 0 0 8px;
+			padding-left: 10px;
+		}
+
+		// list divided (color variant)
+		// ----------------------------------------------------------------
+		&--blue {
+			li + li,
+			li + li:last-child {
+				border-color: rgba(255,255,255, .3);
+			}
+		}
+	}
+
+	// list breadcrumbs
+	// ----------------------------------------------------------------
+	&--breadcrumbs {
+		@extend %clearfix;
+
+		li {
+			float: left;
+			margin: 0;
+			padding-left: 15px;
+
+			&:before {
+				@extend %icon-vertical-align;
+				@include icon-bullet;
+				font-size: 7px;
+				left: 4px;
+				top: 50%;
+				margin-top: -2px;
+			}
+
+			&:first-child {
+				padding-left: 0;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// list footer
+	// ----------------------------------------------------------------
+	&--footer {
+		font-size: 11px;
+		line-height: 15px;
+		color: $color-text-blue-nav;
+
+		li {
+			padding-left: 15px;
+			margin-bottom: 6px;
+			pointer-events: none;
+
+			&:before {
+				@extend %icon-vertical-align;
+				@include icon-bullet;
+				top: 50%;
+				margin-top: -1px;
+				font-size: 8px;
+				color: $color-text-blue-nav;
+			}
+
+			&:hover a,
+			&:hover:before {
+				color: $color-white;
+			}
+		}
+
+		a {
+			pointer-events: all;
+		}
+	}
+
+	// list inline
+	// ----------------------------------------------------------------
+	&--inline {
+		li {
+			display: inline;
+		}
+	}
+
+	// list small
+	// ----------------------------------------------------------------
+	&--small {
+		@extend %text-size--13;
+	}
+
+	// list no-vertical-spacing
+	// ----------------------------------------------------------------
+	&--no-vertical-spacing {
+		li {
+			margin: 0;
+		}
+	}
+
+	// list (color variants)
+	// ----------------------------------------------------------------
+	&--blue {
+		li {
+			&:before {
+				color: $color-telenor-blue;
+			}
+		}
+	}
+
+	&--white {
+		li {
+			&:before {
+				color: $color-white;
+			}
+		}
+	}
+
+	&--grey {
+		li {
+			&:before {
+				color: $color-steel-grey;
+			}
+		}
+	}
+
+	&--grey-dark {
+		li {
+			&:before {
+				color: $color-stone-grey;
+			}
+		}
+	}
+
+	&--green {
+		li {
+			&:before {
+				color: $color-telenor-green;
+			}
+		}
+	}
+
+	&--numeric {
+		counter-reset: item;
+
+		ol {
+			counter-reset: item;
+			margin: 10px 0 0;
+		}
+
+		li {
+			$label-size: 22px;
+
+			position: relative;
+			padding-left: $label-size + 10px !important; // override grid left padding
+			min-height: $label-size;
+			list-style: none;
+
+			&:before {
+				content: counters(item, ".") " ";
+				counter-increment: item;
+				color: $color-white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 0 2px;
+				min-width: $label-size - 4px;
+				height: $label-size;
+				font-size: $label-size / 2;
+				line-height: $label-size;
+				font-family: inherit;
+				text-align: center;
+				border-radius: 50%;
+				background: $color-telenor-green;
+			}
+
+			&.text-size--13 {
+				padding-top: 3px;
+			}
+		}
+	}
+}

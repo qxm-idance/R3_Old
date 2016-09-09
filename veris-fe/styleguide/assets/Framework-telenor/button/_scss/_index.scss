@@ -1,0 +1,574 @@
+/**
+name: Button
+type: ui
+desc: >
+	# Structure
+
+	1. Button needs required structure, each text description has to be wrapped with element with class name 'button\_\_text' for text vertical aligning
+
+	2. __Don't use icon's classes in button's attribute class__
+
+
+	# Icons
+
+	1. You can add icon both to the 'button\_\_label' and 'button\_\_label--success' elements
+
+	2. All icons have property 'vertical-align' equal 'middle'
+
+	3. If you want an icon for the button, you have to wrap 'button\_\_text' element with 'button\_\_label' element and add additional classes:
+
+		1. Class name for icon's position:
+
+			1. 'icon\-\-left' - uses :before for icon (hides :after). Icon has margin-right: 8px by default
+
+			2. 'icon\-\-right' - uses :after for icon (hides :before). Icon has margin-left: 8px by default
+
+		2. Class name for icon symbol
+
+
+	# Animations
+
+	1. Loading button state needs:
+
+		1. Attribute 'data-loading="true"' for the button
+
+		2. Element with class name 'button\_\_spinner' inside the button
+
+	2. Loaded button state needs:
+
+		1. Attribute 'data-loaded="true"' for the button
+
+		2. Element with class name 'button\_\_label--success' inside the button
+
+		3. Icon for success state can be added based on the same rules as for the basic icon
+
+examples:
+  - name: Default button
+    tmpl: >
+        <button class="button button--default">
+        	<span class="button__label">Button default</span>
+        </button>
+  - name: Default button small
+    tmpl: >
+        <button class="button button--default button--small">
+        	<span class="button__label">Button default</span>
+        </button>
+  - name: Default button with 'a' tag
+    tmpl: >
+        <a href="#" class="button button--default">
+        	<span class="button__label">Button default</span>
+        </a>
+  - name: Grey for modal (button is visually identical with default, but with no special styling inside section--negative to avoid unwanted inheritance for modals)
+    tmpl: >
+        <button class="button button--modal">
+        	<span class="button__label">Button modal</span>
+        </button>
+  - name: No background, but with changed color styles
+    tmpl: >
+        <button class="button button--naked">
+        	<span class="button__label">Button naked</span>
+        </button>
+  - name: Underlined
+    tmpl: >
+        <button class="button button--underlined">
+        	<span class="button__label">Button underlined</span>
+        </button>
+  - name: Green
+    tmpl: >
+        <button class="button button--success">
+        	<span class="button__label">Button success</span>
+        </button>
+  - name: Blue
+    tmpl: >
+        <button class="button button--action">
+        	<span class="button__label">Button blue</span>
+        </button>
+  - name: Blue dark
+    tmpl: >
+        <button class="button button--action-dark">
+        	<span class="button__label">Button blue dark</span>
+        </button>
+  - name: Yellow
+    tmpl: >
+        <button class="button button--accept">
+        	<span class="button__label">Button yellow</span>
+        </button>
+  - name: Yellow with next arrow
+    tmpl: >
+        <button class="button button--accept">
+        	<span class="button__label icon--right icon-arrow-next">Next</span>
+        </button>
+  - name: Yellow small with next arrow
+    tmpl: >
+        <button class="button button--small button--accept">
+        	<span class="button__label icon--right icon-arrow-next">Next</span>
+        </button>
+  - name: Yellow with previous arrow
+    tmpl: >
+        <button class="button button--accept">
+        	<span class="button__label icon--left icon-arrow-prev">Prev</span>
+        </button>
+  - name: Link
+    tmpl: >
+        <a class="button button--link" href="#">Button link</a>
+  - name: Link with arrow
+    tmpl: >
+        <a class="button button--link" href="#">
+        	<span class="button__label icon--left icon-bullet">Button link</span>
+        </a>
+  - name: Inline button with arrow
+    tmpl: >
+        <button class="button button--link button--inline">
+        	<span class="button__label icon--left icon-bullet">Button link</span>
+        </button>
+  - name: Blue next button
+    tmpl: >
+        <button class="button button--action">
+        	<span class="button__label icon-arrow-next"></span>
+        </button>
+  - name: Blue prev button
+    tmpl: >
+        <button class="button button--action">
+        	<span class="button__label icon-arrow-prev"></span>
+        </button>
+  - name: Grey with spinner
+    tmpl:
+    	include: grey-spinner.html
+  - name: Blue with spinner
+    tmpl:
+    	include: blue-spinner.html
+  - name: Yellow with spinner
+    tmpl:
+    	include: yellow-spinner.html
+  - name: Button group
+    tmpl: >
+        <div class="button-group">
+        	<button class="button button--default">
+       			<span class="button__label">Button</span>
+       		</button>
+       		<button class="button button--default">
+       			<span class="button__label">Button</span>
+       		</button>
+        </div>
+  - name: Button with full width
+    tmpl: >
+        <button class="button button--default button--stretch">
+       		<span class="button__label">Button</span>
+        </button>
+  - name: Button with vertical middle alignment
+    tmpl: >
+        <button class="button button--default align--middle">
+       		<span class="button__label">Button</span>
+        </button>
+        <button class="button button--default button--small align--middle">
+       		<span class="button__label">Button</span>
+        </button>
+  - name: Button with vertical bottom alignment
+    tmpl: >
+        <button class="button button--default align--bottom">
+       		<span class="button__label">Button</span>
+        </button>
+        <button class="button button--default button--small align--bottom">
+       		<span class="button__label">Button</span>
+        </button>
+  - name: Converter
+    tmpl:
+      include: converter.html
+*/
+
+.button {
+	$root: &;
+	$button-loading-distance: 30px;
+	$button-height: 40px;
+	$button-height-small: 32px;
+
+	display: inline-block;
+	vertical-align: top;
+	height: $button-height;
+	max-width: 100%;
+	padding: 0 16px;
+	line-height: $button-height;
+	border: 1px solid transparent;
+	border-radius: $radius-button;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	transition: all .125s;
+	-webkit-appearance: none;
+	background: none;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&--small {
+		font-size: 13px;
+		line-height: $button-height-small;
+		height: $button-height-small;
+	}
+
+	&--stretch {
+		width: 100%;
+	}
+
+	&[disabled]:hover,
+	&[disabled] {
+		color: $color-steel-grey;
+		border-color: $color-smoke-grey;
+		background: $color-paper-white;
+	}
+
+	// styles for default and modal buttons without styles for section--negative
+	&--modal,
+	&--default {
+		border-color: $color-silver-grey;
+		background: $gradient-white;
+		color: $color-graphite-black;
+
+		&:hover {
+			border-color: $color-steel-grey;
+			background: $gradient-white-grey;
+		}
+
+		&.is-active {
+			border-color: $color-steel-grey;
+			background: $color-steel-grey;
+			color: $color-white;
+		}
+
+		&.is-selected {
+			background: $color-white;
+			color: $color-stone-grey;
+		}
+
+		&:focus {
+			border-color: $color-telenor-blue;
+		}
+	}
+
+	// default button with styles for section--negative
+	&--default {
+		.section--negative & {
+			border-color: transparent;
+
+			&:focus {
+				border-color: $color-stroke-blackblue;
+			}
+		}
+	}
+
+	// button without background
+	&--naked {
+		color: $color-graphite-black;
+
+		&:hover {
+			color: $color-telenor-blue;
+		}
+
+		.section--negative & {
+			color: $color-blue-white;
+
+			&:hover {
+				color: $color-white;
+			}
+		}
+	}
+
+	// button underlined
+	&--underlined {
+		#{$root}__label {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			#{$root}__label {
+				text-decoration: none;
+			}
+		}
+	}
+
+	// blue button
+	&--action {
+		border-color: $color-telenor-blue-dark;
+		background: $gradient-blue;
+		color: $color-white;
+
+		&:hover {
+			border-color: $color-stroke-darkblue;
+			background: $gradient-darkblue;
+		}
+
+		&:focus {
+			border-color: $color-stroke-blackblue;
+		}
+	}
+
+	// dark blue button
+	&--action-dark {
+		border-color: $color-stroke-darkblue;
+		background: $gradient-darkblue-button;
+		color: $color-white;
+
+		&:hover {
+			border-color: $color-telenor-blue-darker;
+			background: $gradient-darkblue-button-dark;
+		}
+
+		&:focus {
+			border-color: $color-stroke-blackblue;
+		}
+
+		.section--negative & {
+			color: $color-white;
+			background-color: $color-blue-dark;
+		}
+
+		.section--negative &[disabled] {
+			color: $color-text-blue-nav;
+		}
+	}
+
+	// green button
+	&--success {
+		border-color: $color-green-dark;
+		background: $gradient-green;
+		color: $color-white;
+	}
+
+	// yellow button
+	&--accept {
+		border-color: $color-yellow-dark;
+		background: $gradient-yellow;
+		color: $color-graphite-black;
+
+		&:hover {
+			border-color: $color-yellow-dark;
+			background: $gradient-yellow-dark;
+		}
+
+		&[disabled] {
+			border-color: $color-smoke-grey;
+			background: $color-paper-white;
+			color: $color-steel-grey;
+		}
+		// check disabled state
+
+		.section--negative & {
+			background: $gradient-yellow;
+			border-color: transparent;
+
+			&:focus {
+				border-color: $color-stroke-blackblue;
+			}
+
+			&:hover {
+				background: $gradient-yellow-dark;
+			}
+		}
+	}
+
+	// button like link
+	&--link {
+		border-color: transparent;
+		color: $color-telenor-blue;
+	}
+
+	// button inline (without height)
+	&--inline {
+		height: auto;
+		line-height: inherit;
+		padding: 0;
+		border: 0;
+	}
+
+	// loading state for button
+	&[data-loading="true"],
+	&[data-loaded="true"] {
+		cursor: default;
+	}
+
+	// loaded state for button
+	&[data-loaded="true"] {
+		&,
+		&:hover,
+		&:focus {
+			border-color: $color-green-dark;
+			background: $gradient-green;
+			color: $color-telenor-green;
+		}
+	}
+
+	&__label,
+	&__label--success {
+		vertical-align: top;
+		height: 100%;
+		transition: top 0.2s ease;
+		position: relative;
+	}
+
+	&__label {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		white-space: nowrap;
+
+		#{$root}[data-loading="true"] &,
+		#{$root}[data-loaded="true"] & {
+			opacity: 0;
+			top: -100%;
+		}
+
+		#{$root}[data-loaded="true"] & {
+			display: block;
+			width: 100%;
+		}
+
+		&--success {
+			display: block;
+			width: 0;
+			color: $color-white;
+
+			&:before {
+				animation: buttonSuccess 0.3s cubic-bezier(.535,.235,.22,1.63);
+			}
+
+			#{$root}[data-loaded="true"] & {
+				display: inline-block;
+				width: auto;
+				transform: translate(0, -100%);
+
+				&:before {
+					left: 0;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	// button spinner
+	&__spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 150%);
+		transition: transform 0.2s ease;
+
+		#{$root}[data-loading="true"] & {
+			transform: translate(-50%, -50%);
+		}
+
+		#{$root}[data-loaded="true"] & {
+			transform: translate(-50%, -150%);
+		}
+	}
+
+	&__spinner-container {
+		@extend %loader-spinner;
+
+		#{$root}--action-dark &,
+		#{$root}--action &,
+		#{$root}--success & {
+			@extend %loader-spinner--light;
+		}
+	}
+
+	// icons for buttons
+	[class*="icon-"] {
+		&:before {
+			line-height: $button-height;
+		}
+	}
+
+	&--small {
+		[class*="icon-"]:before {
+			line-height: $button-height-small;
+		}
+	}
+
+	&--inline {
+		[class*="icon-"]:before {
+			line-height: inherit;
+		}
+	}
+
+	.icon--left,
+	.icon--right {
+		&:before {
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	.icon--left {
+		padding-left: 18px;
+
+		&.icon-thumb-up {
+			padding-left: 25px;
+		}
+
+		&:before {
+			left: 0;
+		}
+	}
+
+	.icon--right {
+		padding-right: 18px;
+
+		&:before {
+			right: 0;
+		}
+	}
+
+	.icon-bullet:before {
+		font-size: 7px;
+		margin-top: -1px;
+	}
+
+	.icon-arrow-down:before {
+		font-size: 10px;
+	}
+
+	.icon-arrow-next,
+	.icon-arrow-prev {
+		&:before {
+			font-size: 10px;
+			font-weight: bold;
+		}
+	}
+}
+
+// Button Group for 2 items
+.button-group {
+	.button {
+		width: 40%;
+		margin-right: $small-spacing-unit;
+
+		&:first-child {
+			margin-right: 0;
+		}
+
+		@include until($bp-small) {
+			width: 100%;
+			margin-right: 0;
+
+			&:first-child {
+				margin-bottom: $small-spacing-unit;
+			}
+		}
+	}
+}
+
+@keyframes buttonSuccess {
+	from {
+		opacity: 0;
+		left: -50px;
+	}
+	to {
+		opacity: 1;
+		left: 0;
+	}
+}

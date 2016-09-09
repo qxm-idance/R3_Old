@@ -1,0 +1,9 @@
+<div class="border box--greyed padding-whole">
+	<div class="form-search form-item--large" data-component="form/search">
+		<input type="search" placeholder="Search..." data-component="type-watch" data-capture-length="1" />
+		<button type="button" tabindex="-1" class="form-search__clear icon-clear" data-list-clear=""></button>
+		<button class="form-search__submit" tabindex="-1">
+			<span class="icon-search"></span>
+		</button>
+	</div>
+</div>

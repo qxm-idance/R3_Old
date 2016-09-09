@@ -1,0 +1,272 @@
+// mixin for typography
+@mixin text-sizes($font-size: null) {
+	@if ($font-size) {
+		@if map-has-key($text-sizes, $font-size) {
+			font-size: $font-size + px;
+			line-height: map-get($text-sizes, $font-size) + px;
+		}
+	} @else {
+		@each $font-size, $line-height in $text-sizes {
+			&--#{$font-size} {
+				font-size: $font-size + px;
+				line-height: $line-height + px;
+			}
+		}
+	}
+}
+
+// clearfix
+@mixin clearfix {
+	&:after {
+		content:"";
+		display:table;
+		clear:both;
+	}
+}
+
+// zindex mixin
+// to increase/decrease value, use $extra argument
+@mixin zindex($layer: placeholder, $extra: 0) {
+	$zindex: map-get($z-layers, $layer);
+	z-index: $zindex + $extra;
+}
+
+/* Media Queries
+--------------------------------------------------------------------------------*/
+@mixin until($bp) {
+	@media only screen and (max-width: $bp) {
+		@content;
+	}
+}
+
+@mixin at-least($bp) {
+	@media only screen and (min-width: $bp) {
+		@content;
+	}
+}
+
+// ----------------------------------------------------------------
+// box shadow inset - used in forms for error mark
+@mixin box-shadow-inset($size: 2px, $color: $color-error) {
+	$size-neg: -$size;
+	box-shadow: $size 0 0 0 $color-error inset, 0 $size 0 0 $color-error inset, $size-neg 0 0 0 $color-error inset, 0 $size-neg 0 0 $color-error inset;
+}
+
+/* Misc
+--------------------------------------------------------------------------------*/
+@mixin tn-triangle($size, $color, $direction, $distance: false) {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	z-index: 4;
+
+	@if $direction == "top" {
+		@if not $distance {
+			bottom: -$size;
+		} @else {
+			bottom: $distance - $size;
+		}
+		left: 50%;
+		margin-left: -($size * 2 / 2);
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+
+	@if $direction == "right" {
+		top: 50%;
+		@if not $distance {
+			left: -$size;
+		} @else {
+			left: $distance - $size;
+		}
+		margin-top: -($size * 2 / 2);
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+
+	@if $direction == "left" {
+		top: 50%;
+		@if not $distance {
+			right: -$size;
+		} @else {
+			right: $distance - $size;
+		}
+		margin-top: -($size * 2 / 2);
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+
+	@if $direction == "bottom" {
+		@if not $distance {
+			top: -$size;
+		} @else {
+			top: $distance - $size;
+		}
+		left: 50%;
+		margin-left: -($size * 2 / 2);
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+}
+
+@mixin truncate {
+	max-width: 100%; // Ensure that the node has a maximum width after which truncation can occur.
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: normal; // Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor nodes.
+}
+
+// ----------------------------------------------------------------
+// bouble arrow
+$tool-tip-inner-arrow-size: 7px;
+
+@mixin bubble-arrow {
+	&:before,
+	&:after {
+		width: 0;
+		height: 0;
+		content: "";
+		position: absolute;
+	}
+
+	&:before {
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid $color-silver-grey;
+		left: $small-spacing-unit * 1.5 + 2;
+		top: -8px;
+		margin-left: -8px;
+	}
+
+	&:after {
+		border-left: $tool-tip-inner-arrow-size solid transparent;
+		border-right: $tool-tip-inner-arrow-size solid transparent;
+		border-bottom: $tool-tip-inner-arrow-size solid $color-white;
+		left: $small-spacing-unit * 1.5 + 2;
+		top: -$tool-tip-inner-arrow-size;
+		margin-left: -$tool-tip-inner-arrow-size;
+	}
+}
+
+@mixin animation-time-delay($delayTime, $delayStep, $itemLength) {
+	@for $i from 1 through $itemLength {
+		&:nth-child(#{$i}) {
+			transition-delay: $delayTime;
+			$delayTime: $delayTime + $delayStep;
+		}
+	}
+}
+
+@mixin dl-list {
+	dl {
+		padding: 0;
+		margin: 0;
+
+		dt {
+			float: left;
+			font-weight: normal;
+			padding: 0;
+			margin: 0;
+			clear: left;
+		}
+
+		dd {
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+			text-align: right;
+		}
+	}
+}
+
+// helpers mixin, used to generate classes
+
+// check selector options
+@function checkSelector($separator, $className, $name) {
+	@if ($name == base) {
+		@return '.' + $className;
+	}
+
+	@if ($separator == default) {
+		@return '.' + $className + '-' + $name;
+	}
+
+	@if ($separator == modifier) {
+		@return '.' + $className + '--' + $name;
+	}
+}
+
+@mixin helpers($property, $className, $variables, $forced: false, $separator: default, $responsive: false) {
+	@each $name, $value in $variables {
+		@if ($forced == forced) {
+			$value: $value !important;
+		}
+
+		#{checkSelector($separator, $className, $name)} {
+			#{$property}: $value;
+		}
+	}
+
+	@if ($responsive == responsive) {
+		$className: 'mobile-' + $className;
+
+		@include until(768px) {
+			@each $name, $value in $variables {
+				@if ($forced == forced) {
+					$value: $value !important;
+				}
+
+				#{checkSelector($separator, $className, $name)} {
+					#{$property}: $value;
+				}
+			}
+		}
+	}
+}
+
+// borders mixin
+@mixin borderClasses() {
+	border: $border;
+
+	&--left {
+		border-left: $border;
+	}
+
+	&--right {
+		border-right: $border;
+	}
+
+	&--bottom {
+		border-bottom: $border;
+	}
+
+	&--top {
+		border-top: $border;
+	}
+
+	&--without-left {
+		border-left: none;
+	}
+
+	&--without-right {
+		border-right: none;
+	}
+
+	&--without-bottom {
+		border-bottom: none;
+	}
+
+	&--without-top {
+		border-top: none;
+	}
+
+	&--without {
+		border: none !important;
+	}
+}

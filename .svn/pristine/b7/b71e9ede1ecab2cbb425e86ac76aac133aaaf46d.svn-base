@@ -1,0 +1,87 @@
+<form data-component="form" data-extensions="form/validation" action="#">
+	<div class="datepicker datepicker--large"
+		data-component="datepicker"
+		data-months-to-show="2"
+		data-default-start-date="2015-11-19"
+		data-default-end-date=""
+		data-disabled-dates="2015-11-21,2015-11-22,2015-11-28,2015-11-29,2015-12-05,2015-12-06,2015-12-12,2015-12-13,2015-12-19,2015-12-20,2015-12-26,2015-12-27,2016-01-02,2016-01-03,2016-01-09,2016-01-10,2016-01-16,2016-01-17"
+		data-disabled-dates-message="Sorry, you can not choose this date, please try another date"
+		data-month-names="januar,februar,marts,april,maj,juni,juli,august,september,oktober,november,december,"
+		data-month-names-short="jan,feb,mar,apr,maj,jun,jul,aug,sep,okt,nov,dec,"
+		data-day-names="søndag,mandag,tirsdag,onsdag,torsdag,fredag,lørdag"
+		data-day-names-short="sø,ma,ti,on,to,fr,lø"
+		data-day-names-min="sø,ma,ti,on,to,fr,lø"
+		data-date-format="yyyy.mm.dd"
+		data-date-message="Please enter correct date"
+		data-month-header-format="MM yyyy"
+		data-prev-text="&amp;#x3cPrevious"
+		data-prev-status="Show previous month"
+		data-prev-jump-text="&amp;#x3c&amp;#x3c"
+		data-prev-jump-status=""
+		data-next-text="Next&amp;#x3e;"
+		data-next-status="Show next month"
+		data-next-jump-text="&amp;#x3e;&amp;#x3e;"
+		data-next-jump-status=""
+		data-today-text="Choose a date"
+		data-today-status="Show current month"
+		data-clear-text="Reset"
+		data-clear-status="Reset the current date"
+		data-close-text="Close"
+		data-close-status="Close without changes"
+		data-apply-text="Apply"
+		data-year-status="Show another year"
+		data-month-status="Show another month"
+		data-week-text="Week"
+		data-week-status="The year's week"
+		data-day-status="'Choose' D, M d"
+		data-default-status="Choose a date"
+		data-min-date="2015-11-19"
+		data-min-date-message="Please Choose date after 2015-11-19"
+		data-max-date="2016-01-18"
+		data-max-date-message="Please Choose date before 2016-01-18"
+		data-range-select="false"
+		data-daterange-message="End date should be not less than start date"
+		data-always-filled="true">
+
+		<input type="text" class="datepicker__range"
+			name="datepicker-range"
+			placeholder="Select any date range"
+			data-valmsg-for="datepicker-range"
+			data-selector="dateRange">
+
+		<input type="text" class="datepicker__start"
+			name="date"
+			placeholder="From date"
+			data-selector="startDate">
+
+		<input class="datepicker__end" type="text" name="endDate" data-selector="endDate" placeholder="To date">
+		<span class="field-validation-valid" data-valmsg-for="datepicker-range" data-valmsg-replace="true"></span>
+		<div class="tooltip-trigger-marker" data-msg-link="datepicker-range">
+			<div class="icon-error tooltip__trigger--validation">
+				<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-datepicker-range">
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<span class="field-validation-valid" data-valmsg-for="date" data-valmsg-replace="true"></span>
+		<div class="tooltip-trigger-marker" data-msg-link="date">
+			<div class="icon-error tooltip__trigger--validation">
+				<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-date">
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<span class="field-validation-valid" data-valmsg-for="endDate" data-valmsg-replace="true"></span>
+		<div class="tooltip-trigger-marker" data-msg-link="endDate">
+			<div class="icon-error tooltip__trigger--validation">
+				<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-endDate">
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<button class="icon-clear" data-selector="clearDates"></button>
+
+	</div>
+
+	<button type="submit">Validate</button>
+</form>

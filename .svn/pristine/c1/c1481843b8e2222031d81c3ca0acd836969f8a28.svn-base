@@ -1,0 +1,12 @@
+<div class="border box--greyed padding-whole">
+	<ul class="form-item">
+		<li class="form-radio">
+			<input type="radio" disabled checked name="rad-disabled" value="--some-value--" id="rad-disabled-0">
+			<label for="rad-disabled-0">Checked</label>
+		</li>
+		<li class="form-radio">
+			<input type="radio" disabled name="rad-disabled" id="rad-disabled-1" value="--some-value--">
+			<label for="rad-disabled-1">Not checked</label>
+		</li>
+	</ul>
+</div>

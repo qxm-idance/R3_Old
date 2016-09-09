@@ -1,0 +1,24 @@
+.section {
+	@extend %clearfix;
+
+	&--wrap {
+		background: $color-white;
+		position: relative;
+		box-shadow: 0 3px 14px rgba($color-black, .35);
+
+		@include until($bp-small) {
+			box-shadow: none;
+		}
+
+	}
+
+	 // section--negative
+
+	&--negative {
+		color: $color-white;
+
+		.text--secondary {
+			opacity: .75;
+		}
+	}
+}

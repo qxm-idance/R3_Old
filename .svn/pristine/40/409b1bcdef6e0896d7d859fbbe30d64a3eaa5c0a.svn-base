@@ -1,0 +1,310 @@
+/**
+name: Select
+type: ui
+modifiers:
+  --small: Small select
+  --dropdown: Dropdown select
+examples:
+	- name: Select
+	  tmpl:
+	  	  include: select.html
+	- name: Select with grouping
+	  tmpl:
+	  	  include: grouping.html
+	- name: Select small
+	  tmpl:
+	  	  include: small.html
+	- name: Disabled select
+	  tmpl:
+	  	  include: disabled.html
+	- name: Select with error
+	  tmpl:
+	  	  include: error.html
+	- name: Select in a negative box
+	  tmpl:
+	  	  include: negative.html
+*/
+
+// Custom select styling.
+// --------------------------------------------------------
+.select-wrapper,
+.form-select {
+
+	position: relative;
+
+	&__field {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	// ----------------------------------------------------------------
+	// native select
+
+	select {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 2;
+		height: 100%;
+
+		// pass focus to field
+		&:hover:focus ~ .form-select__field,
+		&:focus ~ .form-select__field {
+			border: $border-form-input-focus;
+		}
+
+		// pass hover to field
+		&:hover ~ .form-select__field {
+			border: $border-form-input-hover;
+			box-shadow: $box-shadow-downright;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// disabled
+
+	&.form-select--disabled {
+
+		.form-select__field {
+			background: $color-paper-white;
+			border-color: $color-smoke-grey;
+			cursor: default;
+
+			// button
+			&:after {
+				background: none;
+				background-color: $color-paper-white;
+				border-left-color: $color-smoke-grey;
+				color: $color-steel-grey;
+			}
+		}
+
+		select {
+			cursor: default;
+		}
+
+		// pass hover to field
+		select:hover ~ .form-select__field {
+			border: $border-form-input-hover;
+			border-color: $color-smoke-grey;
+			box-shadow: none;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// placeholder field
+
+	&--inline {
+		display: inline-block;
+	}
+
+	&__field {
+
+		@extend %default-input;
+
+		position: relative;
+		padding-right: $base-button-size + 10;
+
+
+		line-height: $base-button-size + 1px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		// dropdown icon
+		&:after {
+
+		@extend %icon-base-styles;
+			@include icon-arrow-down;
+
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			border-left: $border-form-input;
+			background-color: $color-paper-white;
+			background: $gradient-white-grey;
+			color: $color-stone-grey;
+			transition: $transition-form-all;
+		font-size: 10px;
+		line-height: inherit;
+			width: $small-button-size;
+			box-sizing: border-box;
+			text-align: center;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// label
+
+	&__label {
+		@extend %default-label;
+	}
+
+	// ----------------------------------------------------------------
+	// small
+
+	&--small {
+		@extend %text-size--13;
+
+		select {
+			height: $small-button-size;
+		}
+
+		.form-select__field {
+			line-height: $small-button-size;
+			height: $small-button-size;
+			padding-right: $small-button-size + 10;
+		}
+
+		.form-select__field:after {
+			padding: 0 7px;
+			line-height: $large-spacing-unit;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// negative
+
+	.section--negative & {
+
+		// field negative
+		&__field {
+
+			// field button adjust
+			&:after {
+				top: -1px;
+				right: -1px;
+				bottom: -1px;
+				border-left: $border-form-input;
+				border-radius: 0 $radius-form-input $radius-form-input 0;
+				padding: 1px 11px;
+				padding-left: 10px;
+			}
+		}
+
+		// select negative
+		select {
+
+			// pass focus to field
+			&:hover:focus ~ .form-select__field,
+			&:focus ~ .form-select__field {
+				border: $border-form-negative-input-focus;
+			}
+
+			// pass hover to field
+			&:hover ~ .form-select__field {
+				border: $border-form-negative-input-hover;
+				box-shadow: $box-shadow-downright;
+			}
+
+			//
+			&:hover ~ .form-select__field:after,
+			&:focus ~ .form-select__field:after {
+				right: 0;
+				bottom: 0;
+				top: 0;
+				padding: 0 10px;
+			}
+		}
+
+		// small negative
+		&--small {
+
+			@include at-least($bp-small) {
+				.form-select__field:after {
+					padding-left: 7px;
+					padding-right: 8px;
+				}
+
+				select {
+					&:hover ~ .form-select__field:after,
+					&:focus ~ .form-select__field:after {
+						padding: 0 7px;
+					}
+				}
+			}
+		}
+	}
+
+	&--length {
+		margin-top: -1px;
+	}
+
+	// ----------------------------------------------------------------
+	// multi row
+
+	.form-item--multi & {
+		display: table-cell;
+		margin-right: $small-spacing-unit;
+
+		&:first-child {
+			margin-right: 0;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// error
+
+	.form-item--error &,
+	&.form-select--error {
+
+		select:hover:focus ~ .form-select__field,
+		select:hover ~ .form-select__field,
+		select:focus ~ .form-select__field,
+		.form-select__field {
+			border-color: $color-telenor-red;
+		}
+
+		.form-select__field:before {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			content: "";
+
+			z-index: 1;
+
+			//border: $border-form-input-error;
+			outline: none;
+
+			box-sizing: border-box;
+			//border-radius: $radius-form-input;
+
+			border-color: $color-telenor-red;
+			@include box-shadow-inset;
+		}
+	}
+
+	//Forms select style
+	&.form-inline {
+		display: block;
+		margin: 0 0 20px;
+	}
+
+	@include at-least($bp-small) {
+		&.form-inline {
+			display: inline-block;
+			vertical-align: bottom;
+			margin: 0 $small-spacing-unit 0 0;
+			line-height: 1.2;
+		}
+
+		button {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+	}
+
+}

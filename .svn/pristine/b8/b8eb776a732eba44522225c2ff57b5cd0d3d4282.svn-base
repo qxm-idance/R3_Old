@@ -1,0 +1,5 @@
+<div class="icon-error">
+	<div class="tooltip tooltip--error" data-component="tooltip">
+		<p><strong>Lorem ipsum dolor</strong><br>This is an error tooltip</p>
+	</div>
+</div>

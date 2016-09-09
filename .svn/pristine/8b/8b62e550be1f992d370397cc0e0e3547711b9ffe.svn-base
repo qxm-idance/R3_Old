@@ -1,0 +1,48 @@
+.flag {
+    display: table;
+    width: 100%;
+    height: 100%
+}
+
+.flag .flag__image,.flag .flag__body {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.flag .flag__image {
+    padding-right: 10px
+}
+
+.flag .flag__image>img {
+    display: block;
+    max-width: none
+}
+
+.flag .flag__body {
+    width: 100%
+}
+
+.flag--top .flag__image,.flag--top .flag__body {
+    vertical-align: top
+}
+
+.flag--bottom .flag__image,.flag--bottom .flag__body {
+    vertical-align: bottom
+}
+
+.flag--reverse .flag__image {
+    padding-right: 0;
+    padding-left: 10px
+}
+
+@media only screen and (max-width: 37.438em) {
+    .flag {
+        display:block
+    }
+
+    .flag .flag__image,.flag .flag__body {
+        display: block;
+        padding-left: 0;
+        padding-right: 0
+    }
+}

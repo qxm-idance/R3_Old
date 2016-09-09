@@ -1,0 +1,148 @@
+/**
+name: Message
+type: ui
+desc: >
+	# Structure
+
+	1. Message needs required structure, inner holder should have attribute data-element="messageContent" for calculations of height.
+
+	2. __Don't use top/bottom indents for '.message' holder, use it for '.message__inner' holder__
+
+examples:
+  - name: Informational
+    tmpl:
+        include: info.html
+  - name: Warning
+    tmpl:
+        include: warn.html
+  - name: Error
+    tmpl:
+        include: error.html
+  - name: Success
+    tmpl:
+        include: success.html
+  - name: Multiline
+    tmpl:
+        include: multiline.html
+*/
+.message {
+	$root: &;
+
+	position: relative;
+	overflow: hidden;
+
+	&.collapsing {
+		transition: height 1s ease;
+	}
+
+	&__inner {
+		background-color: $color-paper-white;
+		color: $color-graphite-black;
+		border: $border-light;
+		border-radius: $radius-button;
+		padding: $small-spacing-unit;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+
+		#{$root}--success & {
+			border-color: transparent;
+			background: $color-telenor-green;
+			color: $color-white;
+		}
+
+		#{$root}--alert & {
+			border-color: transparent;
+			background: $color-yellow-light;
+		}
+
+		#{$root}--error & {
+			border-color: transparent;
+			background: $color-telenor-red;
+			color: $color-white;
+		}
+
+		#{$root}--info & {
+			color: $color-stone-grey;
+		}
+	}
+
+	&__close {
+		background: none;
+		border: 0;
+		color: $color-silver-grey;
+		outline: none;
+		padding: 0;
+		position: absolute;
+		overflow: visible;
+		top: 10px;
+		right: $small-spacing-unit;
+		font-size: 19px;
+		line-height: 1;
+
+		&:hover,
+		&:focus {
+			color: $color-steel-grey;
+		}
+
+		#{$root}--error &,
+		#{$root}--alert &,
+		#{$root}--success & {
+			color: $color-white;
+
+			&:hover {
+				opacity: .75;
+			}
+		}
+	}
+
+	&__text {
+		padding-right: 30px;
+		padding-top: 3px;
+		color: inherit;
+
+		#{$root}__icon + & {
+			padding-left: 40px;
+		}
+	}
+
+	&__icon {
+		width: $section-spacing;
+		position: absolute;
+		top: 13px;
+		left: 2px;
+		text-align: center;
+		color: inherit;
+		line-height: 1;
+
+		#{$root}--alert & {
+			color: #cb9b33;
+		}
+
+		#{$root}--info & {
+			color: $color-steel-grey;
+		}
+	}
+
+	&__walled {
+		padding: 20px;
+		background: $color-yellow-light;
+		border-bottom: 1px solid $color-white;
+
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	&--closed {
+		height: 0;
+	}
+
+	&--bottom {
+		position: fixed;
+		bottom: 0;
+		margin: 0;
+		width: 100%;
+		z-index: 999;
+	}
+}

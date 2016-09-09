@@ -1,0 +1,561 @@
+/*icon and images by tangll 2016-8-10*/
+/**
+name: List
+type: ui
+desc: >
+    # Structure
+
+    1. list needs required structure, use 'ul > li' structure with class '.list' for display default list view, and add class '.list' with needed modifier to change list view.
+
+    2. wrapping tag in examples just for clearer understanding, not necessarily to use.
+
+examples:
+  - name: Lists
+    tmpl:
+      include: lists.html
+  - name: List Default
+    tmpl:
+      include: list-default.html
+  - name: List Check
+    tmpl:
+      include: list-check.html
+  - name: List Check small
+    tmpl:
+      include: list-check-small.html
+  - name: List Check-bullet
+    tmpl:
+      include: list-check-bullet.html
+  - name: List Check-bullet white
+    tmpl:
+      include: list-check-bullet-white.html
+  - name: List Check-bullet gray
+    tmpl:
+      include: list-check-bullet-grey.html
+  - name: List Check-bullet gray-dark
+    tmpl:
+      include: list-check-bullet-grey-dark.html
+  - name: List divided blue
+    tmpl:
+      include: list-divided-blue.html
+  - name: List breadcrumbs
+    tmpl:
+      include: list-breadcrumbs.html
+  - name: List footer
+    tmpl:
+      include: list-footer.html
+  - name: List numeric
+    tmpl:
+      include: list-numeric.html
+  - name: List inline
+    tmpl:
+      include: list-inline.html
+  - name: List small
+    tmpl:
+      include: list-small.html
+  - name: List with no vertical spacing between li
+    tmpl:
+      include: list-no-vertical-spacing.html
+*/
+[class^="list--check"], [class*=" list--check"] {
+    margin-left: 1em;
+    list-style-image: square
+}
+
+[class^="list--check"] li, [class*=" list--check"] li {
+    margin-top: 0.625em
+}
+
+[class^="list--check"],[class*=" list--check"] {
+    list-style: none;
+    margin-left: 0
+}
+
+[class^="list--check"] li:first-child, [class*=" list--check"] li:first-child {
+    margin-top: 0
+}
+
+[class^="list--check"] ul,[class^="list--check"] ol, [class^="list--check"] dl,
+[class*=" list--check"] ul, [class*=" list--check"] ol,  [class*=" list--check"] dl {
+    margin-left: 1em
+}
+
+ [class^="list--check"] ul li:first-child, [class^="list--check"] ol li:first-child,
+ [class^="list--check"] dl li:first-child, [class*=" list--check"] ul li:first-child,
+ [class*=" list--check"] ol li:first-child,  [class*=" list--check"] dl li:first-child {
+    margin-top: 0.625em
+}
+
+ [class^="list--check"] li:before, [class*=" list--check"] li:before {
+    font-size: 1em;
+    line-height: 1em;
+}
+
+ [class^="list--check"] ul,  [class^="list--check"] ol,  [class^="list--check"] dl,
+ [class*=" list--check"] ul,  [class*=" list--check"] ol,  [class*=" list--check"] dl {
+    margin-left: .5em
+}
+
+.list--check {
+    list-style: none;
+    margin-left: 0
+}
+
+.list--check li {
+    margin-top: 0.625em;
+    padding-left: 1.563rem
+}
+
+.list--check li:first-child {
+    margin-top: 0
+}
+
+.list--check ul, .list--check ol,  .list--check dl {
+    margin-left: 1em
+}
+
+ .list--check ul li:first-child,  .list--check ol li:first-child,  .list--check dl li:first-child {
+    margin-top: 0.625em
+}
+
+ .list--check li:before {
+    margin-left: -1.563rem;
+    width: 1.563rem;
+    font-size: .65em;
+    margin-top: .05em;
+    top: -1px
+}
+
+.list--check--feature li:before {
+    content: ""
+}
+
+.list--check--feature span {
+    display: inline-block;
+    width: 22px;
+    color: #038cd6
+}
+
+@media only screen and (min-width: 64em) {
+    .list--check--feature span {
+        width: 30px
+    }
+}
+
+.list--check--dark li, .list--check--grey li,
+.list--check--white li, .list--check--grey-dark li {
+    margin-top: 0.625em
+}
+
+.list--check--dark li:first-child, .list--check--grey li:first-child,
+.list--check--white li:first-child, .list--check--grey-dark li:first-child {
+    margin-top: 0
+}
+
+.list--check--dark, .list--check--grey,
+.list--check--white, .list--check--grey-dark {
+    list-style: none;
+    margin-left: 0
+}
+
+.list--check--dark ul,  .list--check--grey ul,  .list--check--white ul,
+.list--check--grey-dark ul,  .list--check--dark ol, .list--check--grey ol,
+.list--check--white ol, .list--check--grey-dark ol, .list--check--dark dl,
+.list--check--grey dl,  .list--check--white dl, .list--check--grey-dark dl {
+    margin-left: 1em
+}
+
+.list--check--dark ul li:first-child,  .list--check--grey ul li:first-child,
+.list--check--white ul li:first-child,  .list--check--grey-dark ul li:first-child,
+.list--check--dark ol li:first-child,  .list--check--grey ol li:first-child,
+.list--check--white ol li:first-child,  .list--check--grey-dark ol li:first-child,
+.list--check--dark dl li:first-child,  .list--check--grey dl li:first-child,
+.list--check--white dl li:first-child,  .list--check--grey-dark dl li:first-child {
+    margin-top: 0.625em
+}
+
+.list--check--dark li, .list--check--grey li,
+.list--check--white li, .list--check--grey-dark li {
+    padding-left: 1.5rem
+}
+
+ .list--check--dark li:before,  .list--check--grey li:before,
+ .list--check--white li:before, .list--check--grey-dark li:before {
+    margin-left: -1.5rem;
+    width: 1.5rem;
+    color: #038cd6;
+    font-size: 1em;
+    margin-top: 0;
+    vertical-align: middle;
+    top: -0.125em
+}
+
+.list--check--dark.list--negative li:before, .list--negative.list--check--grey li:before,
+.list--negative.list--check--white li:before,  .list--negative.list--check--grey-dark li:before {
+    color: #fff
+}
+
+ .list--check--dark.list--small li:before, .list--small.list--check--grey li:before,
+ .list--small.list--check--white li:before, .list--small.list--check--grey-dark li:before {
+    top: -0.063em
+}
+
+.list--small li:before {
+    top: -2px
+}
+
+.list--inline {
+    list-style-type: none
+}
+
+.list--inline, .list--inline li {
+    margin: 0;
+    padding: 0;
+    display: inline
+}
+
+.list--inline-spacing-small li + li {
+    margin-left: 10px
+}
+
+.list--inline-spacing-normal li + li {
+    margin-left: 20px
+}
+
+.list--no-spacing li {
+    margin-top: 0
+}
+
+.list--divided li + li {
+    border-left: 2px solid #4daadc;
+    border-left-color: rgba(255, 255, 255, 0.3);
+    margin-left: 8px;
+    padding-left: 10px
+}
+ol li {
+    margin-top: 0.625rem;
+    list-style: decimal outside;
+    margin-left: 1.6em;
+    padding-left: .4em;
+}
+.list li {
+    position: relative;
+    margin: 0 0 10px;
+}
+.list li:before {
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+.list li:last-child {
+    margin: 0;
+}
+
+.list ul,
+.list ol,
+.list dl {
+    margin: 5px 0 0 10px;
+}
+
+.list dl dt {
+    float: left;
+    margin: 0 5px 10px 0;
+}
+
+.list dl dd {
+    margin: 0 0 10px;
+    overflow: hidden;
+}
+.list--default, .list--footer {
+    list-style: none;
+    margin-left: 0;
+}
+.list--default li:first-child, .list--footer li:first-child {
+    margin-top: 0;
+}
+.list--default li {
+    padding-left: 0px !important;
+}
+
+.list--default ul{
+    margin-left: 1em;
+}
+.list--default ul li:first-child{
+    margin-top: 0.625em;
+}
+.list--check li {
+    padding-left: 25px;
+}
+.list--check li:before {
+    content: "\E02A";
+    font-size: 13px;
+    top: 5px;
+}
+
+.list--check--bullet li:before {
+    content: "\E01C";
+    font-size: 20px;
+    top: 50%;
+    margin-top: -3px;
+}
+
+.list--check--small li {
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+.list--check--small li:before {
+    font-size: 9px;
+    top: 5px;
+}
+
+.list--divided li + li,
+.list--divided li + li:last-child {
+    border-left: 2px solid #474747;
+    margin: 0 0 0 8px;
+    padding-left: 10px;
+}
+
+.list--divided--blue li + li,
+.list--divided--blue li + li:last-child {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.list--breadcrumbs li {
+    float: left;
+    margin: 0;
+    padding-left: 15px; }
+.list--breadcrumbs li:before {
+    content: "\E01F";
+    font-size: 7px;
+    left: 4px;
+    top: 50%;
+    margin-top: -2px;
+}
+.list--breadcrumbs li:first-child {
+    padding-left: 0;
+}
+.list--breadcrumbs li:first-child:before {
+    display: none;
+}
+
+.list--footer {
+    font-size: 11px;
+    line-height: 15px;
+    color: #a7c1d1;
+}
+.list--footer li {
+    padding-left: 15px;
+    margin-bottom: 6px;
+    pointer-events: none;
+}
+.list--footer li:before {
+    content: "\E01F";
+    top: 50%;
+    margin-top: -1px;
+    font-size: 8px;
+    color: #a7c1d1;
+}
+.list--footer li:hover a, .list--footer li:hover:before {
+    color: #fff;
+}
+.list--footer a {
+    pointer-events: all;
+}
+
+.list--inline li {
+    display: inline;
+}
+
+.list--no-vertical-spacing li {
+    margin: 0;
+}
+
+.list--blue li:before {
+    color: #038cd6;
+}
+
+.list--white li:before {
+    color: #fff; }
+
+.list--grey li:before {
+    color: #b8b8b8;
+}
+
+.list--grey-dark li:before {
+    color: #666;
+}
+
+.list--green li:before {
+    color: #43c682;
+}
+
+.list--numeric {
+    counter-reset: item;
+}
+.list--numeric ol {
+    counter-reset: item;
+    margin: 10px 0 0;
+}
+.list--numeric li {
+    position: relative;
+    padding-left: 32px !important;
+    min-height: 22px;
+    list-style: none;
+}
+.list--numeric li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 2px;
+    min-width: 18px;
+    height: 22px;
+    font-size: 11px;
+    line-height: 22px;
+    font-family: inherit;
+    text-align: center;
+    border-radius: 50%;
+    background: #43c682;
+}
+.list--numeric li.text-size--13 {
+    padding-top: 3px;
+}
+.list--default li:before{
+    content: "\E01D";
+    font-size: 0.75rem !important;
+    padding-right: 0.5rem;
+    vertical-align: middle !important;
+    position: relative;
+    top: -2px;
+    color: #038cd6;
+}
+ .list--negative li:before,  .list--negative li:hover:before, .list--negative li:active:before,
+ .list--negative li:focus:before {
+    color: #fff;
+}
+ .list--default li:before,.list--footer li:before, .list--check li:before,
+ .list--check--dark li:before, .list--check--grey li:before,
+ .list--check--white li:before,
+ .list--check--grey-dark li:before,
+ .list--negative li:before,
+ [class^="list--check"] li:before,
+ [class*=" list--check"] li:before,
+ .bullet-link:before, .button--link:before, .bullet-link--reverse:before {
+     font-family: "framework-icons";
+     display: inline-block;
+     font-weight: normal;
+     font-style: normal;
+     line-height: 1;
+     speak: none;
+     text-decoration: inherit;
+     text-transform: none;
+     text-rendering: optimizeLegibility;
+     -webkit-font-smoothing: antialiased;
+}
+.list--default li, .text--content ul li, .list--footer li, .section--footer .list--default li {
+    margin-top: 0.625em;
+}
+.icon-bullet-check-negative:before,
+.list--check--dark li:before,
+.list--check--grey li:before,
+.list--check--white li:before,
+.list--check--grey-dark li:before {
+    content: "\E01C";
+}
+.list--check--grey li:before {
+    color: #b8b8b8;
+    font-size: 1em;
+    margin-top: -3px;
+}
+.list--check--grey-dark li:before {
+    color: #757575;
+    font-size: 1em;
+    margin-top: -3px;
+}
+ .list--check--white li:before {
+    color: #fff;
+    font-size: 1em;
+    margin-top: -3px;
+}
+
+
+
+
+/*Inline elements*/
+.text--content h1, .text--content h2, .text--content h3 {
+    font-family: "telenorlight", sans-serif;
+    font-weight: normal;
+    display: block
+}
+
+.text--content h1 strong, .text--content h2 strong, .text--content h3 strong {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.text--content h1 a:hover, .text--content h2 a:hover, .text--content h3 a:hover {
+    color: #038cd6;
+    text-decoration: underline
+}
+
+.text--content a {
+    color: #038cd6
+}
+
+.text--content a:hover {
+    text-decoration: underline
+}
+
+.text--content h1，.text--content h2，.text--content h3 {
+    margin-top: 1em
+}
+
+.text--content p, .text--content ul, .text--content ol, .text--content dl {
+    margin-bottom: 1.3em
+}
+
+.text--content li {
+    margin-top: .625em
+}
+.text--content mark {
+    background-color: #038cd6;
+    color: #fff;
+    padding: 0 2px
+}
+
+.text--content pre {
+    display: block;
+    border-radius: 2px;
+    border: 1px solid #b8b8b8;
+    background: #f0f0f0;
+    padding: 20px;
+    overflow-x: scroll
+}
+
+.text--content code {
+    font-family: Consolas, 'Courier New', monospace
+}
+blockquote {
+    padding-left: 20px;
+    border-left: 3px #038cd6 solid;
+    font-family: "telenorlight", sans-serif;
+    font-style: italic;
+    font-size: 24px
+}
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+

@@ -1,0 +1,25 @@
+{
+	"success": "true",
+	"errorMessages": [], // could be null
+	"data": {
+		"data": [
+			{
+				"customerId": "1",
+				"customerName": "A",
+				"customerStatus": "Active",
+				"customerLegalAddress": "Mansfield Reformatory",
+				"customerRegistered": "tomorrow"
+			},
+			{
+				"customerId": "2",
+				"customerName": "B",
+				"customerStatus": "Suspended",
+				"customerLegalAddress": "Mansfield Reformatory",
+				"customerRegistered": "today"
+			}
+		],
+		"totalCount": 2,
+		"pageSize": 2,
+		"pageNumber": 1,
+	}
+}

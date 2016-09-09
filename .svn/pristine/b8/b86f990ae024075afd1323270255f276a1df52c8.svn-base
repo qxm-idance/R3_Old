@@ -1,0 +1,22 @@
+<div><%= Title %></div>
+<% if (InvoiceNumber) { %>
+<div class="grid-row">
+	<div class="col-xs-3 text--left"><%= InvoiceNumberLabel %></div>
+	<div class="col-xs-9 text--right"><%= InvoiceNumber %></div>
+</div>
+<% } %>
+<% for (var i = 0; i < Fields.length; ++i) { %>
+<% if (typeof Fields[i].price !== "undefined") { %>
+<div class="grid-row">
+	<div class="col-xs-6 text--left"><%= Fields[i].name %></div>
+	<div class="col-xs-6 text--right"><%= Fields[i].price %></div>
+</div>
+<% } else { %>
+<div class="text--left"><%= Fields[i].name %></div>
+<% } %>
+<% } %>
+
+<% if (PaymentLink.length !== 0) { %>
+<a href="<%= PaymentLink %>" class="button button--action button--small leader--small trailer--xsmall">
+	<span class="button__text"><%= ButtonLabel %></span></a>
+<% } %>

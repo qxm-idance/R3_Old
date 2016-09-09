@@ -1,0 +1,64 @@
+.wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.constrain-outer {
+	position: relative;
+	width: 100%;
+	padding-top: 150px;
+	background: url("../img/main_bg.png") center top no-repeat;
+	z-index: 2;
+	max-height: 1000px;
+	background-size: cover;
+}
+
+.constrain-inner {
+	@extend %clearfix;
+	position: relative;
+	max-width: 64em;
+	margin: 0 auto;
+	min-height: 3000px;
+	border: 1px solid $color-black;
+	border-width: 0 1px;
+}
+
+.container {
+	@extend %clearfix;
+	max-width: 1020px;
+	margin-left: auto;
+	margin-right: auto;
+
+	//padding for main container for all pages (30px - scroll size)
+
+	&--main {
+		@include until($bp-large + 30px) {
+			padding-left: $med-spacing-unit;
+			padding-right: $med-spacing-unit;
+		}
+	}
+
+	&--wide {
+		@include until($bp-large + 30px) {
+			margin-left: -$med-spacing-unit;
+			margin-right: -$med-spacing-unit;
+		}
+	}
+}
+
+// footer at bottom with flexbox
+.section {
+	&--oncanvas {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	&--wrap {
+		flex: 1 0 auto;
+		width: 100%;
+	}
+}

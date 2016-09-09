@@ -1,0 +1,204 @@
+/**
+name: Pager
+type: ui
+desc: Just use wrapper with classname 'pager' and data-component="pager" for pager generating
+
+examples:
+  - name: Pager
+    tmpl:
+      include: pager.html
+*/
+
+.pager {
+	$root: &;
+	@extend %clearfix;
+	font-size: 13px;
+	line-height: 30px;
+	display: inline-block;
+	border: $border;
+	border-radius: 2px;
+	vertical-align: top;
+
+	.table--with-loadmore & {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		border: none;
+
+		@include until ($bp-medium) {
+			border: none;
+			display: block;
+		}
+	}
+
+	> span,
+	&__holder {
+		float: left;
+	}
+
+	&__button {
+		cursor: pointer;
+		float: left;
+		color: inherit;
+		min-width: 33px;
+		padding: 0 2px;
+		text-align: center;
+		border-left: $border-light;
+		background: $color-white;
+		position: relative;
+
+		.table--with-loadmore &:not(.loadmore) {
+			display: none;
+		}
+
+		&:after {
+			background: $color-telenor-blue;
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			right: 0;
+			height: 0;
+			transition: height .125s ease-in-out;
+		}
+
+		&.current,
+		&:hover {
+			text-decoration: none;
+
+			&:after {
+				height: 2px;
+			}
+		}
+
+		&:first-child {
+			border-left: none;
+		}
+
+		&.previous,
+		&.next {
+			width: 32px;
+			overflow: hidden;
+			text-indent: -9999em;
+			background: $gradient-white;
+
+			&:hover,
+			&:focus {
+				background-image: linear-gradient(to top, $color-silver-grey, $color-white);
+			}
+
+			&:before {
+				@extend %icon-base-styles;
+				line-height: inherit;
+				position: absolute;
+				display: block;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				text-indent: 0;
+			}
+
+			&:after {
+				content: none;
+			}
+		}
+
+		&.previous {
+			border-right: $border;
+
+			&:before {
+				@extend .icon-arrow-prev:before;
+			}
+		}
+
+		&.next {
+			border-left: $border;
+
+			&:before {
+				@extend .icon-arrow-next:before;
+			}
+		}
+
+		&.current {
+			color: $color-telenor-blue;
+			font-weight: bold;
+
+			&:after {
+				display: block;
+			}
+		}
+
+		&.disabled {
+			color: $color-silver-grey;
+
+			&:hover,
+			&:focus {
+				background: inherit;
+			}
+		}
+
+		@include until ($bp-medium) {
+			&.peripheral{
+				display: none;
+			}
+		}
+	}
+
+	> span > span,
+	&__elipsis {
+		@extend .pager__button;
+		min-width: 25px;
+	}
+
+	.loadmore {
+		display: none;
+		padding: 0 2px;
+		max-width: 300px;
+		flex: 1;
+		border: $border;
+		border-radius: $radius-button;
+		height: 40px;
+		line-height: 40px;
+		outline: none;
+		overflow: hidden;
+		transition: all 0.125s;
+		background: $gradient-white;
+
+		.table--with-loadmore & {
+			display: inline;
+
+			@include until ($bp-medium) {
+				display: block;
+				max-width: 100%;
+				float: none;
+				border: $border;
+			}
+		}
+
+		&.disabled:hover {
+			color: $color-silver-grey;
+		}
+
+		&:hover {
+			text-decoration: none;
+			border-color: $color-steel-grey;
+
+			&:after {
+				height: 0;
+			}
+		}
+
+		&:focus {
+			border-color: $color-telenor-blue;
+		}
+	}
+
+	&--wrap {
+		@extend .float--right;
+
+		.table--with-loadmore & {
+			@extend .float--none;
+		}
+	}
+}

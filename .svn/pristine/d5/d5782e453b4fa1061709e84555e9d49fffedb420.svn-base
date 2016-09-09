@@ -1,0 +1,9 @@
+<table  class="table table--adv">
+	<thead>
+		<tr class="grey-header">
+			<% columns.forEach(function(column) { %>
+				<th><%= column.title || column.name %></th>
+			<% }) %>
+		</tr>
+	</thead>
+</table>

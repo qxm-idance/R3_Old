@@ -1,0 +1,4 @@
+<li class="accordion-filter__leaf-item accordion-filter__leaf-parent-item form-checkbox">
+    <input id="id_<%= index %>" value="<%= index %>" type="checkbox" role="checkbox" aria-checked="true" <% if (visible) { %> checked="checked" <% } %>>
+    <label for="id_<%= index %>"><%= title %></label>
+</li>

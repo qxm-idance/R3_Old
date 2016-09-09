@@ -1,0 +1,211 @@
+.footer {
+	$root: &;
+
+	font-size: 11px;
+	color: $color-text-blue-nav;
+
+
+	@include until($bp-medium) {
+		text-align: center;
+	}
+
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: $color-text-blue-nav;
+		}
+	}
+
+	&__menu-area {
+		background: $color-stroke-darkerblue;
+		padding: $xlarge-spacing-unit 0 $med-spacing-unit;
+
+		@include until($bp-medium) {
+			padding: 0 $small-spacing-unit;
+		}
+
+		&--business {
+			background: $color-stroke-darkerblue-business;
+		}
+	}
+
+	// Contains footer breadcrumb.
+	&__breadcrumbs {
+		color: $color-text-blue-nav;
+		line-height: 1;
+
+		ul {
+			display: inline-block;
+		}
+
+		li {
+			display: inline;
+			padding: 0 8px 0 0;
+		}
+
+		a {
+			&:hover {
+				color: $color-white;
+			}
+		}
+
+		// Devider arrow.
+		li:nth-child(1n+2) a {
+			&:before {
+				@extend %icon-base-styles;
+				@include icon-arrow-next;
+				vertical-align: middle;
+				color: #4d7f9d;
+				font-size: 6px;
+				margin-right: 8px;
+			}
+		}
+	}
+
+	// Contains footer social networks.
+	&__social {
+		display: inline-block;
+
+		li {
+			padding-left: 2px;
+			display: inline-block;
+
+			@include until($bp-medium) {
+				padding: 0 $small-spacing-unit;
+			}
+		}
+
+		a {
+			display: block;
+		}
+
+		[class*="icon-"]:before {
+			font-size: 23px;
+
+			@include until($bp-medium) {
+				font-size: 33px;
+			}
+		}
+	}
+
+	// Contains footer naviagation lists
+	&__menu {
+		border: solid #4d7f9d;
+		border-width: 1px 0;
+	}
+
+	// Contains list of Telenor services
+	&__service-list {
+		padding: $base-spacing-unit 0 $xsmall-spacing-unit;
+
+		@include until($bp-medium) {
+			padding-top: $large-spacing-unit;
+		}
+	}
+
+	&__service-icon {
+		font-size: 18px;
+		display: inline-block;
+		vertical-align: middle;
+
+		@include until($bp-medium) {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	&__service-txt {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 $small-spacing-unit;
+
+		@include until($bp-medium) {
+			display: block;
+		}
+	}
+
+	// Contains footer bottom panel
+	&__panel {
+		background: $color-telenor-blue-darker;
+		padding-top: $med-spacing-unit;
+		padding-bottom: $med-spacing-unit;
+
+		@include until($bp-medium) {
+			padding-left: $small-spacing-unit;
+			padding-right: $small-spacing-unit;
+			text-align: center;
+		}
+
+		&--business {
+			background: $color-telenor-blue-darker-business;
+		}
+	}
+
+	// Contains footer logo
+	&__logo {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: $xsmall-spacing-unit;
+
+		&:before {
+			font-size: 24px;
+		}
+	}
+
+	&__info-list {
+		display: inline-block;
+		vertical-align: middle;
+
+		li {
+			display: inline;
+			padding-right: 5px;
+		}
+	}
+
+	&__payment-image {
+		margin: 0 auto;
+	}
+}
+
+.support-section {
+	background: $color-telenor-blue url("../img/main_bg.png") center top;
+	padding: $xlarge-spacing-unit $small-spacing-unit;
+
+	@include until($bp-medium) {
+		padding: $med-spacing-unit $small-spacing-unit;
+	}
+
+	&--business {
+		background: $color-telenor-blue-business url("../img/main_bg-business.png") center top;
+	}
+
+	&__buttons-list {
+		display: inline-block;
+		vertical-align: top;
+
+		li {
+			float: left;
+
+			& + li {
+				margin-left: $base-spacing-unit;
+			}
+
+			@include until($bp-medium) {
+				float: none;
+				margin-bottom: $base-spacing-unit;
+
+				& + li {
+					margin-left: 0;
+				}
+			}
+		}
+
+		.button {
+			min-width: 175px;
+		}
+	}
+}

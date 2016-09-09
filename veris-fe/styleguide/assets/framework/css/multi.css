@@ -1,0 +1,163 @@
+.multi-filter {
+    position: relative;
+    height: 32px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent
+}
+
+.multi-filter.is-filtered .form-item__clear-button {
+    display: block
+}
+
+.multi-filter .form-item__clear-button {
+    display: none
+}
+
+.multi-filter-block-wrapper .multi-filter.form-item--inline {
+    display: block
+}
+
+.multi-filter__input {
+    display: block;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    height: 32px;
+    line-height: 32px;
+    width: 255px;
+    padding-left: 42px
+}
+
+.multi-filter__input button {
+    font-size: 1rem;
+    line-height: 1
+}
+
+.multi-filter__input:focus:hover,.multi-filter__input:focus {
+    display: block;
+    border: 1px solid #038cd6
+}
+
+.multi-filter__input.is-active {
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.07)
+}
+
+.multi-filter__input:hover {
+    display: block;
+    border: 1px solid #b8b8b8;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.07)
+}
+
+@media only screen and (max-width: 37.438em) {
+    .multi-filter__input {
+        padding-left:50px
+    }
+}
+
+.multi-filter__input:before {
+    background: #f5f5f5;
+    border-right: 1px solid #e8e8e8;
+    content: "";
+    width: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0
+}
+
+@media only screen and (max-width: 37.438em) {
+    .multi-filter__input:before {
+        width:40px
+    }
+}
+
+.multi-filter__input:after {
+    font-family: "framework-icons";
+    display: inline-block;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f15b";
+    width: 32px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    text-align: center;
+    line-height: 30px
+}
+
+@media only screen and (max-width: 37.438em) {
+    .multi-filter__input:after {
+        top:4px;
+        width: 40px
+    }
+}
+
+.multi-filter__input-label {
+    margin-right: 30px;
+    line-height: 40px
+}
+
+@media only screen and (min-width: 37.5em) {
+    .multi-filter__input-label {
+        font-size:0.813rem;
+        line-height: .9375rem;
+        line-height: 32px
+    }
+}
+
+.multi-filter__submit-panel {
+    padding: 10px
+}
+
+.multi-filter__submit-panel button {
+    width: 100%
+}
+
+@media only screen and (max-width: 37.438em) {
+    .multi-filter {
+        display:block;
+        height: auto
+    }
+
+    .multi-filter__input {
+        display: block;
+        font-size: 1rem;
+        line-height: 1;
+        width: 100%;
+        height: 40px;
+        line-height: 40px
+    }
+}
+
+.multi-filter .accordion-filter label .count {
+    color: #adadad
+}
+
+.no-js .multi-filter {
+    display: block;
+    height: auto;
+    margin: 0;
+    margin-top: 20px
+}
+
+.no-js .multi-filter__input {
+    display: none
+}
+
+.no-js .multi-filter__submit-panel {
+    padding: 10px;
+    text-align: right
+}
+
+.no-js .multi-filter__submit-panel button {
+    width: auto
+}

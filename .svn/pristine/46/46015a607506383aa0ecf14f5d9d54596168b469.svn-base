@@ -1,0 +1,98 @@
+.radiobutton-row {
+
+
+	// ----------------------------------------------------------------
+	// basic button style
+
+	@extend %clearfix;
+
+	// hide input
+	input {
+		@extend %hidden-element;
+	}
+
+	// label
+	label {
+		transition: all .125s;
+		cursor: pointer;
+		padding: $small-spacing-unit 16px;
+		// border
+		border: $border;
+		border-right-width: 0;
+		// background
+		background-color: $color-paper-white;
+		background: $gradient-white;
+		line-height: 12px;
+		// layout
+		float: left;
+
+		// icon
+		.icon {
+			margin-right: .6em;
+			vertical-align: middle;
+			display: inline-block;
+			margin-top: -$xsmall-spacing-unit;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// first and last child
+
+	label:nth-child(2) {
+		border-radius: $radius-button 0 0 $radius-button;
+	}
+
+	label:last-child {
+		border-radius: 0 $radius-button $radius-button 0;
+		border-right: $border;
+	}
+
+	// ----------------------------------------------------------------
+	// hover
+
+	input:hover + label {
+		border-color: $color-steel-grey;
+		border-right-color: transparent;
+		background: $gradient-white-grey;
+
+		&:last-child {
+			border-right-color: $color-steel-grey;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// focus
+
+	input:focus + label {
+		border-color: $color-green-dark;
+	}
+
+	// ----------------------------------------------------------------
+	// checked
+
+	input:checked:hover + label,
+	input:checked + label {
+		background-color: $color-telenor-green;
+		background: $gradient-green;
+		color: $color-white;
+		border-color: $color-green-dark;
+		border-right-color: $color-green-dark;
+	}
+
+	// ----------------------------------------------------------------
+	// small
+
+	&.radiobutton-row {
+		&--small {
+			label {
+				padding: 7px 16px;
+			}
+		}
+
+		&--icons-only {
+			.icon {
+				margin-right: 0;
+			}
+		}
+	}
+}

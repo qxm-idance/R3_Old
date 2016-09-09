@@ -1,0 +1,14 @@
+<div>
+	<button id="id_<%= id %>" class="button button--default button--small is-active">
+		<span class="icon icon-list"></span>
+		<span class="icon icon-arrow-down"></span>
+	</button>
+	<div class="speech-bubble is-loaded" data-component="speech-bubble" data-toggle-target="id_<%= id %>">
+		<div class="speech-bubble__content">
+			<div class="accordion-filter">
+				<ul class="columns">
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

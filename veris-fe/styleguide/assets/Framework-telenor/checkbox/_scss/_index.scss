@@ -1,0 +1,283 @@
+/**
+name: Form checkbox
+type: ui
+modifiers:
+  --small : Small checkbox
+  --large : Large checkbox
+  --disable: Disabled checkbox
+examples:
+	- name: Checkboxes list small
+	  tmpl:
+	  	  include: list-small.html
+	- name: Checkboxes list
+	  tmpl:
+		  include: list.html
+	- name: Checkboxes list large
+	  tmpl:
+		  include: list-large.html
+	- name: Disabled checkboxes
+	  tmpl:
+		  include: disabled.html
+	- name: Checkboxes list horizontal small
+	  tmpl:
+		  include: list-horizontal-small.html
+	- name: Checkboxes list horizontal
+	  tmpl:
+		  include: list-horizontal.html
+	- name: Checkboxes list horizontal large
+	  tmpl:
+		  include: list-horizontal-large.html
+	- name: Small checkboxes list in negative box
+	  tmpl:
+		  include: list-small-negative.html
+	- name: Checkboxes list in negative box
+	  tmpl:
+		  include: list-negative.html
+	- name: Large checkboxes list in negative box
+	  tmpl:
+		  include: list-large-negative.html
+	- name: Disabled checkboxes list in negative box
+	  tmpl:
+		  include: disabled-negative.html
+*/
+// Styling of checkboxes.
+// Replace control with generated content on label.
+.form-checkbox {
+
+	// Replace control with generated content on label.
+	// Only apply style if :checked is supported.
+	// Style added through styleguide.js
+	label {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 0 0 30px;
+		cursor: pointer;
+		user-select: none;
+		position: relative;
+
+		&.empty {
+			padding: 0;
+			width: 16px;
+			height: 16px;
+		}
+
+		&:before {
+			@extend %icon-base-styles;
+			@include icon-check;
+			font-size: 11px;
+			background: $color-white;
+			border: 1px solid $color-silver-grey;
+			border-radius: 2px;
+			text-align: center;
+			color: transparent;
+			position: absolute;
+			left: 0;
+			top: 0;
+			letter-spacing: -1px;
+			transition: $transition-form-all;
+			overflow: hidden;
+			padding: 2px 2px 1px;
+		}
+	}
+
+
+
+	[type=checkbox] {
+		@extend .is-hidden;
+		position: absolute;
+	}
+
+	[type=checkbox]:checked ~ label:before {
+		color: $color-telenor-blue;
+	}
+
+	label:hover:before {
+		background-color: $color-paper-white;
+		border: $border-form-input-hover;
+	}
+
+	[type=checkbox]:focus + label:before {
+		background-color: $color-paper-white;
+		border: $border-form-input-focus;
+	}
+
+	// ----------------------------------------------------------------
+	// small
+
+	&--small {
+
+		label {
+			padding-left: 20px;
+
+			&.empty {
+				width: 11px;
+				height: 11px;
+			}
+
+			&:before {
+				padding: 0 1px 1px;
+				font-size: 8px;
+				top: 3px;
+			}
+		}
+
+	}
+
+	// ----------------------------------------------------------------
+	// large
+
+	&--large {
+
+		label {
+			padding-left: 40px;
+
+			&.empty {
+				width: 24px;
+				height: 24px;
+			}
+
+			&:before {
+				width: 19px;
+				height: 19px;
+				font-size: 15px;
+				line-height: 18px;
+				background-color: $color-paper-white;
+			}
+		}
+
+		[type=checkbox]:checked + label:before {
+			background-color: $color-telenor-blue;
+			border-color: $color-telenor-blue;
+			color: $color-white;
+
+			&:focus {
+				border-color: $color-telenor-blue-dark;
+			}
+		}
+	}
+	// ----------------------------------------------------------------
+	// disable
+
+	&--disable {
+		label:before {
+			visibility: hidden;
+		}
+	}
+
+	// unchecked
+	[type=checkbox]:disabled  + label {
+		color: $color-silver-grey;
+		pointer-events: none;
+
+		a {
+			pointer-events: all;
+		}
+
+		&:before {
+			border-color: $color-smoke-grey;
+		}
+	}
+
+	// checked
+	[type=checkbox]:disabled:checked  + label {
+		&:before {
+			border-color: transparent;
+		}
+	}
+	// negative
+
+	.section--negative & {
+		label:before {
+			border-color: $color-white;
+		}
+
+		[type=checkbox]:hover + label:before {
+			background-color: $color-paper-white;
+		}
+
+		[type=checkbox]:active + label:before,
+		[type=checkbox]:focus + label:before {
+			color: $color-telenor-blue-dark;
+			border-color: $color-stroke-darkblue;
+			background-color: $color-blue-white;
+		}
+
+		// negative + small
+
+		&--small {
+		[type=checkbox]:focus:checked + label:before {
+			color: $color-graphite-black;
+		}
+	}
+
+		// negative + large
+		&--large {
+
+			[type=checkbox]:focus:checked + label:before {
+				background-color: $color-blue-white;
+				border-color: $color-stroke-darkblue;
+			}
+
+			[type=checkbox]:checked + label:before {
+				background-color: $color-white;
+				border-color: $color-white;
+			}
+		}
+
+		// disabled unchecked
+		[type=checkbox]:disabled  + label {
+			color: $color-blue-white;
+			pointer-events: none;
+
+			a {
+				pointer-events: all;
+			}
+
+			&:before {
+				border-color: $color-blue-white;
+				background-color: transparent;
+			}
+		}
+
+		// disabled checked
+		[type=checkbox]:disabled:checked  + label {
+			&:before {
+				border-color: transparent;
+				background-color: transparent;
+				color: $color-white;
+			}
+		}
+	}
+
+// ----------------------------------------------------------------
+// single
+	&--single {
+		label {
+			margin: 0;
+			padding: 0;
+
+			&:before {
+				top: 0;
+				margin: 0;
+				position: static;
+			}
+		}
+	}
+
+// Small version.
+	&.form-item--small {
+		label {
+			padding-left: $base-spacing-unit;
+
+			&:before {
+				width: 9px;
+				height: 9px;
+				padding-top: 0;
+				padding-left: 0;
+				font-size: 11px;
+				line-height: 12px;
+				top: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+/*common*/
+a:active, a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+.flexnav__toggler:after{
+    font-family: framework-icons;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1em;
+    line-height: 1;
+    vertical-align:top;
+}

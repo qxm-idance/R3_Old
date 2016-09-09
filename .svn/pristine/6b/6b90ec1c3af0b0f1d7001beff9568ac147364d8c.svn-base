@@ -1,0 +1,133 @@
+/**
+  name: Tab Group
+  type: ui
+  modifiers:
+    --small: Small tabgroup (Invoices/Bill page, Hungary product detals page (subscriptions slider))
+  examples:
+    Simple Group :
+      include: tabgroup.html
+*/
+
+.tabgroup {
+	$root: &;
+
+	@extend %text-size--16;
+	overflow: hidden;
+	text-align: center;
+
+	@include until($bp-medium) {
+		width: 100%;
+		display: table;
+		table-layout: fixed;
+	}
+
+	&__tab {
+		float: left;
+		position: relative;
+
+		@include until($bp-medium) {
+			float: none;
+			display: table-cell;
+		}
+
+		&:first-child {
+			#{$root}__link {
+				border-top-left-radius: $radius-button;
+				border-bottom-left-radius: $radius-button;
+			}
+		}
+
+		&:last-child {
+			#{$root}__link {
+				border-top-right-radius: $radius-button;
+				border-bottom-right-radius: $radius-button;
+				border-width: 1px;
+			}
+		}
+
+		&:hover + li {
+			#{$root}__link {
+				border-left-color: $color-steel-grey;
+			}
+		}
+
+		&.is-active {
+
+			#{$root}__link {
+				background: $color-steel-grey;
+				border-color: transparent;
+				color: $color-white;
+				cursor: default;
+			}
+		}
+
+		&.is-default {
+			#{$root}__link {
+				background: none;
+				border-color: transparent;
+				cursor: default;
+
+				&:hover,
+				&:active {
+					background: none;
+					box-shadow: none;
+				}
+			}
+		}
+
+		&.is-disabled {
+			#{$root}__link {
+				pointer-events: none;
+				color: rgba($color-stone-grey, .3);
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		height: 40px;
+		line-height: 40px;
+		background: $color-white;
+		border: 1px solid $color-silver-grey;
+		border-width: 1px 0 1px 1px;
+		color: $color-stone-grey;
+		padding: 0 $base-spacing-unit;
+
+		@include until($bp-medium) {
+			@include truncate;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $gradient-white-grey;
+			border-color: $color-steel-grey;
+		}
+
+		&:active {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, .13);
+		}
+	}
+
+	&__radio {
+		display: none;
+
+		&:checked ~ #{$root}__link {
+			background: $color-steel-grey;
+			border-color: transparent;
+			color: $color-white;
+			cursor: default;
+		}
+	}
+
+	&--small {
+		@extend %text-size--13;
+
+		#{$root}__link {
+			height: 32px;
+			line-height: 32px;
+		}
+	}
+}

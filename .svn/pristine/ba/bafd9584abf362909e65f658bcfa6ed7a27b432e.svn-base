@@ -1,0 +1,20 @@
+.hljs{
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    text-shadow: 0 1px #fff;
+    background: #f0f0f0;
+}
+.hljs-string, .hljs-doctag {
+    color: #d14;
+}
+.hljs-tag{
+    color:#999
+}
+.hljs-name{
+    color: #db5451;
+}
+.hljs-number, .hljs-literal, .hljs-variable, .hljs-template-variable, .hljs-tag .hljs-attr{
+color:#43c682
+}
+.hljs-string, .hljs-doctag {
+    color: #038cd6;
+}

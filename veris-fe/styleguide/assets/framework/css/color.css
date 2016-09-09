@@ -1,0 +1,629 @@
+/*icon.css by tangll 2016-8-10*/
+/*Lines and fills*/
+.sg-lines-and-fills__line {
+    border-top: 1px solid #b8b8b8
+}
+
+.sg-lines-and-fills__line-light {
+    border-top: 1px solid #e0e0e0
+}
+
+.sg-lines-and-fills__line-negative {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    top: -25px
+}
+
+.sg-lines-and-fills__colors-bg {
+    height: 50px
+}
+.sg-lines-and-fills__colors-bg > div {
+    width: 20%;
+    float: left;
+    height: 100%
+}
+.border, .block--col--dark, .block--content--dark, .box--default, .box--default-dark-border {
+    border: 1px solid #d1d1d1;
+}
+.border--light, .block--col--dark, .block--content--dark, .box--default {
+    border-color: #e8e8e8;
+}
+.box--greyed, .block--col--dark, .block--content--dark, .box--default, .box--default-dark-border {
+    background-color: #f0f0f0
+}
+
+.box--white {
+    background-color: #fff
+}
+
+.box--default {
+    overflow: hidden
+}
+
+.box--default img {
+    max-width: 100%
+}
+
+.box--blue, .title--section, .box--yellow, .box--yellow-light, .box--purple, .box--green {
+    padding: 0.688rem 0.625rem 0.563rem;
+    overflow: hidden;
+    position: relative
+}
+
+@media only screen and (min-width: 37.5em) {
+    .box--blue, .title--section, .box--yellow, .box--yellow-light, .box--purple, .box--green {
+        padding: 1.25rem 1.25rem 1.25rem 1.25rem
+    }
+}
+.box--expand-above-border {
+    margin: -1px
+}
+.box--blue{
+    background: #038cd6;
+}
+.box--yellow {
+    background-color: #ffb900
+}
+
+.box--yellow-light {
+    background-color: #fce173
+}
+
+.box--purple {
+    background-color: #6b2377
+}
+
+.box--green {
+    background-color: #43c682
+}
+
+.box--inner-shadow-left, .box--inner-shadow-right {
+    position: relative
+}
+
+.box--inner-shadow-left:before, .box--inner-shadow-right:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.03), transparent);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.03), transparent);
+    content: ""
+}
+
+.box--inner-shadow-right:before {
+    right: 0;
+    left: auto;
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.03), transparent);
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.03), transparent)
+}
+
+.box--default-dark-border {
+    overflow: hidden
+}
+
+.box--default-dark-border img {
+    max-width: 100%
+}
+
+.box--white-bottom-gradient {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #038cd6;
+    z-index: 10
+}
+
+.box--white-bottom-gradient:before {
+    content: "";
+    z-index: 3;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: #6eb45b;
+    background-image: -webkit-linear-gradient(left, #6eb45b, #2b9ba8, #038cd6);
+    background-image: -webkit-linear-gradient(left, #6eb45b, #2b9ba8, #038cd6);
+    background-image: linear-gradient(to right, #6eb45b, #2b9ba8, #038cd6);
+    height: 3px;
+    width: 100%
+}
+
+.box--white-bottom-gradient + .border, .box--white-bottom-gradient + .block--col--dark, .box--white-bottom-gradient + .block--content--dark, .box--white-bottom-gradient + .box--default, .box--white-bottom-gradient + .box--default-dark-border {
+    border-top: 0
+}
+
+.box--white-top-gradient {
+    position: relative;
+    border-top: 3px solid #038cd6;
+    margin-top: 30px
+}
+
+.box--white-top-gradient:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    background-image: -webkit-linear-gradient(90deg, #43c682, #1db7bb, #038cd6);
+    background-image: -webkit-linear-gradient(0deg, #43c682, #1db7bb, #038cd6);
+    background-image: linear-gradient(90deg, #43c682, #1db7bb, #038cd6);
+    height: 3px;
+    width: 100%
+}
+
+
+/*Colours and backgrounds*/
+.sg-color__row {
+    margin-right: 30px;
+    overflow: hidden;
+    float: left;
+    width: 37.5%;
+    max-width: 21em;
+    margin-bottom: 2em
+}
+
+@media only screen and (max-width: 47.938em) {
+    .sg-color__row {
+        float: none;
+        display: block;
+        width: 100%
+    }
+}
+
+.sg-color__variant {
+    display: none;
+    position: relative;
+    padding: 20px
+}
+
+.sg-color__variant--background {
+    display: block;
+    background: #038cd6 url("../../framework/img/main_bg.png") 63% top;
+    background-size: cover;
+    height: 500px
+}
+
+.sg-color--neg {
+    color: #fff
+}
+
+.sg-color__row--single {
+    max-width: 7em;
+    width: 33.32%;
+    margin-right: 10px
+}
+
+.sg-color__row--single .sg-color__variant {
+    width: 100%;
+    padding-top: 100%
+}
+
+@media only screen and (max-width: 47.938em) {
+    .sg-color__row--single {
+        float: left;
+        width: 33.32%;
+        margin-right: 10px
+    }
+}
+.sg-color__variant[data-color="telenor-blue"] {
+    background: #038cd6;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-blue"]:after {
+    content: "#038cd6"
+}
+
+.sg-color__variant[data-color="telenor-green"] {
+    background: #43c682;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-green"]:after {
+    content: "#43c682"
+}
+
+.sg-color__variant[data-color="telenor-red"] {
+    background: #db5451;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-red"]:after {
+    content: "#db5451"
+}
+
+.sg-color__variant[data-color="telenor-yellow"] {
+    background: #ffb900;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-yellow"]:after {
+    content: "#ffb900"
+}
+
+.sg-color__variant[data-color="telenor-purple"] {
+    background: #6b2377;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-purple"]:after {
+    content: "#6b2377"
+}
+
+.sg-color__variant[data-color="telenor-white"] {
+    background: #fff;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-white"]:after {
+    content: "#fff"
+}
+
+.sg-color__variant[data-color="telenor-white-grey"] {
+    background: #f0f0f0;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-white-grey"]:after {
+    content: "#f0f0f0"
+}
+
+.sg-color__variant[data-color="telenor-white-dark"] {
+    background: #e0e0e0;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-white-dark"]:after {
+    content: "#e0e0e0"
+}
+
+.sg-color__variant[data-color="telenor-grey-lighter"] {
+    background: #dfdfdf;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-grey-lighter"]:after {
+    content: "#dfdfdf"
+}
+
+.sg-color__variant[data-color="telenor-grey-light"] {
+    background: #b8b8b8;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-grey-light"]:after {
+    content: "#b8b8b8"
+}
+
+.sg-color__variant[data-color="telenor-grey"] {
+    background: #bababa;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-grey"]:after {
+    content: "#bababa"
+}
+
+.sg-color__variant[data-color="telenor-grey-dark"] {
+    background: #666;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-grey-dark"]:after {
+    content: "#666"
+}
+
+.sg-color__variant[data-color="telenor-black-light"] {
+    background: #474747;
+    display: block
+}
+
+.sg-color__variant[data-color="telenor-black-light"]:after {
+    content: "#474747"
+}
+
+.sg-color__variant[data-color="gradient-greenblue"] {
+    background: -webkit-linear-gradient(0deg, #43c682, #1db7bb, #038cd6);
+    background: linear-gradient(90deg, #43c682, #1db7bb, #038cd6);
+    display: block
+}
+
+.sg-color__variant[data-color="gradient-greenblue"]:after {
+    content: "linear-gradient(90deg, #43c682, #1db7bb, #038cd6)"
+}
+
+.sg-color__variant[data-color="gradient-yellowred"] {
+    background: -webkit-linear-gradient(270deg, #fff044, #f8b97a, #ee3d49);
+    background: linear-gradient(180deg, #fff044, #f8b97a, #ee3d49);
+    display: block
+}
+
+.sg-color__variant[data-color="gradient-yellowred"]:after {
+    content: "linear-gradient(180deg, #fff044, #f8b97a, #ee3d49)"
+}
+
+.sg-color__variant[data-color="gradient-blueblue"] {
+    background: -webkit-linear-gradient(270deg, #59c9ef, #5376b6);
+    background: linear-gradient(180deg, #59c9ef, #5376b6);
+    display: block
+}
+
+.sg-color__variant[data-color="gradient-blueblue"]:after {
+    content: "linear-gradient(180deg, #59c9ef, #5376b6)"
+}
+
+.sg-color__variant[data-color="gradient-pinkpurple"] {
+    background: -webkit-linear-gradient(270deg, #f37780, #e66cb9, #944ca0);
+    background: linear-gradient(180deg, #f37780, #e66cb9, #944ca0);
+    display: block
+}
+
+.sg-color__variant[data-color="gradient-pinkpurple"]:after {
+    content: "linear-gradient(180deg, #f37780, #e66cb9, #944ca0)"
+}
+
+
+/*fonts*/
+.sg-fonts {
+    word-wrap: normal
+}
+
+.sg-fonts__arial-regular {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-family: arial, sans-serif
+}
+
+.sg-fonts__arial-bold {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-family: arial, sans-serif;
+    font-weight: bold
+}
+
+.sg-fonts__telenor-light {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-family: "telenorlight", sans-serif;
+    font-weight: normal
+}
+
+.sg-fonts__telenor-light strong {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.sg-fonts__telenor-regular {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-family: "telenor", sans-serif;
+    font-weight: normal
+}
+
+.sg-fonts__telenor-bold {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.sg-fonts__example {
+    line-height: 1.25em
+}
+/*Font sizes*/
+[class^="title--"] strong, [class*=" title--"] strong {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+[class^="title--"] a:hover, [class*=" title--"] a:hover {
+    color: #038cd6
+}
+
+.title--xxxlarge {
+    font-size: 12rem;
+    line-height: 1
+}
+
+.title--huge {
+    font-size: 5.25rem;
+    line-height: 1
+}
+
+@media only screen and (max-width: 37.438em) {
+    .title--huge {
+        font-size: 4.5rem;
+        line-height: 1
+    }
+}
+
+.title--xxlarge {
+    font-size: 4.5rem;
+    line-height: 1
+}
+
+@media only screen and (max-width: 37.438em) {
+    .title--xxlarge {
+        font-size: 3.375rem;
+        line-height: 1.1
+    }
+}
+
+.title--xlarge, .text--content h1 {
+    font-size: 3.375rem;
+    line-height: 1.1;
+    margin-left: -.06em
+}
+
+@media only screen and (max-width: 37.438em) {
+    .title--xlarge, .text--content h1 {
+        font-size: 2.75rem;
+        line-height: 1
+    }
+}
+
+.title--large, .text--content h2 {
+    font-size: 2.75rem;
+    line-height: 1;
+    margin-left: -.075em
+}
+
+.title--medium, .title--section, .text--content h3 {
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-left: -.04em
+}
+
+.box--blue .title--medium, .title--section .title--medium, .box--yellow .title--medium, .box--yellow-light .title--medium, .box--purple .title--medium, .box--green .title--medium, .box--blue .title--section, .title--section .title--section, .box--yellow .title--section, .box--yellow-light .title--section, .box--purple .title--section, .box--green .title--section, .box--blue .text--content h3, .text--content .box--blue h3, .title--section .text--content h3, .text--content .title--section h3, .box--yellow .text--content h3, .text--content .box--yellow h3, .box--yellow-light .text--content h3, .text--content .box--yellow-light h3, .box--purple .text--content h3, .text--content .box--purple h3, .box--green .text--content h3, .text--content .box--green h3 {
+    font-size: 1.313rem;
+    line-height: 1.2
+}
+
+@media only screen and (min-width: 37.5em) {
+    .box--blue .title--medium, .title--section .title--medium, .box--yellow .title--medium, .box--yellow-light .title--medium, .box--purple .title--medium, .box--green .title--medium, .box--blue .title--section, .title--section .title--section, .box--yellow .title--section, .box--yellow-light .title--section, .box--purple .title--section, .box--green .title--section, .box--blue .text--content h3, .text--content .box--blue h3, .title--section .text--content h3, .text--content .title--section h3, .box--yellow .text--content h3, .text--content .box--yellow h3, .box--yellow-light .text--content h3, .text--content .box--yellow-light h3, .box--purple .text--content h3, .text--content .box--purple h3, .box--green .text--content h3, .text--content .box--green h3 {
+        font-size: 2.75rem;
+        line-height: 1
+    }
+}
+
+@media only screen and (max-width: 37.438em) {
+    .title--medium, .title--section, .text--content h3 {
+        font-size: 1.875rem
+    }
+}
+
+.title--article {
+    font-size: 2.25rem;
+    line-height: 1;
+    line-height: 1.25
+}
+
+.title--banner-small {
+    font-size: 1.313rem;
+    line-height: 1.2;
+    font-family: "telenorlight", sans-serif;
+    font-weight: normal;
+    line-height: 1
+}
+
+.title--banner-small strong {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.title--table {
+    font-size: 1rem;
+    line-height: 1;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.title--block {
+    padding-bottom: 0.625rem;
+    margin-top: 3.125rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #b8b8b8
+}
+
+.title--multiline {
+    line-height: 1.6em
+}
+
+.title--strong {
+    font-weight: 700
+}
+
+.text--telenor {
+    font-family: "telenor", sans-serif;
+    font-weight: normal
+}
+
+.text--telenor-bold {
+    font-family: "telenorregular", sans-serif;
+    font-weight: bold
+}
+
+.text--telenor-light {
+    font-family: "telenorlight", sans-serif;
+    font-weight: normal
+}
+
+.text--telenor-light strong {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.text--xxxlarge {
+    font-size: 12rem;
+    line-height: 1
+}
+
+strong.text {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.text--xxlarge {
+    font-size: 5.25rem;
+    line-height: 1
+}
+
+strong.text {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.text--xlarge {
+    font-size: 2.25rem;
+    line-height: 1
+}
+
+strong.text {
+    font-family: "telenor", sans-serif;
+    font-weight: bold
+}
+
+.text--large {
+    font-size: 1.188rem;
+    line-height: 1
+}
+
+.text--med {
+    font-size: 1rem;
+    line-height: 1
+}
+
+.text--small, .text--content code, .sg-markdown code, .sg-content__docs code {
+    font-size: 0.813rem;
+    line-height: .9375rem
+}
+
+/*
+.text--xsmall, .text--content small {
+    font-size: 0.688rem;
+    line-height: 1
+}
+*/
+
+.text--rider {
+    margin-bottom: 10px
+}
+
+.text--feature {
+    font-size: 3.375rem;
+    line-height: 1.1;
+    font-family: "telenor", sans-serif;
+    font-weight: bold;
+    display: block;
+    color: #038cd6
+}
+
+.text--uppercase {
+    text-transform: uppercase
+}
+
+
+
+
+

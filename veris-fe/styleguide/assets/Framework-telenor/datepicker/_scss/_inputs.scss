@@ -1,0 +1,285 @@
+.datepicker {
+	$root: &;
+
+	background-color: $color-white;
+	border: 1px solid $color-silver-grey;
+	border-radius: 2px;
+	display: inline-block;
+	vertical-align: top;
+	height: 32px;
+	position: relative;
+	min-width: 220px;
+	margin-bottom: 0;
+
+	@include until($bp-medium) {
+		display: block;
+	}
+
+	&:before {
+		background: $color-ghost-white;
+		border-right: 1px solid $color-smoke-grey;
+		content: "";
+		width: 32px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	&:after {
+		@extend %icon-base-styles;
+		@include icon-calendar;
+		width: 32px;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(0, -50%);
+		text-align: center;
+		line-height: 32px;
+		font-size: 17px;
+		color: $color-stone-grey;
+	}
+
+	&:hover {
+		border: $border-form-input-hover;
+		box-shadow: $box-shadow-downright;
+	}
+
+	&.is-active {
+		border: $border-form-input-focus;
+		box-shadow: $box-shadow-downright;
+	}
+
+	input[type="text"],
+	input[type="date"] {
+		background: transparent;
+		border: none;
+		color: $color-graphite-black;
+		cursor: pointer;
+		font-size: 13px;
+		display: block;
+		line-height: normal;
+		height: 100%;
+		outline: none;
+		padding: 6px 26px 6px 42px;
+		width: 100%;
+		z-index: 5;
+		position: relative;
+
+		&:focus,
+		&:hover {
+			outline: none;
+			border: none;
+		}
+	}
+
+	&--disabled {
+		background: $color-paper-white;
+		border-color: $color-smoke-grey;
+
+		&:hover {
+			border-color: $color-smoke-grey;
+			box-shadow: none;
+		}
+
+		input[type="text"],
+		input[type="date"] {
+			cursor: default;
+			background: none !important;
+		}
+	}
+
+	.icon-clear {
+		background-color: transparent;
+		border: none;
+		color: $color-graphite-black;
+		line-height: 32px;
+		padding: 1px;
+		position: absolute;
+		outline: none;
+		right: 3px;
+		top: 0;
+		bottom: 0;
+		z-index: 6;
+
+		&:before {
+			font-size: 20px;
+			height: 32px;
+			line-height: 28px;
+		}
+
+		@include until($bp-medium) {
+			display: none;
+		}
+	}
+
+	&--large {
+		height: 42px;
+
+		input[type="text"],
+		input[type="date"] {
+			font-size: 16px;
+		}
+
+		.icon-clear {
+			right: 7px;
+			line-height: 38px;
+
+			&:before {
+				line-height: 38px;
+			}
+		}
+	}
+
+	&.form-item--error {
+		box-shadow: 0 0 0 2px $color-telenor-red;
+
+		[type="text"],
+		[type="text"]:focus,
+		[type="number"],
+		[type="number"]:focus,
+		[type="date"],
+		[type="date"]:focus {
+			border-color: transparent !important;
+			box-shadow: none;
+			padding-right: 42px;
+		}
+
+		[class^="icon-"] {
+			right: 4px;
+			bottom: -2px;
+			z-index: 6;
+		}
+
+		.icon-clear {
+			top: 50%;
+			margin-bottom: -13px;
+			right: 20px !important;
+			color: $color-graphite-black;
+		}
+	}
+
+	&--range {
+		.col:after {
+			@extend %icon-base-styles;
+		}
+
+		@include until($bp-medium) {
+			background-color: none;
+			border: 0;
+			padding-left: 0;
+			margin: 0 -5px;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+
+			&:hover,
+			&.is-active {
+				border: 0;
+				box-shadow: none;
+			}
+
+			.col {
+				position: relative;
+				float: left;
+				width: 50%;
+				padding: 0 5px;
+
+				&:before {
+					background: $color-ghost-white;
+					border-right: 1px solid $color-smoke-grey;
+					content: "";
+					width: 32px;
+					position: absolute;
+					left: 6px;
+					top: 1px;
+					bottom: 1px;
+				}
+
+				&:after {
+					@include icon-calendar;
+					width: 32px;
+					position: absolute;
+					left: 6px;
+					top: 50%;
+					transform: translate(0, -50%);
+					text-align: center;
+					line-height: 32px;
+					font-size: 17px;
+					color: $color-stone-grey;
+				}
+			}
+
+			input[type="text"],
+			input[type="date"] {
+				color: $color-graphite-black;
+				font-size: 13px;
+				line-height: 18px;
+				display: block;
+				height: 32px;
+				outline: none;
+				padding: 7px 26px 7px 38px;
+				width: 100%;
+				border: 1px solid $color-silver-grey;
+				border-radius: 2px;
+
+				&:focus,
+				&:hover {
+					border: 1px solid $color-silver-grey;
+				}
+			}
+
+			&.form-item--error {
+				box-shadow: none;
+
+				[type="text"],
+				[type="text"]:focus,
+				[type="number"],
+				[type="number"]:focus,
+				[type="date"],
+				[type="date"]:focus {
+					border-color: transparent !important;
+					box-shadow: 0 0 0 2px $color-telenor-red;
+				}
+
+				[class^="icon-"] {
+					right: 9px;
+				}
+			}
+		}
+	}
+
+	&.disabled {
+		&:before,
+		&:after {
+			z-index: 6;
+		}
+	}
+}
+
+.datepicker {
+	$root: &;
+
+	&__start,
+	&__end {
+		display: none !important;
+
+		@include until($bp-medium) {
+			#{$root}--range & {
+				display: block !important;
+			}
+		}
+	}
+
+	&__range {
+		@include until($bp-medium) {
+			display: none !important;
+		}
+	}
+}
+
+.form-item {
+	height: auto;
+}

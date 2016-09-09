@@ -1,0 +1,242 @@
+/**
+name: Form
+type: ui
+desc: >
+    # Structure
+
+    1. You can use grid styles for creating form layout
+
+    2. For creating multi fields, use classes __grid-row--gutter-none__ for grid and __form-item--multi-fields__ for deleting input's extra side borders
+
+examples:
+  - name: Form field with label
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+  - name: Form field with label and placeholder text
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text" placeholder="Placeholder">
+                </div>
+            </div>
+        </div>
+  - name: Form field with question tooltip
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Label</label>
+                <div class="icon-questionmark tooltip__trigger">
+                    <div class="tooltip" data-component="tooltip" role="tooltip">
+                        <p>Tooltip</p>
+                    </div>
+                </div>
+                <div class="rel leader--xsmall">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+  - name: Form field small with label
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item form-item--small">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+  - name: Required Form field
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item form-item--required">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+  - name: Disabled Form field with value
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text" value="Value" disabled>
+                </div>
+            </div>
+        </div>
+  - name: Textarea
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+  - name: Multiple fields on same row
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="grid-row--gutter-none form-item--multi-fields">
+                <div class="col-md-2">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  - name: Multiple fields on same row and with one label (You should add class for vertical alligment. For this case grid-row-md--bottom)
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="grid-row--gutter-none grid-row-md--bottom form-item--multi-fields">
+                <div class="col-md-4">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 align--bottom">
+                    <div class="form-item">
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 align--bottom">
+                    <div class="form-item">
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  - name: Multiple fields on same row and with one long label You should add class for vertical alligment. For this case grid-row-md--bottom)
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="form-item">
+                <label class="toleft--xsmall">Multible fields on same row and with one long multible fields on same row and with one long label</label>
+            </div>
+            <div class="grid-row--gutter-none grid-row-md--bottom form-item--multi-fields">
+                <div class="col-md-4">
+                    <div class="form-item">
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 align--bottom">
+                    <div class="form-item">
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 align--bottom">
+                    <div class="form-item">
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  - name: Default grid row
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="grid-row leader--small">
+                <div class="col-md-6">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel  leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  - name: Default grid row with one label in row You should add class for vertical alligment. For this case grid-row-md--bottom)
+    tmpl: >
+        <div class="border box--greyed padding-whole">
+            <div class="grid-row grid-row-md--bottom leader--small">
+                <div class="col-md-6">
+                    <div class="form-item">
+                        <label class="toleft--xsmall">Label</label>
+                        <div class="rel leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 align--bottom">
+                    <div class="form-item">
+                        <div class="rel  leader--xsmall">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  - name: Required Form field in a negative box
+    tmpl: >
+        <div class="section--negative box--blue padding-whole">
+            <div class="form-item form-item--required">
+                <label class="toleft--xsmall">Label</label>
+                <div class="rel leader--xsmall">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+*/
+
+@import "forms";
+@import "form--accordion-filter";
+@import "form-checkbox-filter";
+@import "form-radiobutton-row";
+@import "forms-layout";

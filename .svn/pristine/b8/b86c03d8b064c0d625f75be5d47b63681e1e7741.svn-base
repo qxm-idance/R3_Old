@@ -1,0 +1,65 @@
+// Sorting headers.
+.sorting,
+.sorting_asc,
+.sorting_desc {
+	outline: none;
+	cursor: pointer;
+
+	&:after {
+		@extend %icon-base-styles;
+		font-size: 10px;
+		left: 5px;
+		opacity: 0;
+		position: relative;
+		top: 2px;
+		display: inline-block;
+		vertical-align: middle;
+		content:'';
+	}
+}
+
+.sorting_asc {
+	white-space: nowrap;
+
+	&:after {
+		border: solid;
+		border-width: 5px 3px;
+		border-color: transparent transparent $color-telenor-blue;
+		opacity: 1;
+		top:-2px;
+	}
+}
+
+.sorting_desc {
+	white-space: nowrap;
+
+	&:after {
+		border: solid;
+		border-width: 5px 3px;
+		border-color: $color-telenor-blue transparent transparent;
+		opacity: 1;
+	}
+}
+
+.sorting:hover,
+.sorting:focus,
+.sorting_asc,
+.sorting_desc,
+.bill--table .sorting_desc,
+.bill--table .sorting_asc,
+.table--adv .sorting_asc,
+.table--adv .sorting_desc {
+	border-bottom: 2px solid $color-telenor-blue;
+	color: $color-telenor-blue;
+	padding-bottom: 3px;
+
+	// Hack to make Firefox behave.
+	@at-root {
+		@-moz-document url-prefix() {
+			& {
+				box-shadow: inset 0 -1px 0 $color-telenor-blue;
+				border-bottom-width: 1px;
+			}
+		}
+	}
+}

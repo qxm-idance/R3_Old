@@ -1,0 +1,315 @@
+.button--micro {
+    font-size: 7px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+}
+.button.button--bar:first-child,
+.form-checkbox--filter label.button--bar:first-child{
+    border-radius: 2px 0 0 2px;
+}
+.button.button--bar:last-child,
+.form-checkbox--filter label.button--bar:last-child{
+    border-radius: 0 2px 2px 0;
+    border-right: 1px solid #d1d1d1;
+}
+.button.button--bar,
+.form-checkbox--filter label.button--bar{
+    color: #474747;
+    height: 40px;
+    background: -webkit-linear-gradient(270deg, #fff, #f5f5f5);
+    background: linear-gradient(180deg, #fff, #f5f5f5);
+    display: block;
+    float: left;
+    border: 1px solid #d1d1d1;
+    border-radius: 0;
+    border-right-color: transparent;
+}
+.button.button--bar:focus,
+.form-checkbox--filter label.button--bar:focus {
+    border: 1px solid #038cd6;
+    background: -webkit-linear-gradient(270deg, #fff, #e9e9e9);
+    background: linear-gradient(180deg, #fff, #e9e9e9);
+}
+
+.button [class*=" icon-"]:after, .button [class*=" icon-"]:before, .button__text, .form-checkbox--filter label [class*=" icon-"]:after, .form-checkbox--filter label [class*=" icon-"]:before, .overlay-spinner__spinner [class*=" icon-"]:after, .overlay-spinner__spinner [class*=" icon-"]:before, .paging_simple_numbers a.loadmore [class*=" icon-"]:after, .paging_simple_numbers a.loadmore [class*=" icon-"]:before {
+    vertical-align: middle;
+}
+
+.button__spinner,.button__label,.button__label--success,.button__label--success:before {
+    -webkit-transition: color 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63),-webkit-transform 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63),opacity 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63);
+    transition: color 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63),transform 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63),opacity 0.25s cubic-bezier(0.535, 0.235, 0.22, 1.63)
+}
+
+.button__label {
+    position: relative;
+    z-index: 3;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s
+}
+
+.button__spinner {
+    margin-left: -5px;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 46%;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0)
+}
+
+.no-cssanimations .button__spinner {
+    left: 40%;
+    top: 45%
+}
+
+.button__label--success {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, -25px, 0)
+}
+
+[data-loading] .button,[data-loading] .form-checkbox--filter label,.form-checkbox--filter [data-loading] label {
+    cursor: default
+}
+
+[data-loading] .button__label {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, -25px, 0);
+    -webkit-transition-delay: .01s;
+    transition-delay: .01s
+}
+
+.no-csstransforms3d [data-loading] .button__label {
+    top: -1em
+}
+
+[data-loading] .button__spinner {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s
+}
+
+[data-loading] .button__label--success {
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0)
+}
+
+[data-loading] .button__label--success:before {
+    opacity: 0;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0)
+}
+
+[data-loaded] .button,[data-loaded] .form-checkbox--filter label,.form-checkbox--filter [data-loaded] label {
+    cursor: default;
+    border: 1px solid #008e52;
+    background: #43c682;
+    background-image: -webkit-linear-gradient(270deg, #43c682, #02a962);
+    background-image: linear-gradient(180deg, #43c682, #02a962)
+}
+
+.boxshadow [data-loaded] .button,.boxshadow [data-loaded] .form-checkbox--filter label,.form-checkbox--filter .boxshadow [data-loaded] label {
+    box-shadow: inset 0 0 0 1px #008e52;
+    border: none
+}
+
+[data-loaded] .button .button__label--success,[data-loaded] .form-checkbox--filter label .button__label--success,.form-checkbox--filter [data-loaded] label .button__label--success,[data-loaded] .button .button__label--success:before,[data-loaded] .form-checkbox--filter label .button__label--success:before,.form-checkbox--filter [data-loaded] label .button__label--success:before {
+    color: #fff
+}
+
+[data-loaded] .button__label {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0)
+}
+
+[data-loaded] .button__spinner {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, -25px, 0)
+}
+
+[data-loaded] .button__label--success {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s
+}
+
+[data-loaded] .button__label--success:before {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-delay: .5s;
+    transition-delay: .5s
+}
+[data-loading] .form-item--toggle__switch [class^="icon-"],.button__spinner {
+    -webkit-animation-delay: .16s;
+    animation-delay: .16s;
+    display: block;
+    font-size: 10px;
+    text-indent: -9999px;
+    margin-top: -3px
+}
+
+[data-loading] .form-item--toggle__switch [class^="icon-"],.button__spinner,[data-loading] .form-item--toggle__switch [class^="icon-"]:before,[data-loading] .form-item--toggle__switch .form-item .ws-range .ws-range-thumb,.form-item .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-search .ws-range .ws-range-thumb,.form-search .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-item__row .form-comp:before,.form-item__row [data-loading] .form-item--toggle__switch .form-comp:before,[data-loading] .form-item--toggle__switch .error-summary__list li:before,.error-summary__list [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .button--flow:before,[data-loading] .form-item--toggle__switch .button--icon:before,[data-loading] .form-item--toggle__switch .button--naked span:after,.button--naked [data-loading] .form-item--toggle__switch span:after,[data-loading] .form-item--toggle__switch [class*=" status-icon--"]:before,[data-loading] .form-item--toggle__switch .status-dot--check:before,[data-loading] .form-item--toggle__switch .fontface .list--default li:before,.fontface .list--default [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .text--content ul li:before,.fontface .text--content ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .text--content .fontface ul li:before,.text--content .fontface ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--footer li:before,.fontface .list--footer [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check li:before,.fontface .list--check [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--dark li:before,.fontface .list--check--dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey li:before,.fontface .list--check--grey [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--white li:before,.fontface .list--check--white [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey-dark li:before,.fontface .list--check--grey-dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--negative li:before,.fontface .list--negative [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class^="list--check"] li:before,.fontface [class^="list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class*=" list--check"] li:before,.fontface [class*=" list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .bullet-link:before,[data-loading] .form-item--toggle__switch .button--link:before,[data-loading] .form-item--toggle__switch .bullet-link--reverse:before,[data-loading] .form-item--toggle__switch .fill--half:after,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.previous:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.previous:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .pager--default .previous.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.previous:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.previous:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .previous.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.next:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.next:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .pager--default .next.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.next:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.next:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .next.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .flexnav__toggler:after,.button__spinner:before,[data-loading] .form-item--toggle__switch [class^="icon-"]:after,.button__spinner:after {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: loader-blue 1.8s infinite ease-in-out;
+    animation: loader-blue 1.8s infinite ease-in-out;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px
+}
+
+.no-cssanimations [data-loading] .form-item--toggle__switch [class^="icon-"],[data-loading] .form-item--toggle__switch .no-cssanimations [class^="icon-"],.no-cssanimations .button__spinner {
+    background-image: url("../assets/_framework/graphics/ajax-loader.gif"),none;
+    width: 43px;
+    height: 11px;
+    border-radius: 0
+}
+
+[data-loading] .form-item--toggle__switch [class^="icon-"]:before,[data-loading] .form-item--toggle__switch .form-item .ws-range .ws-range-thumb,.form-item .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-search .ws-range .ws-range-thumb,.form-search .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-item__row .form-comp:before,.form-item__row [data-loading] .form-item--toggle__switch .form-comp:before,[data-loading] .form-item--toggle__switch .error-summary__list li:before,.error-summary__list [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .button--flow:before,[data-loading] .form-item--toggle__switch .button--icon:before,[data-loading] .form-item--toggle__switch .button--naked span:after,.button--naked [data-loading] .form-item--toggle__switch span:after,[data-loading] .form-item--toggle__switch [class*=" status-icon--"]:before,[data-loading] .form-item--toggle__switch .status-dot--check:before,[data-loading] .form-item--toggle__switch .fontface .list--default li:before,.fontface .list--default [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .text--content ul li:before,.fontface .text--content ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .text--content .fontface ul li:before,.text--content .fontface ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--footer li:before,.fontface .list--footer [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check li:before,.fontface .list--check [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--dark li:before,.fontface .list--check--dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey li:before,.fontface .list--check--grey [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--white li:before,.fontface .list--check--white [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey-dark li:before,.fontface .list--check--grey-dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--negative li:before,.fontface .list--negative [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class^="list--check"] li:before,.fontface [class^="list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class*=" list--check"] li:before,.fontface [class*=" list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .bullet-link:before,[data-loading] .form-item--toggle__switch .button--link:before,[data-loading] .form-item--toggle__switch .bullet-link--reverse:before,[data-loading] .form-item--toggle__switch .fill--half:after,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.previous:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.previous:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .pager--default .previous.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.previous:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.previous:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .previous.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.next:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.next:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .pager--default .next.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.next:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.next:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .next.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .flexnav__toggler:after,.button__spinner:before,[data-loading] .form-item--toggle__switch [class^="icon-"]:after,.button__spinner:after {
+    content: "";
+    position: absolute;
+    top: 0
+}
+
+[data-loading] .form-item--toggle__switch [class^="icon-"]:before,[data-loading] .form-item--toggle__switch .form-item .ws-range .ws-range-thumb,.form-item .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-search .ws-range .ws-range-thumb,.form-search .ws-range [data-loading] .form-item--toggle__switch .ws-range-thumb,[data-loading] .form-item--toggle__switch .form-item__row .form-comp:before,.form-item__row [data-loading] .form-item--toggle__switch .form-comp:before,[data-loading] .form-item--toggle__switch .error-summary__list li:before,.error-summary__list [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .button--flow:before,[data-loading] .form-item--toggle__switch .button--icon:before,[data-loading] .form-item--toggle__switch .button--naked span:after,.button--naked [data-loading] .form-item--toggle__switch span:after,[data-loading] .form-item--toggle__switch [class*=" status-icon--"]:before,[data-loading] .form-item--toggle__switch .status-dot--check:before,[data-loading] .form-item--toggle__switch .fontface .list--default li:before,.fontface .list--default [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .text--content ul li:before,.fontface .text--content ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .text--content .fontface ul li:before,.text--content .fontface ul [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--footer li:before,.fontface .list--footer [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check li:before,.fontface .list--check [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--dark li:before,.fontface .list--check--dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey li:before,.fontface .list--check--grey [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--white li:before,.fontface .list--check--white [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--check--grey-dark li:before,.fontface .list--check--grey-dark [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface .list--negative li:before,.fontface .list--negative [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class^="list--check"] li:before,.fontface [class^="list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .fontface [class*=" list--check"] li:before,.fontface [class*=" list--check"] [data-loading] .form-item--toggle__switch li:before,[data-loading] .form-item--toggle__switch .bullet-link:before,[data-loading] .form-item--toggle__switch .button--link:before,[data-loading] .form-item--toggle__switch .bullet-link--reverse:before,[data-loading] .form-item--toggle__switch .fill--half:after,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.previous:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.previous:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.previous:before,[data-loading] .form-item--toggle__switch .svg .pager--default .previous.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.previous:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.previous:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.previous:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .previous.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .previous.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .previous.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .pager--default .pager__button.next:before,.svg .pager--default [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.next:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .pager__button.next:before,[data-loading] .form-item--toggle__switch .svg .pager--default .next.pager__elipsis:before,.svg .pager--default [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.next:before,.paging_simple_numbers span .svg .pager--default [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers span span.next:before,.svg .paging_simple_numbers span [data-loading] .form-item--toggle__switch span.next:before,[data-loading] .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .next.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .svg .paging_simple_numbers .next.paginate_button:before,.svg .paging_simple_numbers [data-loading] .form-item--toggle__switch .next.paginate_button:before,[data-loading] .form-item--toggle__switch .flexnav__toggler:after,.button__spinner:before {
+    left: -8px
+}
+
+[data-loading] .form-item--toggle__switch [class^="icon-"]:after,.button__spinner:after {
+    left: 8px;
+    -webkit-animation-delay: .32s;
+    animation-delay: .32s
+}
+
+.button__spinner,.button__spinner:before,.button__spinner:after {
+    height: 10px;
+    width: 10px
+}
+
+.button__spinner:before {
+    left: -15px
+}
+
+.button__spinner:after {
+    left: 15px
+}
+
+[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch [class^="icon-"],[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch [class^="icon-"]:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .form-item .ws-range .ws-range-thumb,.form-item .ws-range [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .ws-range-thumb,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .form-search .ws-range .ws-range-thumb,.form-search .ws-range [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .ws-range-thumb,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .form-item__row .form-comp:before,.form-item__row [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .form-comp:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .error-summary__list li:before,.error-summary__list [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .button--flow:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .button--icon:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .button--naked span:after,.button--naked [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch span:after,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch [class*=" status-icon--"]:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .status-dot--check:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--default li:before,.fontface .list--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .text--content ul li:before,.fontface .text--content ul [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .text--content .fontface ul li:before,.text--content .fontface ul [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--footer li:before,.fontface .list--footer [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--check li:before,.fontface .list--check [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--check--dark li:before,.fontface .list--check--dark [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--check--grey li:before,.fontface .list--check--grey [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--check--white li:before,.fontface .list--check--white [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--check--grey-dark li:before,.fontface .list--check--grey-dark [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface .list--negative li:before,.fontface .list--negative [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface [class^="list--check"] li:before,.fontface [class^="list--check"] [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fontface [class*=" list--check"] li:before,.fontface [class*=" list--check"] [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch li:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .bullet-link:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .button--link:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .bullet-link--reverse:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .fill--half:after,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .pager--default .pager__button.previous:before,.svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .pager__button.previous:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.previous:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .pager__button.previous:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .pager--default .previous.pager__elipsis:before,.svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .previous.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .previous.pager__elipsis:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.previous:before,.paging_simple_numbers span .svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch span.previous:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers span span.previous:before,.svg .paging_simple_numbers span [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch span.previous:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .previous.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .previous.paginate_button:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .previous.paginate_button:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .previous.paginate_button:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .pager--default .pager__button.next:before,.svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .pager__button.next:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .pager__button.next:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .pager__button.next:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .pager--default .next.pager__elipsis:before,.svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .next.pager__elipsis:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .next.pager__elipsis:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .paging_simple_numbers span .svg .pager--default span.next:before,.paging_simple_numbers span .svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch span.next:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers span span.next:before,.svg .paging_simple_numbers span [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch span.next:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .paging_simple_numbers .svg .pager--default .next.paginate_button:before,.paging_simple_numbers .svg .pager--default [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .next.paginate_button:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .svg .paging_simple_numbers .next.paginate_button:before,.svg .paging_simple_numbers [data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .next.paginate_button:before,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch .flexnav__toggler:after,[data-loading] [data-toggle-value="off"]:checked ~ .form-item--toggle__switch [class^="icon-"]:after {
+    -webkit-animation-name: loader-grey;
+    animation-name: loader-grey
+}
+
+@-webkit-keyframes loader-blue {
+    0%, 80%, 100% {
+        background-color: #fff
+    }
+
+    40% {
+        background-color: rgba(255,255,255,0.35)
+    }
+}
+
+@keyframes loader-blue {
+    0%, 80%, 100% {
+        background-color: #fff
+    }
+
+    40% {
+        background-color: rgba(255,255,255,0.35)
+    }
+}
+
+@-webkit-keyframes loader-grey {
+    0%, 80%, 100% {
+        background-color: #fff
+    }
+
+    40% {
+        background-color: #d1d1d1
+    }
+}
+
+@keyframes loader-grey {
+    0%, 80%, 100% {
+        background-color: #fff
+    }
+
+    40% {
+        background-color: #d1d1d1
+    }
+}
+.button .icon,.form-checkbox--filter label .icon {
+    margin-right: .5em
+}
+
+.button .icon:before,.form-checkbox--filter label .icon:before {
+    font-size: 18px
+}
+
+.button.button--small .icon:before,.form-checkbox--filter label .icon:before {
+    font-size: 14px
+}
+
+.button .icon--left:before,.form-checkbox--filter label .icon--left:before {
+    margin-right: .5em
+}
+
+.button .icon--right:before,.form-checkbox--filter label .icon--right:before {
+    margin-left: .5em
+}
+
+.button.button--no-label .icon,.form-checkbox--filter label.button--no-label .icon {
+    margin-right: 0
+}
+.button__spinner .spinner-holder, .progress-spinner--align{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.button__spinner .spinner-holder, .progress-spinner, .tooltip__spinner {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    font-size: 4px;
+    overflow: hidden;
+}
+.button__spinner .spinner-holder .spinner-container, .progress-spinner .spinner-container, .tooltip__spinner .spinner-container {
+    -webkit-animation: progress-spinner-animation 1s infinite steps(12);
+    animation: progress-spinner-animation 1s infinite steps(12);
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 5em;
+    text-indent: 999em;
+}
+.button__spinner .spinner-holder .spinner-container em:after, .button__spinner .spinner-holder .spinner-container em:before, .button__spinner .spinner-holder .spinner-container span:after, .button__spinner .spinner-holder .spinner-container span:before, .button__spinner .spinner-holder .spinner-container:after, .button__spinner .spinner-holder .spinner-container:before, .progress-spinner .spinner-container em:after, .progress-spinner .spinner-container em:before, .progress-spinner .spinner-container span:after, .progress-spinner .spinner-container span:before, .progress-spinner .spinner-container:after, .progress-spinner .spinner-container:before, .tooltip__spinner .spinner-container em:after, .tooltip__spinner .spinner-container em:before, .tooltip__spinner .spinner-container span:after, .tooltip__spinner .spinner-container span:before, .tooltip__spinner .spinner-container:after, .tooltip__spinner .spinner-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2.3em;
+    width: .4em;
+    height: 1.4em;
+    border-radius: 45%;
+    box-shadow: 0 3.6em #eee;
+    -webkit-transform-origin: 50% 2.5em;
+    transform-origin: 50% 2.5em;
+}

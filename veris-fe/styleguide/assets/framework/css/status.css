@@ -1,0 +1,34 @@
+.status-dot {
+    min-height: 9px;
+    position: relative;
+    padding-left: 15px;
+    color: #757575;
+}
+.status-dot--small {
+    min-height: 6px;
+}
+.status-dot:before {
+    background: #d1d1d1;
+    border-radius: 50%;
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+}
+.status-dot--small:before {
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+}
+.status-dot--green:before {
+    background-color: #43c682;
+}
+.status-dot--yellow:before {
+    background-color: #ffb900;
+}
+.status-dot--red:before {
+    background-color: #db5451;
+}

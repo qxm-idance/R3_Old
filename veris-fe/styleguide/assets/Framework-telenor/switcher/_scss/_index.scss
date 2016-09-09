@@ -1,0 +1,365 @@
+/**
+name: Switcher
+type: ui
+desc: Implementation of toggle component with two states.
+examples:
+  - name: Default switcher
+    tmpl:
+        include: default.html
+  - name: Wide switcher
+    tmpl:
+        include: wide.html
+  - name: Switcher with loading state
+    tmpl:
+        include: with-loading.html
+*/
+
+$toggle-width: 80px;
+$toggle-height: 32px;
+$toggle-distance-close: 3px;
+$toggle-distance-far: 42px;
+
+@mixin toggle-inactive-state {
+	background: $color-white;
+	border: 1px solid $color-silver-grey;
+	color: $color-silver-grey;
+}
+
+@mixin toggle-active-state {
+	border-color: $color-telenor-blue;
+	background-color: $color-telenor-blue;
+	background: linear-gradient(180deg, #038cd6, #0296e5);
+	color: $color-white;
+}
+
+@mixin toggle-error-state {
+	border-color: $color-telenor-red;
+	background-color: $color-error;
+	background-image: none;
+	color: $color-white;
+}
+
+@mixin toggle-disabled-state {
+	border-color: $color-steel-grey !important;
+	background-color: $color-silver-grey !important;
+	background: linear-gradient(to top, #d1d1d1, #b8b8b8);
+	color: $color-white !important;
+
+	[class^="icon-"] {
+		border: none;
+		font-size: 12px;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	[class^="icon-"]:before {
+		background: transparent;
+		width: 100%;
+		height: auto;
+		left: 0;
+		@extend %icon-vertical-align;
+		@include icon-lock;
+	}
+}
+
+.form-item--toggle {
+	label {
+		@extend %text-size--13;
+		cursor: pointer;
+	}
+
+
+	display: inline-block;
+	width: $toggle-width;
+	height: $toggle-height;
+	// border: 1px solid $color-silver-grey;
+	border-radius: 2px;
+	background-color: $color-white;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+
+	&.form-item--toggle--wide {
+		width: $toggle-width * 2;
+	}
+
+	label {
+		position: absolute;
+		line-height: $toggle-height;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		text-align: center;
+		z-index: 3;
+	}
+
+	input {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 6;
+
+		&:disabled {
+			cursor: default;
+
+			& + label {
+				color: $color-silver-grey;
+				cursor: default;
+			}
+
+			& ~ .form-item--toggle__switch {
+				@include toggle-disabled-state;
+			}
+		}
+
+		&:focus ~ .form-item--toggle__track {
+			// box-shadow: inset 0 0 0 $toggle-distance-close $color-smoke-grey;
+			outline: none;
+		}
+
+		// ----------------------------------------------------------------
+		// adjust trailing tool-tip trigger
+
+		& + .tooltip__trigger {
+			line-height: 33px;
+			vertical-align: top;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// error
+
+	&--error {
+
+		// override main border on error
+		&.form-item--toggle input:focus ~ .form-item--toggle__track,
+		&.form-item--toggle input:hover:focus ~ .form-item--toggle__track,
+		&.form-item--toggle input:hover ~ .form-item--toggle__track,
+		&.form-item--toggle .form-item--toggle__track {
+			border-color: $color-error;
+		}
+
+		// switch
+		.toggle__check:checked ~ .form-item--toggle__switch,
+		.toggle__check ~ .form-item--toggle__switch {
+			@include toggle-error-state;
+		}
+	}
+}
+
+.form-item--toggle__switch {
+	@include toggle-active-state;
+	position: absolute;
+	left: $toggle-distance-close;
+	top: $toggle-distance-close;
+	bottom: $toggle-distance-close;
+	right: $toggle-distance-far;
+	background-clip: padding-box;
+	border-radius: 2px;
+	z-index: 2;
+	transition-duration: .2s, .4s, .4s, .4s;
+	transition-property: left, right, background-color, color;
+	transition-timing-function: cubic-bezier(.2, .1, 0, 1);
+	text-align: center;
+
+	// Draw the drag icon.
+	[class^="icon-"] {
+		height: 9px;
+		width: 7px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -5px 0 0 -3px;
+		border: solid $color-white;
+		border-width: 0 1px;
+
+		&:before {
+			content: "";
+			background: $color-white;
+			width: 1px;
+			position: absolute;
+			left: 2px;
+			top: 0;
+			height: 100%;
+		}
+	}
+
+	.toggle__radio ~ & {
+		z-index: 4;
+	}
+
+	.form-item--toggle:active & {
+		//left: $toggle-distance-close;
+		//right: $toggle-distance-close;
+	}
+
+	[data-loading] & {
+		background-color: $color-telenor-blue;
+		background-image: linear-gradient(180deg, #038cd6, #0296e5);
+		left: 4px !important;
+		right: 4px !important;
+
+		[class^="icon-"] {
+			@extend %loader;
+			border-color: transparent;
+
+			&:after {
+				left: 6px !important;
+			}
+		}
+	}
+
+	[data-loading] [data-toggle-value="off"]:checked ~ & {
+		background: $color-white;
+		[class^="icon-"] {
+			@extend %loader--grey;
+		}
+	}
+}
+
+.form-item--toggle__track {
+	background-color: $color-white;
+	border: $border-form-input;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	transition: $transition-form-all;
+	border-radius: inherit;
+
+	.form-item--toggle:hover & {
+		background-color: $color-paper-white;
+		border: $border-form-input-hover;
+	}
+
+	.form-item--toggle input:hover:focus ~ &,
+	.form-item--toggle input:focus ~ & {
+		background-color: $color-paper-white;
+		border: $border-form-input-hover;
+	}
+
+	// Prevent if disabled.
+	.form-item--toggle input:disabled ~ & {
+		background-color: $color-white !important;
+		border-color: $color-silver-grey !important;
+	}
+
+	// ----------------------------------------------------------------
+	// negative
+
+	// negative focus
+	.section--negative .form-item--toggle input:hover:focus ~ &,
+	.section--negative .form-item--toggle input:focus ~ & {
+		background-color: $color-paper-white;
+		border-color: $border-form-negative-input-focus;
+	}
+
+	// negative hover
+	.section--negative .form-item--toggle:hover & {
+		background-color: $color-paper-white;
+		border-color: $border-form-negative-input-hover;
+	}
+
+	.section--negative & {
+		border-color: transparent;
+	}
+}
+
+
+.toggle__check {
+	& ~ .form-item--toggle__switch {
+		@include toggle-active-state;
+	}
+
+	&:checked ~ .form-item--toggle__switch {
+		@include toggle-active-state;
+		right: $toggle-distance-close;
+		left: $toggle-distance-far;
+		transition-duration: .6s, .2s, .6s, .6s;
+	}
+
+	// Prevent if disabled.
+	&:disabled ~ .form-item--toggle__switch {
+		@include toggle-disabled-state;
+		left: $toggle-distance-close;
+		right: $toggle-distance-far;
+
+		// Wide version
+		.form-item--toggle--wide & {
+			right: $toggle-distance-far * 2;
+		}
+	}
+
+	// Prevent if disabled.
+	&:checked:disabled ~ .form-item--toggle__switch {
+		left: $toggle-distance-far;
+		right: $toggle-distance-close;
+
+		// Wide version
+		.form-item--toggle--wide & {
+			left: $toggle-distance-far * 2;
+		}
+	}
+}
+
+[data-toggle-value="on"] {
+	&:checked {
+		z-index: -1;
+
+		& ~ .form-item--toggle__switch {
+			@include toggle-active-state;
+			left: $toggle-distance-far;
+			right: $toggle-distance-close;
+			transition-duration: .6s, .2s, .6s, .6s;
+		}
+	}
+
+	& + label {
+		color: $color-telenor-blue;
+		left: $toggle-distance-close;
+	}
+}
+
+[data-toggle-value="off"] {
+	&:checked {
+		z-index: -1;
+
+		& ~ .form-item--toggle__switch {
+			left: $toggle-distance-close;
+			right: $toggle-distance-far;
+			transition-duration: .2s, .6s, .6s, .6s;
+		}
+	}
+
+	& + label {
+		color: $color-telenor-blue;
+		right: $toggle-distance-close;
+	}
+}
+
+.form-item--toggle--wide {
+	.form-item--toggle__switch {
+		right: $toggle-distance-far * 2;
+	}
+
+	.toggle__check {
+		left: $toggle-distance-far * 2;
+	}
+
+	[data-toggle-value="on"]:checked ~ .form-item--toggle__switch {
+		left: $toggle-distance-far * 2;
+
+	}
+
+	[data-toggle-value="off"]:checked ~ .form-item--toggle__switch {
+		right: $toggle-distance-far * 2;
+	}
+}

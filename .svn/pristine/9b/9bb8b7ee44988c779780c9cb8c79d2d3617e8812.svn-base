@@ -1,0 +1,86 @@
+.block {
+  &--form {
+
+    // ----------------------------------------------------------------
+    // form title block
+
+    .title {
+      &--xsmall {
+        .icon:before {
+          font-size: 11px;
+          color: $color-stone-grey;
+        }
+      }
+    }
+
+    // ----------------------------------------------------------------
+    // toggle
+
+    &__edit-toggle {
+      z-index: 50;
+      position: relative;
+
+      .touch & {
+        padding: 15px;
+        margin: -15px;
+      }
+    }
+
+    // ----------------------------------------------------------------
+    // paragraphs
+
+    p {
+	  margin: $small-spacing-unit 0;
+    }
+
+    // ----------------------------------------------------------------
+    // seperator
+    .border {
+      &--bottom {
+		padding-bottom: $base-spacing-unit;
+      }
+    }
+
+    // ----------------------------------------------------------------
+    // termlist
+
+    // remove margin top when directly in container
+    .container > .terms-list {
+      margin-top: 0;
+    }
+
+    @include at-least($bp-small) {
+      .terms-list:last-child dd {
+        margin-bottom: 0;
+      }
+    }
+
+    &--locked {
+      .block {
+        &--form {
+          &__locked-container {
+            display: block;
+          }
+
+          &__editable-container {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &--editable {
+      .block {
+        &--form {
+          &__locked-container {
+            display: none;
+          }
+
+          &__editable-container {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

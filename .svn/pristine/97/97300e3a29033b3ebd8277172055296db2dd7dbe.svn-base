@@ -1,0 +1,12 @@
+<div class="section--negative box--blue padding-whole">
+	<ul class="form-item">
+		<li class="form-radio form-radio--small">
+			<input type="radio" checked name="rad-small-negative" value="--some-value--" id="rad-small-negative-0">
+			<label for="rad-small-negative-0">Lorem ipsum bla bla small 1</label>
+		</li>
+		<li class="form-radio form-radio--small">
+			<input type="radio" name="rad-small-negative" id="rad-small-negative-1" value="--some-value--">
+			<label for="rad-small-negative-1">Lorem ipsum bla bla small 2</label>
+		</li>
+	</ul>
+</div>

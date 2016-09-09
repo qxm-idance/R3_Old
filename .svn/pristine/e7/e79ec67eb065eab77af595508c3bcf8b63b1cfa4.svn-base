@@ -1,0 +1,2246 @@
+%icon-base-styles {
+	font-family: "framework-icons";
+	display: inline-block;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	speak: none;
+	text-decoration: inherit;
+	text-transform: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1em;
+	line-height: 1;
+}
+
+/* Bootstrap Overrides */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	@extend %icon-base-styles;
+}
+
+.icon-0-24 {
+	&:before {
+	 content: "\E001";
+	}
+}
+
+.icon-14days {
+	&:before {
+	 content: "\E002";
+	}
+}
+
+.icon-4g {
+	&:before {
+	 content: "\E003";
+	}
+}
+
+.icon-acrobat {
+	&:before {
+	 content: "\E004";
+	}
+}
+
+.icon-add-ons {
+	&:before {
+	 content: "\E005";
+	}
+}
+
+.icon-add {
+	&:before {
+	 content: "\E006";
+	}
+}
+
+.icon-adjust {
+	&:before {
+	 content: "\E007";
+	}
+}
+
+.icon-alternative-offer {
+	&:before {
+	 content: "\E008";
+	}
+}
+
+.icon-apperror {
+	&:before {
+	 content: "\E009";
+	}
+}
+
+.icon-arrow-down {
+	&:before {
+	 content: "\E00A";
+	}
+}
+
+.icon-arrow-next {
+	&:before {
+	 content: "\E00B";
+	}
+}
+
+.icon-arrow-prev {
+	&:before {
+	 content: "\E00C";
+	}
+}
+
+.icon-arrow-step-down {
+	&:before {
+	 content: "\E00D";
+	}
+}
+
+.icon-arrow-step {
+	&:before {
+	 content: "\E00E";
+	}
+}
+
+.icon-arrow-up {
+	&:before {
+	 content: "\E00F";
+	}
+}
+
+.icon-attachment {
+	&:before {
+	 content: "\E010";
+	}
+}
+
+.icon-audio {
+	&:before {
+	 content: "\E011";
+	}
+}
+
+.icon-avaya {
+	&:before {
+	 content: "\E012";
+	}
+}
+
+.icon-basket {
+	&:before {
+	 content: "\E013";
+	}
+}
+
+.icon-battery {
+	&:before {
+	 content: "\E014";
+	}
+}
+
+.icon-blank-paper {
+	&:before {
+	 content: "\E015";
+	}
+}
+
+.icon-bookmark {
+	&:before {
+	 content: "\E016";
+	}
+}
+
+.icon-box {
+	&:before {
+	 content: "\E017";
+	}
+}
+
+.icon-broadband1 {
+	&:before {
+	 content: "\E018";
+	}
+}
+
+.icon-broadband2 {
+	&:before {
+	 content: "\E019";
+	}
+}
+
+.icon-broken-screen {
+	&:before {
+	 content: "\E01A";
+	}
+}
+
+.icon-building {
+	&:before {
+	 content: "\E01B";
+	}
+}
+
+.icon-bullet-check-negative {
+	&:before {
+	 content: "\E01C";
+	}
+}
+
+.icon-bullet-disc {
+	&:before {
+	 content: "\E01D";
+	}
+}
+
+.icon-bullet-rev {
+	&:before {
+	 content: "\E01E";
+	}
+}
+
+.icon-bullet {
+	&:before {
+	 content: "\E01F";
+	}
+}
+
+.icon-calendar {
+	&:before {
+	 content: "\E020";
+	}
+}
+
+.icon-camera {
+	&:before {
+	 content: "\E021";
+	}
+}
+
+.icon-cart {
+	&:before {
+	 content: "\E022";
+	}
+}
+
+.icon-casing {
+	&:before {
+	 content: "\E023";
+	}
+}
+
+.icon-change {
+	&:before {
+	 content: "\E024";
+	}
+}
+
+.icon-chart {
+	&:before {
+	 content: "\E025";
+	}
+}
+
+.icon-chat-fill {
+	&:before {
+	 content: "\E026";
+	}
+}
+
+.icon-chat {
+	&:before {
+	 content: "\E027";
+	}
+}
+
+.icon-check-grey {
+	&:before {
+	 content: "\E028";
+	}
+}
+
+.icon-check-white {
+	&:before {
+	 content: "\E029";
+	}
+}
+
+.icon-check {
+	&:before {
+	 content: "\E02A";
+	}
+}
+
+.icon-checkbox-part-selected {
+	&:before {
+	 content: "\E02B";
+	}
+}
+
+.icon-check-list {
+	&:before {
+	 content: "\E02C";
+	}
+}
+
+.icon-clear {
+	&:before {
+	 content: "\E02D";
+	}
+}
+
+.icon-clip {
+	&:before {
+	 content: "\E02E";
+	}
+}
+
+.icon-close-cross {
+	&:before {
+	 content: "\E02F";
+	}
+}
+
+.icon-close-expand {
+	&:before {
+	 content: "\E030";
+	}
+}
+
+.icon-close-menu {
+	&:before {
+	 content: "\E031";
+	}
+}
+
+.icon-close-right-panel {
+	&:before {
+	 content: "\E032";
+	}
+}
+
+.icon-close {
+	&:before {
+	 content: "\E033";
+	}
+}
+
+.icon-cloud {
+	&:before {
+	 content: "\E034";
+	}
+}
+
+.icon-coins {
+	&:before {
+	 content: "\E035";
+	}
+}
+
+.icon-collapse {
+	&:before {
+	 content: "\E036";
+	}
+}
+
+.icon-controller {
+	&:before {
+	 content: "\E037";
+	}
+}
+
+.icon-coverage {
+	&:before {
+	 content: "\E038";
+	}
+}
+
+.icon-coverage1 {
+	&:before {
+	 content: "\E039";
+	}
+}
+
+.icon-coverage2 {
+	&:before {
+	 content: "\E03A";
+	}
+}
+
+.icon-create {
+	&:before {
+	 content: "\E03B";
+	}
+}
+
+.icon-credit-card {
+	&:before {
+	 content: "\E03C";
+	}
+}
+
+.icon-customer-interactions {
+	&:before {
+	 content: "\E03D";
+	}
+}
+
+.icon-data {
+	&:before {
+	 content: "\E03E";
+	}
+}
+
+.icon-diafragma {
+	&:before {
+	 content: "\E03F";
+	}
+}
+
+.icon-document {
+	&:before {
+	 content: "\E040";
+	}
+}
+
+.icon-download {
+	&:before {
+	 content: "\E041";
+	}
+}
+
+.icon-downloads {
+	&:before {
+	 content: "\E042";
+	}
+}
+
+.icon-dropdown {
+	&:before {
+	 content: "\E043";
+	}
+}
+
+.icon-earth {
+	&:before {
+	 content: "\E044";
+	}
+}
+
+.icon-error-no-bg {
+	&:before {
+	 content: "\E045";
+	}
+}
+
+.icon-error-xl-white {
+	&:before {
+	 content: "\E046";
+	}
+}
+
+.icon-error {
+	&:before {
+	 content: "\E047";
+	}
+}
+
+.icon-excel {
+	&:before {
+	 content: "\E048";
+	}
+}
+
+.icon-expand {
+	&:before {
+	 content: "\E049";
+	}
+}
+
+.icon-extra-add-ons {
+	&:before {
+	 content: "\E04A";
+	}
+}
+
+.icon-eye {
+	&:before {
+	 content: "\E04B";
+	}
+}
+
+.icon-facebook-squared {
+	&:before {
+	 content: "\E04C";
+	}
+}
+
+.icon-facebook {
+	&:before {
+	 content: "\E04D";
+	}
+}
+
+.icon-feature-phone-broadband {
+	&:before {
+	 content: "\E04E";
+	}
+}
+
+.icon-flag {
+	&:before {
+	 content: "\E04F";
+	}
+}
+
+.icon-global {
+	&:before {
+	 content: "\E050";
+	}
+}
+
+.icon-googleplus {
+	&:before {
+	 content: "\E051";
+	}
+}
+
+.icon-gplus {
+	&:before {
+	 content: "\E052";
+	}
+}
+
+.icon-grid {
+	&:before {
+	 content: "\E053";
+	}
+}
+
+.icon-hamburger-menu {
+	&:before {
+	 content: "\E054";
+	}
+}
+
+.icon-headphones {
+	&:before {
+	 content: "\E055";
+	}
+}
+
+.icon-heart {
+	&:before {
+	 content: "\E056";
+	}
+}
+
+.icon-home-broadband {
+	&:before {
+	 content: "\E057";
+	}
+}
+
+.icon-home {
+	&:before {
+	 content: "\E058";
+	}
+}
+
+.icon-hosting {
+	&:before {
+	 content: "\E059";
+	}
+}
+
+.icon-hotline {
+	&:before {
+	 content: "\E05A";
+	}
+}
+
+.icon-identification-password {
+	&:before {
+	 content: "\E05B";
+	}
+}
+
+.icon-img {
+	&:before {
+	 content: "\E05C";
+	}
+}
+
+.icon-impersonation {
+	&:before {
+	 content: "\E05D";
+	}
+}
+
+.icon-input-radio-selected {
+	&:before {
+	 content: "\E05E";
+	}
+}
+
+.icon-instagram {
+	&:before {
+	 content: "\E05F";
+	}
+}
+
+.icon-key {
+	&:before {
+	 content: "\E060";
+	}
+}
+
+.icon-knowledge-base {
+	&:before {
+	 content: "\E061";
+	}
+}
+
+.icon-large {
+	&:before {
+	 content: "\E062";
+	}
+}
+
+.icon-lightbulb {
+	&:before {
+	 content: "\E063";
+	}
+}
+
+.icon-list-collapse {
+	&:before {
+	 content: "\E064";
+	}
+}
+
+.icon-list-expand {
+	&:before {
+	 content: "\E065";
+	}
+}
+
+.icon-list {
+	&:before {
+	 content: "\E066";
+	}
+}
+
+.icon-location {
+	&:before {
+	 content: "\E067";
+	}
+}
+
+.icon-lock {
+	&:before {
+	 content: "\E068";
+	}
+}
+
+.icon-locked {
+	&:before {
+	 content: "\E069";
+	}
+}
+
+.icon-log-out {
+	&:before {
+	 content: "\E06A";
+	}
+}
+
+.icon-login-phone-number {
+	&:before {
+	 content: "\E06B";
+	}
+}
+
+.icon-logo-onedrive {
+	&:before {
+	 content: "\E06C";
+	}
+}
+
+.icon-lost-and-stolen-help {
+	&:before {
+	 content: "\E06D";
+	}
+}
+
+.icon-mail {
+	&:before {
+	 content: "\E06E";
+	}
+}
+
+.icon-medium {
+	&:before {
+	 content: "\E06F";
+	}
+}
+
+.icon-menu {
+	&:before {
+	 content: "\E070";
+	}
+}
+
+.icon-message-waiting {
+	&:before {
+	 content: "\E071";
+	}
+}
+
+.icon-message {
+	&:before {
+	 content: "\E072";
+	}
+}
+
+.icon-messages {
+	&:before {
+	 content: "\E073";
+	}
+}
+
+.icon-message-question {
+	&:before {
+	 content: "\E074";
+	}
+}
+
+.icon-meter {
+	&:before {
+	 content: "\E075";
+	}
+}
+
+.icon-minus {
+	&:before {
+	 content: "\E076";
+	}
+}
+
+.icon-minutes-sms-data {
+	&:before {
+	 content: "\E077";
+	}
+}
+
+.icon-mobile-broadband {
+	&:before {
+	 content: "\E078";
+	}
+}
+
+.icon-mobile-messages {
+	&:before {
+	 content: "\E079";
+	}
+}
+
+.icon-mobile-wifi {
+	&:before {
+	 content: "\E07A";
+	}
+}
+
+.icon-mobile {
+	&:before {
+	 content: "\E07B";
+	}
+}
+
+.icon-mobility {
+	&:before {
+	 content: "\E07C";
+	}
+}
+
+.icon-music {
+	&:before {
+	 content: "\E07D";
+	}
+}
+
+.icon-my-tv {
+	&:before {
+	 content: "\E07E";
+	}
+}
+
+.icon-network {
+	&:before {
+	 content: "\E07F";
+	}
+}
+
+.icon-notification {
+	&:before {
+	 content: "\E080";
+	}
+}
+
+.icon-office-365 {
+	&:before {
+	 content: "\E081";
+	}
+}
+
+.icon-office365 {
+	&:before {
+	 content: "\E082";
+	}
+}
+
+.icon-one-to-one-loaner-phone {
+	&:before {
+	 content: "\E083";
+	}
+}
+
+.icon-one-two-three {
+	&:before {
+	 content: "\E084";
+	}
+}
+
+.icon-onescreen-white {
+	&:before {
+	 content: "\E085";
+	}
+}
+
+.icon-open-menu {
+	&:before {
+	 content: "\E086";
+	}
+}
+
+.icon-open-right-panel {
+	&:before {
+	 content: "\E087";
+	}
+}
+
+.icon-open-veris {
+	&:before {
+	 content: "\E088";
+	}
+}
+
+.icon-padlock {
+	&:before {
+	 content: "\E089";
+	}
+}
+
+.icon-paper-doc {
+	&:before {
+	 content: "\E08A";
+	}
+}
+
+.icon-paper-exclamation {
+	&:before {
+	 content: "\E08B";
+	}
+}
+
+.icon-paper-list {
+	&:before {
+	 content: "\E08C";
+	}
+}
+
+.icon-paper-terminate {
+	&:before {
+	 content: "\E08D";
+	}
+}
+
+.icon-pencil {
+	&:before {
+	 content: "\E08E";
+	}
+}
+
+.icon-people {
+	&:before {
+	 content: "\E08F";
+	}
+}
+
+.icon-percent {
+	&:before {
+	 content: "\E090";
+	}
+}
+
+.icon-perfect-start {
+	&:before {
+	 content: "\E091";
+	}
+}
+
+.icon-person {
+	&:before {
+	 content: "\E092";
+	}
+}
+
+.icon-phone {
+	&:before {
+	 content: "\E093";
+	}
+}
+
+.icon-phone404 {
+	&:before {
+	 content: "\E094";
+	}
+}
+
+.icon-phone-handset {
+	&:before {
+	 content: "\E095";
+	}
+}
+
+.icon-picture {
+	&:before {
+	 content: "\E096";
+	}
+}
+
+.icon-piggy {
+	&:before {
+	 content: "\E097";
+	}
+}
+
+.icon-pipeline {
+	&:before {
+	 content: "\E098";
+	}
+}
+
+.icon-placemarker {
+	&:before {
+	 content: "\E099";
+	}
+}
+
+.icon-play-circle {
+	&:before {
+	 content: "\E09A";
+	}
+}
+
+.icon-play {
+	&:before {
+	 content: "\E09B";
+	}
+}
+
+.icon-plus {
+	&:before {
+	 content: "\E09C";
+	}
+}
+
+.icon-present {
+	&:before {
+	 content: "\E09D";
+	}
+}
+
+.icon-print {
+	&:before {
+	 content: "\E09E";
+	}
+}
+
+.icon-products {
+	&:before {
+	 content: "\E09F";
+	}
+}
+
+.icon-question {
+	&:before {
+	 content: "\E0A0";
+	}
+}
+
+.icon-questionmark {
+	&:before {
+	 content: "\E0A1";
+	}
+}
+
+.icon-rating {
+	&:before {
+	 content: "\E0A2";
+	}
+}
+
+.icon-rating1 {
+	&:before {
+	 content: "\E0A3";
+	}
+}
+
+.icon-refresh {
+	&:before {
+	 content: "\E0A4";
+	}
+}
+
+.icon-reject {
+	&:before {
+	 content: "\E0A5";
+	}
+}
+
+.icon-remove {
+	&:before {
+	 content: "\E0A6";
+	}
+}
+
+.icon-repairs {
+	&:before {
+	 content: "\E0A7";
+	}
+}
+
+.icon-router {
+	&:before {
+	 content: "\E0A8";
+	}
+}
+
+.icon-save {
+	&:before {
+	 content: "\E0A9";
+	}
+}
+
+.icon-search {
+	&:before {
+	 content: "\E0AA";
+	}
+}
+
+.icon-search2 {
+	&:before {
+	 content: "\E0AB";
+	}
+}
+
+.icon-service-alt {
+	&:before {
+	 content: "\E0AC";
+	}
+}
+
+.icon-service {
+	&:before {
+	 content: "\E0AD";
+	}
+}
+
+.icon-settings {
+	&:before {
+	 content: "\E0AE";
+	}
+}
+
+.icon-signal {
+	&:before {
+	 content: "\E0AF";
+	}
+}
+
+.icon-simcard {
+	&:before {
+	 content: "\E0B0";
+	}
+}
+
+.icon-small-home {
+	&:before {
+	 content: "\E0B1";
+	}
+}
+
+.icon-small {
+	&:before {
+	 content: "\E0B2";
+	}
+}
+
+.icon-smartphone-broadband {
+	&:before {
+	 content: "\E0B3";
+	}
+}
+
+.icon-smiley {
+	&:before {
+	 content: "\E0B4";
+	}
+}
+
+.icon-speedtest {
+	&:before {
+	 content: "\E0B5";
+	}
+}
+
+.icon-sport {
+	&:before {
+	 content: "\E0B6";
+	}
+}
+
+.icon-star-white {
+	&:before {
+	 content: "\E0B7";
+	}
+}
+
+.icon-star {
+	&:before {
+	 content: "\E0B8";
+	}
+}
+
+.icon-stock-management {
+	&:before {
+	 content: "\E0B9";
+	}
+}
+
+.icon-stores {
+	&:before {
+	 content: "\E0BA";
+	}
+}
+
+.icon-support-circle-24-7 {
+	&:before {
+	 content: "\E0BB";
+	}
+}
+
+.icon-support {
+	&:before {
+	 content: "\E0BC";
+	}
+}
+
+.icon-table-columns {
+	&:before {
+	 content: "\E0BD";
+	}
+}
+
+.icon-tablet-mobile {
+	&:before {
+	 content: "\E0BE";
+	}
+}
+
+.icon-tablet {
+	&:before {
+	 content: "\E0BF";
+	}
+}
+
+.icon-technician {
+	&:before {
+	 content: "\E0C0";
+	}
+}
+
+.icon-telenor {
+	&:before {
+	 content: "\E0C1";
+	}
+}
+
+.icon-telephone {
+	&:before {
+	 content: "\E0C2";
+	}
+}
+
+.icon-thumb-down {
+	&:before {
+	 content: "\E0C3";
+	}
+}
+
+.icon-thumb-right {
+	&:before {
+	 content: "\E0C4";
+	}
+}
+
+.icon-thumb-up {
+	&:before {
+	 content: "\E0C5";
+	}
+}
+
+.icon-tidal {
+	&:before {
+	 content: "\E0C6";
+	}
+}
+
+.icon-time-period {
+	&:before {
+	 content: "\E0C7";
+	}
+}
+
+.icon-time {
+	&:before {
+	 content: "\E0C8";
+	}
+}
+
+.icon-topup {
+	&:before {
+	 content: "\E0C9";
+	}
+}
+
+.icon-truck {
+	&:before {
+	 content: "\E0CA";
+	}
+}
+
+.icon-tv {
+	&:before {
+	 content: "\E0CB";
+	}
+}
+
+.icon-twitter-circle {
+	&:before {
+	 content: "\E0CC";
+	}
+}
+
+.icon-twitter {
+	&:before {
+	 content: "\E0CD";
+	}
+}
+
+.icon-unlocked {
+	&:before {
+	 content: "\E0CE";
+	}
+}
+
+.icon-upload {
+	&:before {
+	 content: "\E0CF";
+	}
+}
+
+.icon-usage {
+	&:before {
+	 content: "\E0D0";
+	}
+}
+
+.icon-usb {
+	&:before {
+	 content: "\E0D1";
+	}
+}
+
+.icon-user {
+	&:before {
+	 content: "\E0D2";
+	}
+}
+
+.icon-veris {
+	&:before {
+	 content: "\E0D3";
+	}
+}
+
+.icon-video {
+	&:before {
+	 content: "\E0D4";
+	}
+}
+
+.icon-voice-broadband {
+	&:before {
+	 content: "\E0D5";
+	}
+}
+
+.icon-water {
+	&:before {
+	 content: "\E0D6";
+	}
+}
+
+.icon-wheel {
+	&:before {
+	 content: "\E0D7";
+	}
+}
+
+.icon-youtube {
+	&:before {
+	 content: "\E0D8";
+	}
+}
+
+.icon-zero-kr {
+	&:before {
+	 content: "\E0D9";
+	}
+}
+
+.icon-zero {
+	&:before {
+	 content: "\E0DA";
+	}
+}
+
+.icon-zip {
+	&:before {
+	 content: "\E0DB";
+	}
+}
+
+.icon-zoom-out {
+	&:before {
+	 content: "\E0DC";
+	}
+}
+
+.icon-zoom {
+	&:before {
+	 content: "\E0DD";
+	}
+}
+
+
+
+@mixin icon-0-24 {
+	content: "\E001";
+}
+
+@mixin icon-14days {
+	content: "\E002";
+}
+
+@mixin icon-4g {
+	content: "\E003";
+}
+
+@mixin icon-acrobat {
+	content: "\E004";
+}
+
+@mixin icon-add-ons {
+	content: "\E005";
+}
+
+@mixin icon-add {
+	content: "\E006";
+}
+
+@mixin icon-adjust {
+	content: "\E007";
+}
+
+@mixin icon-alternative-offer {
+	content: "\E008";
+}
+
+@mixin icon-apperror {
+	content: "\E009";
+}
+
+@mixin icon-arrow-down {
+	content: "\E00A";
+}
+
+@mixin icon-arrow-next {
+	content: "\E00B";
+}
+
+@mixin icon-arrow-prev {
+	content: "\E00C";
+}
+
+@mixin icon-arrow-step-down {
+	content: "\E00D";
+}
+
+@mixin icon-arrow-step {
+	content: "\E00E";
+}
+
+@mixin icon-arrow-up {
+	content: "\E00F";
+}
+
+@mixin icon-attachment {
+	content: "\E010";
+}
+
+@mixin icon-audio {
+	content: "\E011";
+}
+
+@mixin icon-avaya {
+	content: "\E012";
+}
+
+@mixin icon-basket {
+	content: "\E013";
+}
+
+@mixin icon-battery {
+	content: "\E014";
+}
+
+@mixin icon-blank-paper {
+	content: "\E015";
+}
+
+@mixin icon-bookmark {
+	content: "\E016";
+}
+
+@mixin icon-box {
+	content: "\E017";
+}
+
+@mixin icon-broadband1 {
+	content: "\E018";
+}
+
+@mixin icon-broadband2 {
+	content: "\E019";
+}
+
+@mixin icon-broken-screen {
+	content: "\E01A";
+}
+
+@mixin icon-building {
+	content: "\E01B";
+}
+
+@mixin icon-bullet-check-negative {
+	content: "\E01C";
+}
+
+@mixin icon-bullet-disc {
+	content: "\E01D";
+}
+
+@mixin icon-bullet-rev {
+	content: "\E01E";
+}
+
+@mixin icon-bullet {
+	content: "\E01F";
+}
+
+@mixin icon-calendar {
+	content: "\E020";
+}
+
+@mixin icon-camera {
+	content: "\E021";
+}
+
+@mixin icon-cart {
+	content: "\E022";
+}
+
+@mixin icon-casing {
+	content: "\E023";
+}
+
+@mixin icon-change {
+	content: "\E024";
+}
+
+@mixin icon-chart {
+	content: "\E025";
+}
+
+@mixin icon-chat-fill {
+	content: "\E026";
+}
+
+@mixin icon-chat {
+	content: "\E027";
+}
+
+@mixin icon-check-grey {
+	content: "\E028";
+}
+
+@mixin icon-check-white {
+	content: "\E029";
+}
+
+@mixin icon-check {
+	content: "\E02A";
+}
+
+@mixin icon-checkbox-part-selected {
+	content: "\E02B";
+}
+
+@mixin icon-check-list {
+	content: "\E02C";
+}
+
+@mixin icon-clear {
+	content: "\E02D";
+}
+
+@mixin icon-clip {
+	content: "\E02E";
+}
+
+@mixin icon-close-cross {
+	content: "\E02F";
+}
+
+@mixin icon-close-expand {
+	content: "\E030";
+}
+
+@mixin icon-close-menu {
+	content: "\E031";
+}
+
+@mixin icon-close-right-panel {
+	content: "\E032";
+}
+
+@mixin icon-close {
+	content: "\E033";
+}
+
+@mixin icon-cloud {
+	content: "\E034";
+}
+
+@mixin icon-coins {
+	content: "\E035";
+}
+
+@mixin icon-collapse {
+	content: "\E036";
+}
+
+@mixin icon-controller {
+	content: "\E037";
+}
+
+@mixin icon-coverage {
+	content: "\E038";
+}
+
+@mixin icon-coverage1 {
+	content: "\E039";
+}
+
+@mixin icon-coverage2 {
+	content: "\E03A";
+}
+
+@mixin icon-create {
+	content: "\E03B";
+}
+
+@mixin icon-credit-card {
+	content: "\E03C";
+}
+
+@mixin icon-customer-interactions {
+	content: "\E03D";
+}
+
+@mixin icon-data {
+	content: "\E03E";
+}
+
+@mixin icon-diafragma {
+	content: "\E03F";
+}
+
+@mixin icon-document {
+	content: "\E040";
+}
+
+@mixin icon-download {
+	content: "\E041";
+}
+
+@mixin icon-downloads {
+	content: "\E042";
+}
+
+@mixin icon-dropdown {
+	content: "\E043";
+}
+
+@mixin icon-earth {
+	content: "\E044";
+}
+
+@mixin icon-error-no-bg {
+	content: "\E045";
+}
+
+@mixin icon-error-xl-white {
+	content: "\E046";
+}
+
+@mixin icon-error {
+	content: "\E047";
+}
+
+@mixin icon-excel {
+	content: "\E048";
+}
+
+@mixin icon-expand {
+	content: "\E049";
+}
+
+@mixin icon-extra-add-ons {
+	content: "\E04A";
+}
+
+@mixin icon-eye {
+	content: "\E04B";
+}
+
+@mixin icon-facebook-squared {
+	content: "\E04C";
+}
+
+@mixin icon-facebook {
+	content: "\E04D";
+}
+
+@mixin icon-feature-phone-broadband {
+	content: "\E04E";
+}
+
+@mixin icon-flag {
+	content: "\E04F";
+}
+
+@mixin icon-global {
+	content: "\E050";
+}
+
+@mixin icon-googleplus {
+	content: "\E051";
+}
+
+@mixin icon-gplus {
+	content: "\E052";
+}
+
+@mixin icon-grid {
+	content: "\E053";
+}
+
+@mixin icon-hamburger-menu {
+	content: "\E054";
+}
+
+@mixin icon-headphones {
+	content: "\E055";
+}
+
+@mixin icon-heart {
+	content: "\E056";
+}
+
+@mixin icon-home-broadband {
+	content: "\E057";
+}
+
+@mixin icon-home {
+	content: "\E058";
+}
+
+@mixin icon-hosting {
+	content: "\E059";
+}
+
+@mixin icon-hotline {
+	content: "\E05A";
+}
+
+@mixin icon-identification-password {
+	content: "\E05B";
+}
+
+@mixin icon-img {
+	content: "\E05C";
+}
+
+@mixin icon-impersonation {
+	content: "\E05D";
+}
+
+@mixin icon-input-radio-selected {
+	content: "\E05E";
+}
+
+@mixin icon-instagram {
+	content: "\E05F";
+}
+
+@mixin icon-key {
+	content: "\E060";
+}
+
+@mixin icon-knowledge-base {
+	content: "\E061";
+}
+
+@mixin icon-large {
+	content: "\E062";
+}
+
+@mixin icon-lightbulb {
+	content: "\E063";
+}
+
+@mixin icon-list-collapse {
+	content: "\E064";
+}
+
+@mixin icon-list-expand {
+	content: "\E065";
+}
+
+@mixin icon-list {
+	content: "\E066";
+}
+
+@mixin icon-location {
+	content: "\E067";
+}
+
+@mixin icon-lock {
+	content: "\E068";
+}
+
+@mixin icon-locked {
+	content: "\E069";
+}
+
+@mixin icon-log-out {
+	content: "\E06A";
+}
+
+@mixin icon-login-phone-number {
+	content: "\E06B";
+}
+
+@mixin icon-logo-onedrive {
+	content: "\E06C";
+}
+
+@mixin icon-lost-and-stolen-help {
+	content: "\E06D";
+}
+
+@mixin icon-mail {
+	content: "\E06E";
+}
+
+@mixin icon-medium {
+	content: "\E06F";
+}
+
+@mixin icon-menu {
+	content: "\E070";
+}
+
+@mixin icon-message-waiting {
+	content: "\E071";
+}
+
+@mixin icon-message {
+	content: "\E072";
+}
+
+@mixin icon-messages {
+	content: "\E073";
+}
+
+@mixin icon-message-question {
+	content: "\E074";
+}
+
+@mixin icon-meter {
+	content: "\E075";
+}
+
+@mixin icon-minus {
+	content: "\E076";
+}
+
+@mixin icon-minutes-sms-data {
+	content: "\E077";
+}
+
+@mixin icon-mobile-broadband {
+	content: "\E078";
+}
+
+@mixin icon-mobile-messages {
+	content: "\E079";
+}
+
+@mixin icon-mobile-wifi {
+	content: "\E07A";
+}
+
+@mixin icon-mobile {
+	content: "\E07B";
+}
+
+@mixin icon-mobility {
+	content: "\E07C";
+}
+
+@mixin icon-music {
+	content: "\E07D";
+}
+
+@mixin icon-my-tv {
+	content: "\E07E";
+}
+
+@mixin icon-network {
+	content: "\E07F";
+}
+
+@mixin icon-notification {
+	content: "\E080";
+}
+
+@mixin icon-office-365 {
+	content: "\E081";
+}
+
+@mixin icon-office365 {
+	content: "\E082";
+}
+
+@mixin icon-one-to-one-loaner-phone {
+	content: "\E083";
+}
+
+@mixin icon-one-two-three {
+	content: "\E084";
+}
+
+@mixin icon-onescreen-white {
+	content: "\E085";
+}
+
+@mixin icon-open-menu {
+	content: "\E086";
+}
+
+@mixin icon-open-right-panel {
+	content: "\E087";
+}
+
+@mixin icon-open-veris {
+	content: "\E088";
+}
+
+@mixin icon-padlock {
+	content: "\E089";
+}
+
+@mixin icon-paper-doc {
+	content: "\E08A";
+}
+
+@mixin icon-paper-exclamation {
+	content: "\E08B";
+}
+
+@mixin icon-paper-list {
+	content: "\E08C";
+}
+
+@mixin icon-paper-terminate {
+	content: "\E08D";
+}
+
+@mixin icon-pencil {
+	content: "\E08E";
+}
+
+@mixin icon-people {
+	content: "\E08F";
+}
+
+@mixin icon-percent {
+	content: "\E090";
+}
+
+@mixin icon-perfect-start {
+	content: "\E091";
+}
+
+@mixin icon-person {
+	content: "\E092";
+}
+
+@mixin icon-phone {
+	content: "\E093";
+}
+
+@mixin icon-phone404 {
+	content: "\E094";
+}
+
+@mixin icon-phone-handset {
+	content: "\E095";
+}
+
+@mixin icon-picture {
+	content: "\E096";
+}
+
+@mixin icon-piggy {
+	content: "\E097";
+}
+
+@mixin icon-pipeline {
+	content: "\E098";
+}
+
+@mixin icon-placemarker {
+	content: "\E099";
+}
+
+@mixin icon-play-circle {
+	content: "\E09A";
+}
+
+@mixin icon-play {
+	content: "\E09B";
+}
+
+@mixin icon-plus {
+	content: "\E09C";
+}
+
+@mixin icon-present {
+	content: "\E09D";
+}
+
+@mixin icon-print {
+	content: "\E09E";
+}
+
+@mixin icon-products {
+	content: "\E09F";
+}
+
+@mixin icon-question {
+	content: "\E0A0";
+}
+
+@mixin icon-questionmark {
+	content: "\E0A1";
+}
+
+@mixin icon-rating {
+	content: "\E0A2";
+}
+
+@mixin icon-rating1 {
+	content: "\E0A3";
+}
+
+@mixin icon-refresh {
+	content: "\E0A4";
+}
+
+@mixin icon-reject {
+	content: "\E0A5";
+}
+
+@mixin icon-remove {
+	content: "\E0A6";
+}
+
+@mixin icon-repairs {
+	content: "\E0A7";
+}
+
+@mixin icon-router {
+	content: "\E0A8";
+}
+
+@mixin icon-save {
+	content: "\E0A9";
+}
+
+@mixin icon-search {
+	content: "\E0AA";
+}
+
+@mixin icon-search2 {
+	content: "\E0AB";
+}
+
+@mixin icon-service-alt {
+	content: "\E0AC";
+}
+
+@mixin icon-service {
+	content: "\E0AD";
+}
+
+@mixin icon-settings {
+	content: "\E0AE";
+}
+
+@mixin icon-signal {
+	content: "\E0AF";
+}
+
+@mixin icon-simcard {
+	content: "\E0B0";
+}
+
+@mixin icon-small-home {
+	content: "\E0B1";
+}
+
+@mixin icon-small {
+	content: "\E0B2";
+}
+
+@mixin icon-smartphone-broadband {
+	content: "\E0B3";
+}
+
+@mixin icon-smiley {
+	content: "\E0B4";
+}
+
+@mixin icon-speedtest {
+	content: "\E0B5";
+}
+
+@mixin icon-sport {
+	content: "\E0B6";
+}
+
+@mixin icon-star-white {
+	content: "\E0B7";
+}
+
+@mixin icon-star {
+	content: "\E0B8";
+}
+
+@mixin icon-stock-management {
+	content: "\E0B9";
+}
+
+@mixin icon-stores {
+	content: "\E0BA";
+}
+
+@mixin icon-support-circle-24-7 {
+	content: "\E0BB";
+}
+
+@mixin icon-support {
+	content: "\E0BC";
+}
+
+@mixin icon-table-columns {
+	content: "\E0BD";
+}
+
+@mixin icon-tablet-mobile {
+	content: "\E0BE";
+}
+
+@mixin icon-tablet {
+	content: "\E0BF";
+}
+
+@mixin icon-technician {
+	content: "\E0C0";
+}
+
+@mixin icon-telenor {
+	content: "\E0C1";
+}
+
+@mixin icon-telephone {
+	content: "\E0C2";
+}
+
+@mixin icon-thumb-down {
+	content: "\E0C3";
+}
+
+@mixin icon-thumb-right {
+	content: "\E0C4";
+}
+
+@mixin icon-thumb-up {
+	content: "\E0C5";
+}
+
+@mixin icon-tidal {
+	content: "\E0C6";
+}
+
+@mixin icon-time-period {
+	content: "\E0C7";
+}
+
+@mixin icon-time {
+	content: "\E0C8";
+}
+
+@mixin icon-topup {
+	content: "\E0C9";
+}
+
+@mixin icon-truck {
+	content: "\E0CA";
+}
+
+@mixin icon-tv {
+	content: "\E0CB";
+}
+
+@mixin icon-twitter-circle {
+	content: "\E0CC";
+}
+
+@mixin icon-twitter {
+	content: "\E0CD";
+}
+
+@mixin icon-unlocked {
+	content: "\E0CE";
+}
+
+@mixin icon-upload {
+	content: "\E0CF";
+}
+
+@mixin icon-usage {
+	content: "\E0D0";
+}
+
+@mixin icon-usb {
+	content: "\E0D1";
+}
+
+@mixin icon-user {
+	content: "\E0D2";
+}
+
+@mixin icon-veris {
+	content: "\E0D3";
+}
+
+@mixin icon-video {
+	content: "\E0D4";
+}
+
+@mixin icon-voice-broadband {
+	content: "\E0D5";
+}
+
+@mixin icon-water {
+	content: "\E0D6";
+}
+
+@mixin icon-wheel {
+	content: "\E0D7";
+}
+
+@mixin icon-youtube {
+	content: "\E0D8";
+}
+
+@mixin icon-zero-kr {
+	content: "\E0D9";
+}
+
+@mixin icon-zero {
+	content: "\E0DA";
+}
+
+@mixin icon-zip {
+	content: "\E0DB";
+}
+
+@mixin icon-zoom-out {
+	content: "\E0DC";
+}
+
+@mixin icon-zoom {
+	content: "\E0DD";
+}
+
+
+
+@font-face {
+	font-family: "framework-icons";
+	src: url("../fonts/telenorIcon/framework-icons.eot");
+	src: url("../fonts/telenorIcon/framework-icons.eot?#iefix") format("eot"),
+			 url("../fonts/telenorIcon/framework-icons.woff") format("woff"),
+			 url("../fonts/telenorIcon/framework-icons.ttf") format("truetype"),
+			 url("../fonts/telenorIcon/framework-icons.svg#framework-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}

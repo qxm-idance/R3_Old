@@ -1,0 +1,17 @@
+<div class="text--right">
+	<div class="dropdown dropdown--download" data-component="dropdown">
+		<button class="button button--default button--small" role="button" data-toggle="dropdown">
+			<span class="button__label icon--right icon-arrow-down">
+				<span class="button__text">
+					Download
+				</span>
+			</span>
+		</button>
+		<div class="drop dropdown__content">
+			<ul>
+				<li><a href="#" class="icon-excel">Download as CSV</a></li>
+				<li><a href="#" class="icon-acrobat">Download as XLSX</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<button class="button button--default" data-component="button" data-alias="greySpinner">
+	<span class="button__label icon--right icon-arrow-next">Click me</span>
+	<span class="button__label--success icon--left icon-thumb-up">Success</span>
+	<span class="button__spinner"><span class="button__spinner-container"><i></i></span></span>
+</button>
+
+<script>
+	window.sgReady(function () {
+		var $button = window.app.core.dom.find('[data-alias="greySpinner"]');
+		var auraButton = $button.data('$component');
+		var dfd = null;
+
+		$button.on('click', function () {
+			dfd = auraButton.activityIndicator();
+			setTimeout(function () {
+				dfd && dfd.resolve();
+			}, 2000);
+		});
+
+	});
+</script>

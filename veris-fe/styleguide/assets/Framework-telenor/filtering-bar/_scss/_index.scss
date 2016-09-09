@@ -1,0 +1,59 @@
+/**
+name: Filtering Bar
+type: ui
+modifiers:
+      --filters: filtering bar (using on Product category and accessory pages)
+examples:
+  - name: filter list example
+    tmpl:
+        include: filtering-list.html
+  - name: filter select example
+    tmpl:
+        include: filtering-select.html
+*/
+
+.filter {
+	$root: &;
+	padding: 10px 4px 4px 10px;
+
+	&--under-tabs {
+		margin-top: -1px;
+	}
+
+	&__list {
+		letter-spacing: -4px;
+
+		[type="checkbox"] {
+			display: none;
+
+			&:checked + #{$root}__label {
+				color: $color-white;
+				background: $color-telenor-blue;
+				border-color: $color-telenor-blue-dark;
+			}
+		}
+	}
+
+	&__label {
+		display: block;
+		padding: 0 13px;
+		height: 32px;
+		line-height: 30px;
+		border-radius: $radius-button;
+		border: 1px solid $color-steel-grey;
+		cursor: pointer;
+		transition: all .125s;
+		background: $color-white;
+
+		&:hover {
+			background: $color-ghost-white;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: 0;
+		margin: 0 6px 6px 0;
+	}
+}

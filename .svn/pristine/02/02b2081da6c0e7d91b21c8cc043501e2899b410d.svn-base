@@ -1,0 +1,9 @@
+.js .js--hidden {
+    position: absolute !important;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+}

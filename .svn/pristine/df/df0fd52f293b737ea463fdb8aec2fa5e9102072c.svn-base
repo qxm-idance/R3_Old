@@ -1,0 +1,206 @@
+.accordion-filter {
+
+
+  width: 100%;
+
+  @extend %text-size--13;
+  font-weight: normal;
+
+  // shared list item styling
+  .accordion-filter__parent-item-toggle,
+  .accordion-filter__leaf-item {
+    //padding-top: 5px;
+    padding-left: 10px;
+
+    line-height: $base-button-size;
+    height: $base-button-size;
+  }
+
+
+  // temp focus highlighter
+  *:focus {
+    // opacity: .5;
+  }
+
+  // ----------------------------------------------------------------
+  // parent item
+  &__parent-item {
+
+    position: relative;
+    display: block;
+
+    // height: $base-button-size;
+    overflow: hidden;
+
+    // meta states
+
+
+    &[data-state="all-selected"] .accordion-filter__parent-item-toggle label:before {
+      @extend .icon-check:before;
+    }
+
+    &[data-state="some-selected"] .accordion-filter__parent-item-toggle label:before {
+      @extend .icon-checkbox-part-selected:before;
+
+      padding-left: 3px;
+      padding-right: 0;
+    }
+
+
+    // hide / show list
+    .accordion-filter__leaf-item {
+      display: none;
+    }
+
+    &.is-expanded {
+      .accordion-filter__leaf-item {
+        display: block;
+      }
+
+      .accordion-filter__parent-item-expand:before {
+        @include icon-arrow-up;
+      }
+    }
+
+    & .is-open {
+      .accordion-filter__leaf-item {
+        display: block;
+      }
+
+      .accordion-filter__parent-item-expand:before {
+        @include icon-arrow-up;
+      }
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // parent item toggle
+
+  &__parent-item-toggle {
+
+    display: block;
+    height: $base-button-size;
+
+    border-bottom: $border;
+
+
+
+    // focus
+    &:focus {
+      label:before {
+        background-color: $color-paper-white;
+        border: $border-form-input-focus;
+      }
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // expand button
+
+  &__parent-item-expand {
+
+    width: $base-button-size;
+    height: $base-button-size;
+
+    border-bottom: $border;
+
+    line-height: 44px;
+    font-size: 30px;
+
+    text-align: center;
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    background: $color-smoke-grey;
+    background-image: $gradient-white;
+    border-left: $border;
+
+    &:before {
+      position: relative;
+    }
+
+    // focus state
+    // TODO: Align with oveall button focus states
+    &:focus:before {
+      opacity: .5;
+    }
+
+    &:focus:after {
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      top: 0;
+      left: 0;
+
+      box-sizing: border-box;
+
+      border: $border-form-input-focus;
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // leaf item
+
+  &__leaf-item {
+    border-bottom: $border-light;
+
+    // adjust label to fill item
+    label {
+		padding-top: 2px;
+		line-height: 12px;
+		display: inline-block;
+		vertical-align: middle;
+
+      &:before {
+        top: 10px;
+      }
+    }
+
+    input[type="checkbox"] {
+    	display:inline-block;
+    	vertical-align: middle;
+    }
+
+    &:last-child {
+      border-bottom: $border;
+    }
+  }
+
+  &__leaf-parent-item {
+    //border-bottom: $border;
+    border-bottom: none;
+  }
+
+  // ----------------------------------------------------------------
+  // list element
+
+  &__parent-item-list {
+
+    > .accordion-filter__leaf-item {
+      padding-left: 33px;
+    }
+
+    //border-top: $border;
+    //border-bottom: $border;
+  }
+
+  .is-expanded .accordion-filter__parent-item-list {
+      //border-bottom: none;
+  }
+
+
+
+  // ----------------------------------------------------------------
+  // mobile breakpoint
+
+  @include until($bp-medium) {
+    width: auto;
+  }
+}

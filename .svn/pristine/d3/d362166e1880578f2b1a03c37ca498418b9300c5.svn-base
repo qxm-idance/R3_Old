@@ -1,0 +1,6 @@
+<div class="form-item--toggle form-item--toggle--wide" data-component="switcher">
+	<input class="toggle__radio" data-toggle-value="on" value="on" id="toggle1" type="radio" name="switcher1" data-selector="first-option" checked><label for="toggle1">Yes</label>
+	<input class="toggle__radio" data-toggle-value="off" value="off" id="toggle2" type="radio" name="switcher1" data-selector="second-option"><label for="toggle2">No</label>
+	<div class="form-item--toggle__switch"><span class="icon-drag"></span></div>
+	<div class="form-item--toggle__track"></div>
+</div>

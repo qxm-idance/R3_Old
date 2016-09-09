@@ -1,0 +1,37 @@
+/**
+name: Collapse
+type: ui
+modifiers:
+	--closed: Sets default hidden state for collapse content
+examples:
+	- name: Simple collapsible content
+	  tmpl:
+		  include: simple.html
+	- name: Simple collapsible content with additional close button
+	  tmpl:
+		  include: simple-with-closer.html
+	- name: Collapsible content with labels
+	  tmpl:
+		  include: with-labels.html
+	- name: Grpips of collapsible contents
+	  tmpl:
+		  include: groups.html
+	- name: Collapsible content with radio triggers
+	  tmpl:
+		  include: with-radio-triggers.html
+*/
+.collapse {
+
+	&__target {
+		position: relative;
+		overflow: hidden;
+
+		&.collapsing {
+			transition: height 1s ease;
+		}
+	}
+
+	&--closed {
+		height: 0;
+	}
+}

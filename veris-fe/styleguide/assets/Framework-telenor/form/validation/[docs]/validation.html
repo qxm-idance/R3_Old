@@ -1,0 +1,153 @@
+<form data-component="form" data-extensions="form/validation" method="post" novalidate="novalidate">
+	<section class="container leader">
+		<div class="border box--greyed padding-whole">
+			<div class="grid-row leader--small">
+				<div class="col-md-6">
+					<div class="form-item form-item--required">
+						<label>Your street name</label>
+						<div class="rel leader--xsmall">
+							<input autofocus="autofocus"
+								   data-val="true"
+								   data-val-length="Street name field should contain less than 50 characters."
+								   data-val-length-max="50"
+								   data-val-required="Street name field is required."
+								   id="AddressData_StreetName" name="AddressData.StreetName" tabindex="4" type="text" value="" autocomplete="off" class="valid">
+							<span class="field-validation-valid" data-valmsg-for="AddressData.StreetName" data-valmsg-replace="true"></span>
+							<div class="tooltip-trigger-marker" data-msg-link="AddressData.StreetName">
+								<div class="icon-error tooltip__trigger--validation">
+									<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.StreetName">
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 align--bottom">
+					<div class="grid-row--gutter-none form-item--multi-fields leader--xsmall">
+						<div class="col-md-3">
+							<div class="form-item form-item--required">
+								<label>No.</label>
+								<div class="rel">
+									<input data-alias="street-number"
+										   data-val="true"
+										   data-val-regex="House number field should contain up to 4 digits."
+										   data-val-regex-pattern="^[0-9]{1,4}$"
+										   data-val-required="House number field is required."
+										   id="AddressData_HouseNumber" name="AddressData.HouseNumber" tabindex="5" type="text" value="" autocomplete="off">
+									<span class="field-validation-valid" data-valmsg-for="AddressData.HouseNumber" data-valmsg-replace="true"></span>
+									<div class="tooltip-trigger-marker" data-msg-link="AddressData.HouseNumber">
+										<div class="icon-error tooltip__trigger--validation">
+											<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.HouseNumber">
+												<p></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-item form-item--required">
+								<label>Letter</label>
+								<div class="rel">
+									<input data-alias="house-letter"
+										   data-val="true"
+										   data-val-length="House letter field should contain less than 4 characters."
+										   data-val-length-max="4"
+										   data-val-required="House letter field is required."
+										   id="AddressData_HouseLetter"
+										   name="AddressData.HouseLetter"
+										   tabindex="6" type="text" value="">
+									<span class="field-validation-valid" data-valmsg-for="AddressData.HouseLetter" data-valmsg-replace="true"></span>
+									<div class="tooltip-trigger-marker" data-msg-link="AddressData.HouseLetter">
+										<div class="icon-error tooltip__trigger--validation">
+											<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.HouseLetter">
+												<p></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-item form-item--required">
+								<label>Floor</label>
+								<div class="rel">
+									<input
+										data-val="true"
+										data-val-regex="Floor field should contain numeric value."
+										data-val-regex-pattern="^[0-9a-zA-Z]{1,3}$"
+										data-val-required="Floor number field is required."
+										id="AddressData_Floor" name="AddressData.Floor" tabindex="7" type="text" value="">
+									<span class="field-validation-valid" data-valmsg-for="AddressData.Floor" data-valmsg-replace="true"></span>
+									<div class="tooltip-trigger-marker" data-msg-link="AddressData.Floor">
+										<div class="icon-error tooltip__trigger--validation">
+											<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.Floor">
+												<p></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-item form-item--required">
+								<label>Side/Door</label>
+								<div class="rel">
+									<input data-val="true" data-val-length="Door number field should contain less than 10 characters." data-val-length-max="10" data-val-required="Side/Door number field is required." id="AddressData_DoorNumber" name="AddressData.DoorNumber" tabindex="8" type="text" value="">
+									<span class="field-validation-valid" data-valmsg-for="AddressData.DoorNumber" data-valmsg-replace="true"></span>
+									<div class="tooltip-trigger-marker" data-msg-link="AddressData.DoorNumber">
+										<div class="icon-error tooltip__trigger--validation">
+											<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.DoorNumber">
+												<p></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid-row leader--small">
+				<div class="col-md-6">
+					<div class="form-item form-item--required">
+						<label>Zip code</label>
+						<div class="rel leader--xsmall">
+							<input data-alias="zip"  data-val="true" data-val-regex="Zip code field should contain 4 digits." data-val-required="Zip code field is required." data-val-regex-pattern="^[0-9]{4}$" data-val-required="Zip code field is required." id="AddressData_ZipCode" name="AddressData.ZipCode" tabindex="9" type="text" value="" autocomplete="off">
+							<span class="field-validation-valid" data-valmsg-for="AddressData.ZipCode" data-valmsg-replace="true"></span>
+							<div class="tooltip-trigger-marker" data-msg-link="AddressData.ZipCode">
+								<div class="icon-error tooltip__trigger--validation">
+									<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.ZipCode">
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-item form-item--required">
+						<label>City</label>
+						<div class="rel  leader--xsmall">
+							<input data-alias="city" data-payload-zipcode="AddressData_ZipCode" data-val="true" data-val-length="City field should contain less than 50 characters." data-val-length-max="50" data-val-required="City field is required." id="AddressData_City" name="AddressData.City" tabindex="10" type="text" value="" autocomplete="off">
+							<span class="field-validation-valid" data-valmsg-for="AddressData.City" data-valmsg-replace="true"></span>
+							<div class="tooltip-trigger-marker" data-msg-link="AddressData.City">
+								<div class="icon-error tooltip__trigger--validation">
+									<div class="tooltip tooltip--error" data-component="tooltip" role="tooltip" data-element="VALIDATION_MESSAGE_FOR-AddressData.City">
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="padding-whole padding-trailer--none">
+				<button data-component="button" data-alias="testConnection" data-submit="true" class="button button--accept" tabindex="12">
+					Validate
+				</button>
+			</div>
+		</div>
+	</section>
+</form>

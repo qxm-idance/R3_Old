@@ -1,0 +1,10 @@
+<div class="message message--success" data-component="message">
+	<div class="message__inner" data-element="messageContent">
+		<span class="message__icon icon icon-notification"></span>
+
+		<div class="text-size--13 message__text">
+			<p data-element="messageText">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+		<button class="message__close" data-component="element" data-alias="messageClose"><span class="icon-remove"></span></button>
+	</div>
+</div>

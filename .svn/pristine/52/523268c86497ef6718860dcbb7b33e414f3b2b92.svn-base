@@ -1,0 +1,18 @@
+.terms-list dt {
+    font-size: .8125rem;
+    font-size: 0.75rem;
+}
+.terms-list dd {
+    color: #494949;
+    line-height: 1.4rem;
+    margin: 0 0 1rem;
+}
+.terms-list {
+    color: rgb(117, 117, 117);
+    line-height: 0.9375rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0px;
+}
+.block--col {
+    padding: 1.875rem 0px;
+}

@@ -1,0 +1,14 @@
+/*tooltips by-Emilie*/
+.col--expand .form-item--toggle + .icon-questionmark{
+    line-height: 32px;
+}
+.tooltip__trigger.icon-questionmark:before {
+    vertical-align: middle;
+}
+.tooltip.is-active {
+    opacity: 1;
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    transform: translateY(3px);
+    visibility: visible
+}

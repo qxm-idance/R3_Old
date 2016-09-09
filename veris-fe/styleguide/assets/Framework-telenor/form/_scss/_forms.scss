@@ -1,0 +1,771 @@
+// Define supported input types in one place.
+@mixin supported-inputs ($textarea: false) {
+
+	@if $textarea {
+		textarea,
+		[type="text"],
+		[type="number"],
+		[type="email"],
+		[type="month"],
+		[type="password"],
+		[type="tel"],
+		[type="url"],
+		[type="search"] {
+			@content;
+		}
+	} @else {
+		[type="text"],
+		[type="number"],
+		[type="email"],
+		[type="month"],
+		[type="password"],
+		[type="tel"],
+		[type="url"],
+		[type="search"] {
+			@content;
+		}
+	}
+}
+
+@mixin form-focus {
+	&:focus {
+		border: $border-form-input-focus;
+		outline: none;
+	}
+
+	.section--negative &:focus {
+		border: $border-form-negative-input-focus;
+	}
+}
+
+@mixin form-error {
+	position: relative;
+
+	@include supported-inputs (true) {
+		&,
+		&:focus {
+			border-color: $color-telenor-red !important;
+			@include box-shadow-inset;
+		}
+	}
+
+	// Styles for select
+	
+	&.form-select {
+			
+		.tooltip-trigger-marker {
+			display: none;
+		}
+		
+		.form-select__field,
+		select:hover ~ .form-select__field {
+			border-color: $color-telenor-red !important;
+			@include box-shadow-inset;
+			
+			&:after {
+				top: 2px;
+				bottom: 2px;
+				right: 2px;
+			}
+		}
+	}
+	
+	
+
+	// Error icon.
+	[class^="icon-"] {
+		color: $color-error;
+		position: absolute;
+		right: $small-spacing-unit;
+		text-align: center;
+		font-size: 17px;
+		line-height: 20px;
+		@extend %icon-vertical-align;
+		@include zindex(ui-top);
+	}
+}
+
+// Using wrapper to encapsulate styles a little.
+%default-input {
+	padding: $small-spacing-unit;
+	background: $color-white;
+	border: $border-form-input;
+	border-radius: 2px;
+	color: $color-graphite-black;
+	max-width: 100%;
+	height: $base-button-size + 2px;
+	line-height: normal;
+	transition: $transition-form-all;
+
+	&[disabled] {
+		background: $color-paper-white;
+		border-color: $color-smoke-grey;
+		-webkit-text-fill-color: $color-graphite-black;
+		opacity: 1;
+
+		&:hover {
+			border-color: $color-smoke-grey;
+		}
+	}
+
+	&:hover {
+		border: $border-form-input-hover;
+
+		@at-root .section--negative & {
+			border-color: $color-silver-grey;
+		}
+	}
+
+	@at-root .section--negative & {
+		border-color: transparent;
+	}
+
+	// ----------------------------------------------------------------
+	// placeholder color
+
+	&::-webkit-input-placeholder { /* WebKit browsers */
+		color: $color-steel-grey;
+	}
+
+	&::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color: $color-steel-grey;
+		opacity: 1;
+	}
+
+	&::-ms-input-placeholder {
+		color: $color-steel-grey;
+	}
+
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color: $color-steel-grey;
+	}
+
+	&:focus {
+		border: $border-form-input-focus;
+		outline: none;
+	}
+
+	.section--negative &:focus {
+		border: $border-form-negative-input-focus;
+	}
+}
+
+%default-label {
+	@extend %text-size--13;
+	padding: 0 4px 6px;
+	display: inline-block;
+	vertical-align: top;
+	color: $color-stone-grey;
+
+	.section--negative & {
+		color: $color-white;
+	}
+
+	.form-item--disabled & {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&[for] {
+		cursor: pointer;
+	}
+}
+
+
+// Base input styling
+// --------------------------------------------------------------
+// .form-item added to contain cascade.
+
+.select-toggle {
+	position: absolute;
+	background: rgba(0, 0, 0, 0);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	@include zindex(ui-top);
+}
+
+// Input[type="range"] when polyfilled with webshims.
+// Default styling displayed as comments to override.
+// ---------------------------------------
+
+.form-item {
+
+	label {
+		@extend %default-label;
+		position: relative;
+
+		&.text--small {
+			@extend %text-size--13;
+		}
+
+		&.text--med {
+			@extend %text-size--16;
+		}
+
+		&.text--large {
+			@extend %text-size--19;
+		}
+	}
+
+	//negative hover
+
+	textarea {
+		@extend %default-input;
+		line-height: 1.5625em;
+		min-height: 100px;
+		padding: 8px 10px;
+
+		@include form-focus;
+	}
+
+	[type="range"] {
+		width: 50%;
+	}
+
+	.button {
+		&--link {
+			float: left;
+		}
+	}
+
+	.ws-range {
+		background-color: $color-silver-grey;
+		box-shadow: none;
+		border: none;
+
+		.ws-range-thumb {
+			$dim: 16;
+
+			@extend %icon-base-styles;
+			@extend .icon-input-radio-selected:before;
+
+			width: .7em;
+			height: .7em;
+			background: #1eab13;
+			border: .4em solid $color-white;
+			box-shadow: 0 0 0 1px $color-silver-grey, 0 1px 5px 0 rgba(0, 0, 0, .25);
+
+			&:after,
+			&:before {
+				content: "";
+				display: none;
+			}
+		}
+
+		.ws-range-rail {
+			background: $color-silver-grey;
+			box-shadow: none;
+			border: none;
+		}
+
+		.ws-range-progress {
+			background: #1eab13;
+		}
+	}
+
+	.form-item {
+		&--multi {
+			[type="text"],
+			[type="text"]:hover {
+				border-left-width: 0;
+
+				&:focus {
+					border-left-width: 1px;
+					margin-left: -1px;
+				}
+			}
+
+			.form-item:first-child [type="text"],
+			.form-item:first-child [type="text"]:hover {
+				border-right-width: 1px;
+				border-left-width: 1px;
+
+				&:focus {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.form-checkbox {
+		.text--med {
+			line-height: 18px;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// label
+
+	&__label {
+		margin-right: 5px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	@include supported-inputs () {
+		@extend %default-input;
+		@include form-focus;
+		width: 100%;
+		display: block;
+		-webkit-appearance: none;
+	}
+
+	&--required {
+		label:after,
+		.form-item__description:after {
+			content: "*";
+			color: $color-telenor-red;
+			display: inline-block;
+			padding-left: 2px;
+
+			@include until($bp-xsmall) {
+					margin-left: -$xsmall-spacing-unit;
+					transform: translate($xsmall-spacing-unit, 0);
+			}
+		}
+	}
+
+	@at-root .pre-lightbox .form-item {
+		 &--required {
+				label:after,
+				.form-item__description:after {
+					color: $color-white;
+				}
+			}
+	}
+
+	&__description {
+		@extend %default-label;
+		margin-top: 6px;
+	}
+
+	&--multi-paddings {
+		[class*="col-"] {
+			padding-left: 1px;
+
+			&:first-child {
+				padding: 0;
+			}
+		}
+	}
+
+	&--multi-fields {
+		[class*="col-"] {
+
+			.form-item {
+				margin-left: -1px;
+			}
+
+			input {
+				border-radius: 0;
+
+				&:hover,
+				&:focus {
+					position: relative;
+					@include zindex(ui-middle);
+				}
+
+				&:focus {
+					@include zindex(ui-middle, 1);
+				}
+			}
+
+			&:first-child {
+
+				input {
+					border-top-left-radius: 2px;
+					border-bottom-left-radius: 2px;
+				}
+			}
+
+			&:last-child {
+
+				.form-item {
+					margin-right: 0;
+				}
+
+				input {
+					border-top-right-radius: 2px;
+					border-bottom-right-radius: 2px;
+				}
+			}
+		}
+	}
+
+	&--error {
+		@include form-error;
+	}
+
+	&--inline {
+		@extend %clearfix;
+
+		display: inline-block;
+		vertical-align: top;
+		margin-left: $small-spacing-unit;
+		margin-right: $small-spacing-unit - 4;
+
+		@include until($bp-medium) {
+			display: block;
+			margin: 0;
+			margin-bottom: $base-spacing-unit;
+		}
+
+		.block--filter & {
+			display: block;
+			margin: $base-spacing-unit $base-spacing-unit 0 0;
+
+			@include until ($bp-small) {
+				margin-right: 0;
+			}
+		}
+
+		// no margin left on first item
+		&:first-child {
+			margin-left: 0;
+		}
+
+		label + & {
+			margin-left: 7px;
+		}
+
+		select {
+			padding-right: 40px;
+			margin-right: 40px;
+		}
+	}
+
+	&--filter {
+		position: relative;
+
+		&:before {
+			@extend %icon-base-styles;
+			@include icon-search;
+
+			line-height: 1;
+			position: absolute;
+			left: $small-spacing-unit;
+			top: 50%;
+		}
+
+		input {
+			padding-left: $large-spacing-unit;
+		}
+
+		[data-loading] &:before {
+			@include icon-wheel;
+			animation: spin 2s linear infinite;
+		}
+
+		.icon-clear {
+			background-color: transparent;
+			border: none;
+			color: $color-graphite-black;
+			line-height: 1;
+			padding: 0;
+			position: absolute;
+			outline: none;
+			right: $small-spacing-unit;
+			top: 50%;
+			margin-top: -21px;
+		}
+
+		[type="submit"] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		// is empty state > hide clear
+		&.is-empty .icon-clear {
+			display: none;
+		}
+	}
+
+	// removed by josef to escape
+	@include at-least($bp-small) {
+		// Small version.
+		&.form-item--small {
+			@include supported-inputs () {
+				font-size: 13px;
+				line-height: normal;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				height: $small-button-size;
+			}
+		}
+
+		&--select {
+			// Small version.
+			&.form-item--small {
+				font-size: 13px;
+			}
+		}
+	}
+
+	&__clear-button {
+		background-color: transparent;
+		border: none;
+		color: $color-graphite-black;
+		line-height: 1;
+		padding: 0;
+		position: absolute;
+		outline: none;
+		right: $small-spacing-unit;
+		top: 50%;
+		margin-top: -8px;
+
+		&:before {
+			@extend %icon-base-styles;
+			@include icon-clear;
+		}
+	}
+}
+
+.form-row {
+	margin-top: $base-spacing-unit;
+}
+
+// Form components
+// --------------------------------------------------
+// Adds icons and buttons to input elements.
+.form-item__row {
+	position: relative;
+	display: inline-block;
+
+	.form-comp {
+
+		&:before {
+			@extend %icon-base-styles;
+
+			font-size: 20px;
+			line-height: 36px;
+			color: $color-graphite-black;
+			font-family: "framework-icons";
+			position: absolute;
+			top: 0;
+			border: none;
+			background: transparent;
+			margin: 2px 0;
+			padding: 0 $small-spacing-unit;
+		}
+
+		&.comp-date:before {
+			@extend .icon-calendar:before;
+		}
+
+		// Styling for component placed before the input
+		&:first-child {
+
+			&:before {
+				left: 0;
+				padding-right: 0;
+			}
+
+			& + input {
+				width: auto;
+				padding-left: ($small-spacing-unit + 20px + $small-spacing-unit);
+			}
+		}
+
+		// Styling for component placed after the input
+		&:last-child {
+			&:before {
+				right: 0;
+				border-left: 2px solid $color-silver-grey;
+				border-radius: 2px;
+				padding: 0 ($small-spacing-unit - 2px);
+				margin: 2px;
+				background: $color-paper-white;
+			}
+		}
+	}
+
+	input:first-child {
+		padding-right: ($small-spacing-unit + 20px + $small-spacing-unit);
+		width: auto;
+	}
+}
+
+// Radio buttons and checkboxes
+// ------------------------------------------------------------
+
+// Shared styling of labels for checkboxes and radio buttons.
+%radio-label {
+	padding: 6px 0 0 32px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 0;
+	text-align: left;
+	margin-right: 15px;
+
+	&:before {
+		font-family: "framework-icons";
+		background: $color-white;
+		border: 1px solid $color-silver-grey;
+		font-weight: normal;
+		font-style: normal;
+		text-align: center;
+		color: $color-telenor-blue;
+		position: absolute;
+		left: 0;
+	}
+}
+
+// Inline labels
+// -----------------------------------------------------------------
+// Use inline labels for at-least-tablet-wide and fall back to stacked labels for smaller screens.
+
+@include at-least($bp-medium) {
+
+	.label-inline {
+		padding-top: $base-spacing-unit;
+
+		label {
+			float: left;
+			clear: left;
+			width: 20%;
+			text-align: right;
+			padding-right: $small-spacing-unit;
+			padding-top: 13px;
+
+			.form-item--small & {
+				padding-top: 9px;
+			}
+		}
+
+		@include supported-inputs {
+			width: 80%;
+		}
+
+		.form-item__row {
+			width: 78.99%;
+			display: inline-block;
+
+			@include supported-inputs {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// Inline layout for checkboxes and radio buttons.
+// Fall back to stacked checkboxes for smaller screens than tablet.
+@include at-least($bp-small) {
+
+	.form-inline {
+		line-height: 0;
+
+		[class^="form-radio"],
+		[class^="form-checkbox"] {
+			display: inline-block;
+			margin-right: $small-spacing-unit - 4; // compensate for inline block default margin
+			line-height: 0;
+		}
+	}
+}
+
+// Error summary
+// -----------------------------------------------------------------
+.error-summary {
+	border-radius: 2px;
+	background-color: $color-error;
+	border: 4px solid $color-telenor-red;
+	color: $color-white;
+	padding: $large-spacing-unit $base-spacing-unit;
+
+	&__title {
+		border-bottom: 1px solid $color-telenor-red;
+		padding-bottom: $base-spacing-unit;
+	}
+
+	&__list {
+
+		li {
+			padding-left: $large-spacing-unit;
+			position: relative;
+
+			&:before {
+				@extend %icon-base-styles;
+				@extend .icon-error:before;
+				color: $color-white;
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 18px;
+				width: 18px;
+			}
+		}
+	}
+}
+
+// Error summary
+// -----------------------------------------------------------------
+.warning-summary {
+	@extend .error-summary;
+	background-color: $color-telenor-yellow;
+	border: 4px solid $color-yellow-dark;
+	color: $color-stone-grey;
+
+	.error-summary__title {
+		border-bottom: 1px solid $color-yellow-dark;
+		color: $color-yellow-dark;
+	}
+}
+
+// Megaselect custom styles
+// -----------------------------------------------------------------
+.form-item--megaselect {
+	a {
+		cursor: pointer;
+	}
+}
+
+/* Common forms */
+
+.form-item--inline.form-item--first {
+	margin-left: 0;
+}
+
+.form-item--multi {
+
+	&.multi-large {
+
+		.form-item {
+			vertical-align: top;
+			padding-left: 1px;
+			margin: 0;
+
+			input {
+				border-radius: 2px;
+			}
+
+			&:first-child {
+				padding: 0;
+			}
+
+			&.no-child:first-child {
+				padding-left: 1px;
+			}
+
+			@include until($bp-medium) {
+				&.mobile-one-whole +.form-item {
+					margin-top: $base-spacing-unit;
+				}
+			}
+		}
+	}
+
+	.form-item--first {
+		width: 35% !important;
+	}
+
+	.form-item--second {
+		width: 65% !important;
+	}
+}

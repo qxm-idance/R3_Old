@@ -1,0 +1,2 @@
+<input class="datepicker__start" type="date"/>
+<input class="datepicker__end" type="date"/>

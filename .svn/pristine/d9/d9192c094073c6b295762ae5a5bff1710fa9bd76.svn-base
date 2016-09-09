@@ -1,0 +1,27 @@
+<div class="category-filters">
+	<div class="filter__container box--greyed border">
+		<ul class="filter__list">
+			<li class="filter__item">
+				<input type="checkbox" name="checkbox-0" id="checkbox-0" value="all"/>
+				<label for="checkbox-0" class="filter__label">
+					<span class="text-size--13">Label</span>
+					<span class="text-size--11">(10)</span>
+				</label>
+			</li>
+			<li class="filter__item">
+				<input type="checkbox" name="checkbox-0" id="checkbox-1" value="all"/>
+				<label for="checkbox-1" class="filter__label">
+					<span class="text-size--13">Label</span>
+					<span class="text-size--11">(6)</span>
+				</label>
+			</li>
+			<li class="filter__item">
+				<input type="checkbox" name="checkbox-0" id="checkbox-3" value="all"/>
+				<label for="checkbox-3" class="filter__label">
+					<span class="text-size--13">Label</span>
+					<span class="text-size--11">(8)</span>
+				</label>
+			</li>
+		</ul>
+	</div>
+</div>

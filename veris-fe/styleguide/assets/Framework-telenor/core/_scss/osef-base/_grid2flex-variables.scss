@@ -1,0 +1,32 @@
+// variables
+
+// default configuration
+$configuration: (
+	columns-count:                               12,
+	container:                                   grid-container,
+	row:                                         grid-row,
+	column:                                      col,
+	box-sizing-enabled:                          false,
+	offsets-enabled:                             true,
+	row-vertical-alignment-enabled:              true,
+	row-horizontal-alignment-enabled:            true,
+	column-vertical-alignment-enabled:           true,
+	column-ordering-enabled:                     true,
+	breakpoints-enabled:                         true
+);
+
+// default gutters
+// default gutter value used on $row without gutter prefixes
+$gutters: (
+	gutter:                                      20px,
+	gutter-none:                                 0,
+	gutter-large:                                40px,
+	gutter-small:                                10px
+);
+
+// default breakpoints
+$breakpoints: (
+	xs:                                          0,
+	sm:                                          480px,
+	md:                                          768px
+);

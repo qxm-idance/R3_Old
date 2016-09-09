@@ -1,0 +1,142 @@
+/**
+name: Range slider
+type: ui
+modifiers:
+  --single: Singe slider
+examples:
+	- name: Range slider
+	  tmpl:
+	  	  include: range-slider.html
+	- name: Single slider
+	  tmpl:
+	  	  include: single-slider.html
+*/
+
+.range-slider {
+	user-select: none;
+	-webkit-touch-callout: none;
+
+	&__container {
+		height: $xsmall-spacing-unit;
+		position: relative;
+		background: $color-steel-grey;
+		border-radius: $xsmall-spacing-unit / 2;
+		margin-bottom: 8px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.2) inset;
+	}
+
+	&__points {
+		background: $gradient-blue;
+		position: absolute;
+		border-radius:2px 0 0 2px;
+		height: 100%;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.2) inset;
+	}
+
+	&__point {
+		width: 15px;
+		height: 15px;
+		margin-top: -7px;
+		border-radius: 50%;
+		cursor: pointer;
+		background: $color-white;
+		border: 0;
+		box-shadow: 0 0 0 1px $color-steel-grey, 0 1px $xsmall-spacing-unit 0 rgba(0, 0, 0, .25);
+		outline: none;
+
+		&--from {
+			float: left;
+			margin-left: -11px;
+
+			.range-slider--single & {
+				display: none;
+			}
+		}
+
+		&--to {
+			float: right;
+			margin-right: -8px;
+		}
+	}
+
+	&__values {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		position: relative;
+		color: $color-stone-grey;
+		font-size: 11px;
+		line-height: 13px;
+
+		li {
+			list-style: none;
+			flex: 1;
+			text-align: right;
+
+			&:first-child {
+				position: absolute;
+				left: -4px;
+				text-align: left;
+
+				.range-slider__value--empty {
+					&:before {
+						border-right: none;
+						border-left: $border;
+					}
+				}
+			}
+
+			&:last-child {
+				.range-slider__value,
+				.range-slider__value--empty {
+					span {
+						transform: translate(-85%,0);
+					}
+					&:before {
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__value-label {
+		display: block;
+		margin-bottom: 2px;
+	}
+
+	&__value {
+		&--empty {
+			position: relative;
+			padding-top: 14px;
+			display: inline-block;
+			height: 20px;
+			span {
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%,0);
+			}
+			&:before {
+				border-right: $border;
+				width: 1px;
+				margin-left: -1px;
+				background-color: $border;
+				content: " ";
+				height: 8px;
+				position: absolute;
+				left: 50%;
+				top: 0;
+			}
+		}
+	}
+
+	&--single {
+		cursor: pointer;
+
+		.range-slider__select--from {
+			display: none;
+		}
+	}
+}

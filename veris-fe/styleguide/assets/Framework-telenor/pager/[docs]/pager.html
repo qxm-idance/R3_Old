@@ -1,0 +1,9 @@
+<div class="pager" data-component="pager" data-alias="pagination"></div>
+
+<script>
+	window.sgReady(function () {
+		var $pager = window.app.core.dom.find('[data-alias="pagination"]');
+		var auraPager = $pager.data('$component');
+		auraPager.updateSettings(3, 35, 1);
+	});
+</script>

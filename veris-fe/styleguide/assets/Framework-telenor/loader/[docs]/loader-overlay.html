@@ -1,0 +1,29 @@
+<div class="rel padding-whole--xlarge">
+	<div data-component="loader" data-alias="loaderOverlay">
+		Please click one of the buttons below
+	</div>
+</div>
+<div data-component="button" class="button button--default" data-alias="loaderOverlayBusy">
+	<span class="button__label">Set busy</span>
+</div>
+<div data-component="button" class="button button--default" data-alias="loaderOverlayReady">
+	<span class="button__label">Set ready</span>
+</div>
+
+<script>
+	window.sgReady(function () {
+		var $busyButton = window.app.core.dom.find('[data-alias="loaderOverlayBusy"]');
+		var $readyButton = window.app.core.dom.find('[data-alias="loaderOverlayReady"]');
+
+		var $loaderOverlay = window.app.core.dom.find('[data-alias="loaderOverlay"]');
+		var loaderOverlay = $loaderOverlay.data('$component');
+
+		$busyButton.on('click', function(){
+			loaderOverlay.turnOn();
+		});
+
+		$readyButton.on('click', function() {
+			loaderOverlay.turnOff();
+		});
+	});
+</script>

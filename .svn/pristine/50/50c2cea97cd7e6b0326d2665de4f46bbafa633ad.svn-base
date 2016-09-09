@@ -1,0 +1,218 @@
+/**
+name: Form radio
+type: ui
+modifiers:
+  --small : Small radio
+  --large : Large radio
+  --disable: Disabled radio
+examples:
+	- name: Radio list small
+	  tmpl:
+	  	  include: list-small.html
+	- name: Radio list
+	  tmpl:
+		  include: list.html
+	- name: Radio list large
+	  tmpl:
+		  include: list-large.html
+	- name: Disabled radio
+	  tmpl:
+		  include: disabled.html
+	- name: Radio list horizontal small
+	  tmpl:
+		  include: list-horizontal-small.html
+	- name: Radio list horizontal
+	  tmpl:
+		  include: list-horizontal.html
+	- name: Radio list horizontal large
+	  tmpl:
+		  include: list-horizontal-large.html
+	- name: Small radis list in negative box
+	  tmpl:
+		  include: list-small-negative.html
+	- name: Radio list in negative box
+	  tmpl:
+		  include: list-negative.html
+	- name: Large radio list in negative box
+	  tmpl:
+		  include: list-large-negative.html
+	- name: Disabled radio list in negative box
+	  tmpl:
+		  include: disabled-negative.html
+*/
+// Styling of radio buttons.
+// Replace control with generated content on label.
+.form-radio {
+
+	// ----------------------------------------------------------------
+	// base styling
+
+	label {
+		padding: 6px 0 6px 32px;
+		display: inline-block;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			border-radius: 50%;
+			background: $color-white;
+			border: 1px solid $color-steel-grey;
+			width: 16px;
+			height: 16px;
+			content: "";
+			left: 0;
+			top: 6px;
+			transition: $transition-form-all;
+		}
+
+		&:after {
+			position: absolute;
+			border-radius: 50%;
+			background-color: $color-telenor-blue;
+			width: 8px;
+			height: 8px;
+			content: "";
+			opacity: 0;
+			left: 5px;
+			top: 11px;
+			transition: $transition-form-all;
+		}
+	}
+
+	[type=radio] {
+		@extend .is-hidden;
+		position: absolute;
+	}
+
+	[type=radio]:checked + label:after {
+		opacity: 1;
+	}
+
+	[type=radio]:focus + label:before {
+		border: $border-form-input-focus;
+		background-color: $color-paper-white;
+	}
+
+	// ----------------------------------------------------------------
+	// disabled
+
+	// unchecked
+	[type=radio]:disabled  + label {
+		color: $color-silver-grey;
+		pointer-events: none;
+
+		&:before {
+			border-color: $color-smoke-grey;
+		}
+	}
+
+	// checked
+	[type=radio]:checked:disabled + label {
+		color: $color-silver-grey;
+		pointer-events: none;
+
+		&:before {
+			// border-color: transparent;
+		}
+
+		&:after {
+			background-color: $color-silver-grey;
+			opacity: 1;
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// small
+
+	&--small {
+
+		label {
+			padding: 3px 0 3px 21px;
+
+			&:before {
+				width: 10px;
+				height: 10px;
+				top: 6px;
+			}
+
+			&:after {
+				width: 6px;
+				height: 6px;
+				left: 3px;
+				top: 9px;
+			}
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// large
+
+	&--large {
+
+		label {
+			padding: 10px 0 10px 32px;
+
+			&:before {
+				width: 24px;
+				height: 24px;
+				top: 6px;
+			}
+
+			&:after {
+				width: 14px;
+				height: 14px;
+				top: 12px;
+				left: 6px;
+			}
+		}
+	}
+}
+
+// ----------------------------------------------------------------
+// negative
+
+.section {
+	&--negative {
+		.form-radio {
+			label:before {
+				border-color: $color-white;
+			}
+
+			label:after {
+				background-color: $color-blue-dark;
+			}
+
+			[type=radio]:focus + label:before {
+				border-color: $color-stroke-darkblue;
+				background-color: $color-blue-white;
+			}
+
+			// disabled unchecked
+			[type=radio]:disabled  + label {
+				color: $color-blue-white;
+				pointer-events: none;
+
+				&:before {
+					border-color: $color-blue-white;
+					background-color: transparent;
+				}
+			}
+
+			// disabled checked
+			[type=radio]:disabled:checked  + label {
+				color: $color-blue-white;
+				pointer-events: none;
+
+				&:before {
+					border-color: $color-blue-white;
+					background-color: transparent;
+				}
+
+				&:after {
+					background-color: $color-blue-white;
+				}
+			}
+		}
+
+	}
+}

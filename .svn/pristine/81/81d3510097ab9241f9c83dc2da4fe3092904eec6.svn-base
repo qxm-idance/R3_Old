@@ -1,0 +1,271 @@
+<textarea data-element="buttonConverterInput" placeholder="Paste button formatting here"></textarea>
+<button data-element="buttonConverterSubmit">Convert</button>
+<pre data-element="buttonConverterWarnings" style="color: #cf1111;"></pre>
+<pre data-element="buttonConverterResult"></pre>
+
+<script type="text/javascript">
+window.sgReady(function() {
+	var $buttonConverterSubmit = window.app.core.dom.find('[data-element="buttonConverterSubmit"]');
+	var $buttonConverterInput = window.app.core.dom.find('[data-element="buttonConverterInput"]');
+	var $buttonConverterWarnings = window.app.core.dom.find('[data-element="buttonConverterWarnings"]');
+	var $buttonConverterResult = window.app.core.dom.find('[data-element="buttonConverterResult"]');
+	$buttonConverterSubmit.on('click', function () {
+		var buttonHtml = $buttonConverterInput.val().trim();
+		var container = document.createElement('div');
+		container.innerHTML = buttonHtml;
+
+		if (container.firstChild.tagName !== "BUTTON") {
+			$buttonConverterWarnings.html("It's not a button");
+			return;
+		}
+
+		var btn = container.firstChild;
+		var converter = new ButtonDotNetClass(btn);
+		$buttonConverterResult.html(converter.render());
+		$buttonConverterWarnings.html(converter.renderWarnings());
+	});
+
+	var CLASSES = {
+		button: "button",
+		buttonLabel: "button__label",
+		buttonText: "button-text",
+		buttonSpinner: "button__spinner",
+		successButton: "button__label--success",
+		successButtonLeftThumbUp: ["icon--left", "icon-thumb-up"]
+	}
+
+	function ButtonDotNetClass(btn) {
+		this.helper = app.core.helper;
+		this.btn = btn;
+		this.model = {};
+		this.warnings = [];
+		this.parseClasses();
+		this.parseTitle();
+	}
+
+	ButtonDotNetClass.prototype.parseTitle = function() {
+		var label = this.btn.querySelector("." + CLASSES.buttonLabel +", ." + CLASSES.buttonText);
+		this.model.title = label.textContent.trim();
+		var lambdaExpressionStart = "@Html.PropertyFor(";
+		var lambdaOperator = "=>";
+		if (this.model.title.indexOf(lambdaExpressionStart) === 0) {
+			var lambdaOperatorPosition = this.model.title.indexOf(lambdaOperator);
+			var lambdaParam = this.model.title.substring(lambdaExpressionStart.length, lambdaOperatorPosition).trim();
+			var lambdaBody = this.model.title.substring(lambdaOperatorPosition + lambdaOperator.length).trim();
+			var lambdaModel = lambdaBody.substring(0, lambdaBody.indexOf('.'));
+			if (lambdaModel === lambdaParam) {
+				// get substring starting from Model property and without last parenthesis
+				this.model.title = "Model." + lambdaBody.substring(lambdaBody.indexOf('.') + 1, lambdaBody.length - 1).trim();
+			} else {
+				this.warnings.push("Please fix PropertyFor expression for button title")
+			}
+		} else {
+			// wrap in quotes
+			this.model.title = "\"" + this.model.title + "\"";
+		}
+	};
+
+	ButtonDotNetClass.prototype.parseClasses = function() {
+		var buttonModifierStart = "button--";
+		this.btn.classList.forEach(function(cls) {
+			if (cls === "button") {
+				this.model.hasButtonClass = true;
+			} else if (cls.indexOf(buttonModifierStart) === 0) {
+				var modifier = cls.substring(buttonModifierStart.length);
+				this.model.buttonStyles ? this.model.buttonStyles.push(modifier) : this.model.buttonStyles = [modifier];
+			} else {
+				this.model.classes ? this.model.classes.push(cls) : this.model.classes = [cls];
+			}
+		}.bind(this));
+	};
+
+	ButtonDotNetClass.prototype.render = function() {
+		var result = '@Html.RenderButton(new ButtonOptions({title}, {buttonStyle})\n{\n\
+	{inits}\n})\n';
+		result = result.replace("{title}", this.model.title);
+		result = result.replace("{buttonStyle}", this.getStyles());
+		result = result.replace("{inits}", this.getInits());
+		return result;
+	};
+
+	ButtonDotNetClass.prototype.renderWarnings = function() {
+		return this.warnings.join('\n');
+	};
+
+	ButtonDotNetClass.prototype.getInits = function() {
+		var inits = ["classes", "type", "defaultButtonClasses", "dataComponent", "dataAlias", "dataDisabled", "disabled",
+			"useSpinner", "dataSubmit", "role", "successButton", "attributes"
+		];
+		var result = [];
+		inits.forEach(function(init) {
+			// call appropriate method like getClasses() for 'classes' init
+			var method = this.helper.camelCase('get-' + init);
+			if (this[method]) {
+				var res = this[method]();
+				if (res) {
+					result.push(res);
+				}
+			} else {
+				console.warn('method', method, "not implemented");
+			}
+		}.bind(this));
+		return result.join(",\n	");
+	};
+
+	ButtonDotNetClass.prototype.getStyles = function() {
+		if (!this.model.buttonStyles) {
+			return "";
+		}
+		var styles = this.model.buttonStyles.map(function(style) {
+			if (style == "default") {
+				style = "@default";
+			}
+			return "ButtonStyle." + style;
+		}).join(" | ");
+		return styles;
+	};
+
+	ButtonDotNetClass.prototype.getClasses = function() {
+		var classes = "";
+		if (this.model.classes) {
+			classes = "Classes = \"" + this.model.classes.join(" ") + "\"";
+		}
+		return classes;
+	};
+
+	ButtonDotNetClass.prototype.getType = function() {
+		var knownTypes = ["button", "reset", "submit"];
+		var typeAttr = this.btn.attributes.getNamedItem('type');
+		if (typeAttr) {
+			if (knownTypes.indexOf(typeAttr.value) > -1) {
+				return "Type = ButtonType." + typeAttr.value;
+			} else {
+				this.warnings.push("Button type is unknown. Please check");
+			}
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDataComponent = function() {
+		var attr = this.btn.attributes.getNamedItem('data-component');
+		var implemented = ["button", "element"];
+		if (attr) {
+			if (implemented.indexOf(attr.value) > -1) {
+				return "DataComponent = ButtonDataComponent." + attr.value;
+			} else {
+				this.warnings.push('No predefined DataComponent in ButtonDataComponent class');
+			}
+
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDataAlias = function() {
+		var attr = this.btn.attributes.getNamedItem('data-alias');
+		if (attr) {
+			return "DataAlias = \"" + attr.value + "\"";
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDataDisabled = function() {
+		var attr = this.btn.attributes.getNamedItem('data-disabled');
+		if (attr) {
+			return "DataDisabled = " + (attr.value ? "true" : "false");
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDataSubmit = function() {
+		var attr = this.btn.attributes.getNamedItem('data-submit');
+		if (attr) {
+			return "DataSubmit = " + (attr.value ? "true" : "false");
+		}
+	};
+
+	ButtonDotNetClass.prototype.getRole = function() {
+		var attr = this.btn.attributes.getNamedItem('role');
+		var knownRoles = ["button"];
+		if (attr) {
+			if (knownRoles.indexOf(attr.value) > -1) {
+				return "Role = ButtonRole." + attr.value;
+			} else {
+				this.warnings.push("No predefined role for role '" + attr.value + "'");
+			}
+		}
+	};
+
+	ButtonDotNetClass.prototype.getUseSpinner = function() {
+		if (this.btn.querySelector("." + CLASSES.buttonSpinner)) {
+			return "UseSpinner = true";
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDefaultButtonClasses = function() {
+		var classList = this.btn.querySelector("." + CLASSES.buttonLabel + ", ." + CLASSES.buttonText).classList;
+		classList = Array.prototype.filter.call(classList, function(className) {
+			return (className !== CLASSES.buttonLabel && className !== CLASSES.buttonText)
+		});
+
+		if (classList.length > 0) {
+			return "DefaultButtonClasses = \"" + classList.join(' ') + "\"";
+		}
+	};
+
+	ButtonDotNetClass.prototype.getSuccessButton = function() {
+		var successButton = this.btn.querySelector('.' + CLASSES.successButton);
+		if (successButton) {
+			var label = successButton.textContent;
+			var classList = successButton.classList;
+			classList = Array.prototype.filter.call(classList, function(className) {
+				return (className !== CLASSES.successButton)
+			});
+
+			if (classList.length > 0) {
+				var missingClasses = CLASSES.successButtonLeftThumbUp.filter(function(cls) {
+					return (classList.indexOf(cls) < 0);
+				});
+				var excessClasses = classList.filter(function(cls) {
+					return (CLASSES.successButtonLeftThumbUp.indexOf(cls) < 0);
+				});
+				if (missingClasses.length === 0 && excessClasses.length === 0) {
+					// render specific thumb up success button
+					return 'SuccessButton = SuccessButton.CreateLeftThumbUp("' + label + '")';
+				}
+			}
+
+			return 'SuccessButton = new SuccessButton("' + label + '", "' + classList.join(' ') + '")';
+		}
+	};
+
+	ButtonDotNetClass.prototype.getDisabled = function() {
+		var attr = this.btn.attributes.getNamedItem('disabled');
+		if (attr) {
+			return "Disabled = true";
+		}
+	};
+
+	ButtonDotNetClass.prototype.getAttributes = function() {
+		var knownAttributes = ["disabled", "data-disabled", "data-component", "data-alias", "type", "role", "class", "data-submit"];
+
+		var attrs = Array.prototype.filter.call(this.btn.attributes, function(attribute) {
+			return (knownAttributes.indexOf(attribute.name) < 0);
+		});
+		var retarray = [];
+		var attrValue;
+		attrs.forEach(function(attr) {
+			if (attr.value.indexOf('@Model') === 0) {
+				// trim leading @
+				attrValue = attr.value.substr(1);
+			} else {
+				attrValue = "\"" + attr.value +"\"";
+			}
+			retarray.push(this.helper.camelCase(attr.name) + " = " + attrValue);
+		}.bind(this));
+		if (retarray.length > 0) {
+
+			var retval = "Attributes = new\n\
+	{\n\
+		" + retarray.join(",\n		") + "\n\
+	}";
+			return retval;
+		}
+	};
+});
+</script>

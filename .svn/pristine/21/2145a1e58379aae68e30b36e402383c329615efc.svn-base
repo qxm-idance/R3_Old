@@ -1,0 +1,12 @@
+<div class="border box--greyed padding-whole">
+	<ul class="form-item form-inline">
+		<li class="form-checkbox ">
+			<input type="checkbox" checked id="cbs-inline-0" name="cbs-inline-0" value="--some-value--">
+			<label class="text--med" for="cbs-inline-0">Lorem ipsum bla bla 1</label>
+		</li>
+		<li class="form-checkbox ">
+			<input type="checkbox" name="cbs-inline-1"  id="cbs-inline-1" value="--some-value--">
+			<label class="text--med" for="cbs-inline-1">Lorem ipsum bla bla 2</label>
+		</li>
+	</ul>
+</div>

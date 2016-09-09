@@ -1,0 +1,4 @@
+<li class="tabpanel__tab flexnav" role="presentation">
+	<a href="" class="tabpanel__link flexnav__toggler" role="tab"><%= moreText %></a>
+	<ul class="flexnav__subnav"></ul>
+</li>

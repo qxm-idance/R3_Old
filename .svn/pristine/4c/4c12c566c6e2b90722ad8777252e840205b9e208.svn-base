@@ -1,0 +1,46 @@
+<table class="table table--adv invoices__table table--loadable dataTable no-footer dtr-column collapsed" id="DataTables_Table_0" role="grid" style="display: table;">
+	<thead>
+		<tr role="row">
+			<th class="form-checkbox invoices__table__column--checkbox all col--compact-5 form-checkbox--single sorting_disabled">
+				<input type="checkbox" id="select-all-rows" value="all" data-component="checkbox" data-alias="selectAll">
+				<label for="select-all-rows"></label>
+			</th>
+			<th class="invoices__table__column min-createdDate-a sorting_desc">Issued</th>
+			<th class="invoices__table__column--description min-invoiceNumber-a sorting">Description</th>
+			<th class="invoices__table__column all sorting">Status</th>
+			<th class="invoices__table__column min-dueDate-a sorting">Due date</th>
+			<th class="invoices__table__column all sorting">Amount</th>
+			<th class="invoices__table__column min-balanceAmount-a sorting">Balance</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr role="row" class="odd">
+			<td class=" col--compact-5 form-checkbox form-checkbox--single invoices__table__column--checkbox">
+				<input type="checkbox" id="check-6456456" name="invoices" value="6456456;343,43;Paid">
+				<label for="check-6456456"></label>
+			</td>
+			<td class="min-createdDate-a sorting_1">2015.12.11</td>
+			<td class="  min-invoiceNumber-a">
+				<p>Credit note</p><span class="text-size--13"><a href="#">#6456456</a></span>
+			</td>
+			<td>Paid</td>
+			<td class="  min-dueDate-a">2015.12.11</td>
+			<td>547,81 kr.</td>
+			<td class="  min-balanceAmount-a"><span class="">343,43 kr.</span></td>
+		</tr>
+		<tr role="row" class="even">
+			<td class=" col--compact-5 form-checkbox form-checkbox--single invoices__table__column--checkbox">
+				<input type="checkbox" id="check-6456456" name="invoices" value="6456456;343,43;Paid">
+				<label for="check-6456456"></label>
+			</td>
+			<td class="min-createdDate-a sorting_1">2015.12.11</td>
+			<td class="  min-invoiceNumber-a">
+				<p>Credit note</p><span class="text-size--13"><a href="#">#6456456</a></span>
+			</td>
+			<td>Paid</td>
+			<td class="  min-dueDate-a">2015.12.11</td>
+			<td>547,81 kr.</td>
+			<td class="  min-balanceAmount-a"><span class="">343,43 kr.</span></td>
+		</tr>
+	</tbody>
+</table>

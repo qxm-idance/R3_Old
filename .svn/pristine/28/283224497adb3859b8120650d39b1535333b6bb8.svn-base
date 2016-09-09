@@ -1,0 +1,57 @@
+/**
+  name: Datatables
+  type: ui
+  modifiers:
+      --loadable: Loading table, after that shows rows with informations
+      --default: Default table
+      --adv: Base layout of table with hover state
+      --without-hover: Table without hover state
+      --zebra: Table with odd/even colors
+  examples:
+    - name: Table default
+      tmpl: >
+        <table class="table table--default">
+            <thead>
+                <tr>
+                    <th>Column1</th>
+                    <th>Column2</th>
+                    <th>Column3</th>
+                    <th>Column4</th>
+                    <th>Column5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12.05.2015</td>
+                    <td>Order created</td>
+                    <td>12345678901235</td>
+                    <td>12.05.2015, 14:32</td>
+                    <td>Bredbånd op</td>
+                </tr>
+                <tr>
+                    <td>12.05.2015</td>
+                    <td>Order created</td>
+                    <td>12345678901235</td>
+                    <td>12.05.2015, 14:32</td>
+                    <td>Bredbånd op</td>
+                </tr>
+                <tr>
+                    <td>12.05.2015</td>
+                    <td>Order created</td>
+                    <td>12345678901235</td>
+                    <td>12.05.2015, 14:32</td>
+                    <td>Bredbånd op</td>
+                </tr>
+            </tbody>
+        </table>
+    - name: Table with sorting and hover
+      tmpl:
+        include: table.html
+    - name: Table zebra with expandable row
+      tmpl:
+        include: table-expandable.html
+*/
+
+@import "tables";
+@import "bills-balance-table";
+@import "sorting";

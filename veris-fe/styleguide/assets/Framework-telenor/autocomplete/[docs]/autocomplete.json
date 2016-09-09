@@ -1,0 +1,10 @@
+{
+	"success": true,
+	"data": [
+		{"label": "Alabama", "value": "Alabama"},
+		{"label": "Alaska", "value": "Alaska"},
+		{"label": "Arizona", "value": "Arizona"},
+		{"label": "Arkansas", "value": "Arkansas"},
+		{"label": "California", "value": "California"}
+	]
+}

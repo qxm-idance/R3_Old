@@ -1,0 +1,293 @@
+// Generate helpers classes
+// text colors
+@include helpers(color, color, $text-colors-setup, false, default, false);
+
+// align setup
+@include helpers(vertical-align, align, $align-setup, false, modifier, false);
+
+// text-align setup
+@include helpers(text-align, text, $text-align-setup, false, modifier, responsive);
+
+// display setup
+@include helpers(display, display, $display-setup, forced, modifier, responsive);
+
+// float setup
+@include helpers(float, float, $float-setup, false, modifier, responsive);
+
+// margins setup
+@include helpers(margin, margin-whole, $spacing-setup, forced, modifier, responsive);
+@include helpers(margin-bottom, trailer, $spacing-setup, forced, modifier, responsive);
+@include helpers(margin-top, leader, $spacing-setup, forced, modifier, responsive);
+@include helpers(margin-left, toleft, $spacing-setup, forced, modifier, responsive);
+@include helpers(margin-right, toright, $spacing-setup, forced, modifier, responsive);
+
+// paddings setup
+@include helpers(padding, padding-whole, $spacing-setup, forced, modifier, responsive);
+@include helpers(padding-bottom, padding-trailer, $spacing-setup, forced, modifier, responsive);
+@include helpers(padding-top, padding-leader, $spacing-setup, forced, modifier, responsive);
+@include helpers(padding-left, padding-toleft, $spacing-setup, forced, modifier, responsive);
+@include helpers(padding-right, padding-toright, $spacing-setup, forced, modifier, responsive);
+
+// specific padding for content block
+.padding-whole--content {
+	padding: $large-spacing-unit $base-spacing-unit;
+
+	@include until($bp-medium) {
+		padding: $base-spacing-unit;
+	}
+}
+
+// borders
+.border {
+	@include borderClasses();
+
+	// light border variant
+	&--light {
+		border-color: $color-smoke-grey;
+	}
+}
+
+@include until($bp-medium) {
+	.mobile-border {
+		@include borderClasses();
+	}
+}
+
+// Layout
+%clearfix,
+.clear {
+	@include clearfix;
+}
+
+.rel {
+	position: relative;
+}
+
+.ovh {
+	overflow: hidden;
+}
+
+// Visibility settings
+@include until($bp-medium) {
+	.mobile-hidden {
+		display: none !important;
+	}
+}
+
+@include at-least($bp-medium) {
+	.desktop-hidden {
+		display: none !important;
+	}
+
+	.desktop-visible {
+		display: block !important;
+	}
+}
+
+// Inline Block
+.inline-block {
+	display: inline-block !important;
+	max-width: 100%;
+}
+
+// States
+// ------------------------------------------------
+.collapsing {
+	transition: height .35s ease;
+	height: 0;
+	overflow: hidden;
+}
+
+.is-hidden,
+.is-collapsed {
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	min-height: 0 !important;
+}
+
+.is-shown,
+.is-visible {
+	display: block;
+	height: auto;
+	visibility: visible;
+	opacity: 1;
+}
+
+.is-open {
+	display: block;
+	height: auto;
+}
+
+.js-hidden {
+	display: none !important;
+}
+
+// To hide element without reserving a place for it
+%hidden-element,
+.hidden-element {
+	position: fixed !important;
+	left: -9999px !important;
+	top: -9999px !important;
+}
+
+// To hide event
+.hidden-event {
+	pointer-events: none;
+}
+
+%truncate,
+.text-truncate {
+	@include truncate;
+}
+
+.text-caps {
+	text-transform: uppercase;
+}
+
+// Flex box
+.flex {
+	display: flex;
+
+	&--row {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&--column {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.flex-item {
+	flex: 1;
+}
+
+// Columns
+.columns-two {
+	column-count: 2;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.field-validation-error,
+.field-validation-valid {
+	display: none;
+}
+
+.icon--text {
+	display: none !important;
+}
+
+//gradient line (green to blue)
+%gradient-line {
+	content: "";
+	z-index: 3;
+	display: block;
+	position: relative;
+	margin-bottom: -1px;
+	background-image: linear-gradient(to right, #6eb45b, #2b9ba8, #038cd6);
+	height: 3px;
+}
+
+.gradient-line {
+	&:before {
+		@extend %gradient-line;
+	}
+
+	&--bottom {
+		&:after {
+			@extend %gradient-line;
+		}
+	}
+
+	&--with-border {
+		&:before {
+			@extend %gradient-line;
+			margin: -1px -1px 0;
+		}
+	}
+}
+
+.rounded-image {
+	overflow: hidden;
+	border-radius: 50%;
+
+	img {
+		display: block;
+		border-radius: 50%;
+	}
+}
+
+//boxshadow inset for gray aside
+.box-shadow-gray {
+	position:relative;
+
+	&:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		content: '';
+		width: 6px;
+		background: linear-gradient(to right, rgba(0,0,0,.06), rgba(0,0,0,0));
+
+		@include until($bp-medium) {
+			display: none;
+		}
+	}
+
+	&--right {
+		&:before {
+			left: auto;
+			right: 0;
+			background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.06));
+		}
+	}
+}
+
+// full with for mobile
+.stretch-mobile {
+	@include until($bp-medium) {
+		width: 100%;
+	}
+}
+
+// Background overlay
+.background-overlay {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	&.purple:before {
+		background-image: linear-gradient(#7f2a8e,#d60a8a,#eb1c2b);
+		opacity: .65;
+	}
+}
+
+// Rotation of content
+.rotation {
+	&--horizontal {
+		@keyframes rotate {
+			from {transform: rotatey(0deg);}
+			to {transform: rotatey(180deg);}
+		}
+		animation: rotate 1s infinite linear;
+	}
+}

@@ -1,0 +1,112 @@
+// Styling of shop filters based on form-checkbox.
+.form-checkbox--filter {
+	margin: 0;
+	position: relative;
+	display: inline-block;
+
+	#filters-secondary &,
+	#filters-chosen & {
+		line-height: 0;
+		margin-bottom: 10px;
+	}
+
+	#filters-chosen & {
+		&:first-child {
+			margin-top: $small-spacing-unit;
+		}
+	}
+
+	label {
+		@extend .button;
+		@extend .button--small;
+
+		background: $color-white;
+		color: $color-graphite-black;
+
+		margin: 0;
+		position: relative;
+
+		// Show removal button, if located inside #filters-chosen
+		#filters-chosen & {
+			padding-right: 35px;
+
+			&:before {
+				@extend %icon-base-styles;
+				@include icon-reject;
+				font-size: 7px;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -10px;
+				width: 18px;
+				height: 18px;
+				line-height: 18px;
+				border: 1px solid $color-stroke-darkblue;
+				border-radius: 50%;
+				background: $gradient-darkblue;
+			}
+
+			.filter-count {
+				color: $color-blue-white;
+				display: none;
+			}
+		}
+
+		.filter-count {
+			font-size: 11px;
+			color: $color-stone-grey;
+		}
+	}
+
+	// Replace control with generated content on label.
+
+	[type=checkbox] {
+		display: none;
+	}
+
+	// If filter is checked
+	[type=checkbox]:checked + label {
+		box-shadow: inset 0 0 0 1px $color-telenor-blue-dark;
+		border: none;
+
+		span {
+			color: $color-white;
+		}
+
+		.filter-count {
+			color: $color-blue-white;
+		}
+	}
+
+	[type=checkbox]:disabled + label {
+		box-shadow: inset 0 0 0 1px $color-silver-grey;
+		border: none;
+
+		span {
+			color: $color-silver-grey;
+		}
+	}
+
+	// Media queries
+	// ----------------------------------------------
+	// Tablet, 600px ($bp-small)
+
+	// Respond tablet.
+	@include at-least($bp-small) {
+
+		#filters-chosen & {
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&--primary {
+				display: none;
+			}
+
+			.filter-number {
+				display: none;
+			}
+		}
+	}
+}

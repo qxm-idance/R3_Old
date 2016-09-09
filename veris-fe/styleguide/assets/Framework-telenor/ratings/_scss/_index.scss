@@ -1,0 +1,120 @@
+.rating {
+  &__stars {
+    font-size: 20px;
+    color: $color-silver-grey;
+
+    &--blue {
+      color: $color-silver-grey;
+
+      .fill {
+        &--whole {
+          color: $color-telenor-blue;
+        }
+
+        &--half {
+          &:after {
+            color: $color-telenor-blue;
+          }
+        }
+      }
+    }
+
+    &--white {
+      color: $color-telenor-blue-light;
+
+      .fill {
+        &--whole {
+          color: $color-white;
+        }
+
+        &--half {
+          &:after {
+            color: $color-white;
+          }
+        }
+      }
+    }
+
+    &--small {
+      font-size: 15px;
+
+      & + .rating {
+        &__text {
+          @extend %text-size--13;
+        }
+      }
+
+      .fill {
+        &--half {
+          &.icon-star {
+            &:after {
+              //clip: rect(0 (11 / 2 / 15 * 1em) auto 0); // Half star width devided by font size.
+            }
+          }
+        }
+      }
+    }
+
+    & + .rating {
+      &__text {
+        @extend %text-size--16;
+        display: block;
+      }
+    }
+  }
+}
+
+.box--blue {
+  .rating {
+    &__stars {
+      &--small {
+
+        & + .rating {
+          &__text {
+            color: $color-white;
+          }
+        }
+      }
+
+      & + .rating {
+        &__text {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+
+.icon-star {
+  &:before,
+  &:after {
+    vertical-align: text-top;
+  }
+}
+
+.fill {
+  &--whole {
+    color: $color-telenor-blue-light;
+  }
+
+  &--half {
+    position: relative;
+
+    &:after {
+	  @extend %icon-base-styles;
+      color: $color-telenor-blue-light;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+
+    &.icon-star {
+      &:after {
+        @extend .icon-star:before;
+        clip: rect(0 (18 / 2 / 23 * 1em) auto 0); // Half star width devided by font size.
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+/**
+	name: Number
+	type: ui
+	desc: No modifiers and mixins need it for this component
+	examples:
+		Number selector:
+			include: number.html
+		Number selector in negative box:
+			include: number-negative.html
+*/
+
+.form-item {
+
+	&__number-wrapper {
+		position: relative;
+		z-index: 1;
+		max-width: 90px;
+
+		[type="text"],
+		[type="number"] {
+			display: block;
+			width: 100%;
+			font-size: $base-font-size;
+			line-height: 1;
+			height: 43px;
+			padding-right: 25px;
+			padding-left: 25px;
+			text-align: center;
+			border: $border;
+			border-radius: $radius-button;
+			color: $color-graphite-black;
+			-moz-appearance: textfield;
+			-webkit-appearance: textfield;
+
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+				margin: 0;
+				-webkit-appearance: none;
+			}
+
+			&:disabled ~ .number__control {
+				display: none;
+			}
+		}
+
+		.number {
+			&__control {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 22px;
+				padding: 3px 0 0;
+				z-index: 2;
+				font-size: 9px;
+				outline: none;
+				border: $border;
+				background: $color-smoke-grey $gradient-white;
+
+				&:hover {
+					background: $color-silver-grey $gradient-white-grey;
+				}
+
+				&:focus {
+					border: $border-form-input-focus;
+				}
+
+				&--decrease {
+					left: 0;
+					border-radius: $radius-button 0 0 $radius-button;
+
+					&:before {
+						@extend %icon-base-styles;
+						@include icon-minus;
+					}
+				}
+
+				&--increase {
+					right: 0;
+					border-radius: 0 $radius-button $radius-button 0;
+
+					&:before {
+						@extend %icon-base-styles;
+						@include icon-plus;
+					}
+				}
+
+				// ----------------------------------------------------------------
+				// negative focus
+
+				.section--negative & {
+
+					&:focus {
+						border: $border-form-negative-input-focus;
+					}
+				}
+			}
+		}
+	}
+
+	&__action-hidden {
+		[type="number"] {
+			-moz-appearance: textfield;
+			-webkit-appearance: textfield;
+
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+				margin: 0;
+				-webkit-appearance: none;
+			}
+		}
+	}
+}

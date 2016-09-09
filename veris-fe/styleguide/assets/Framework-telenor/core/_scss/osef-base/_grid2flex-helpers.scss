@@ -1,0 +1,15 @@
+.grid-row--content {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.grid-row--bordered {
+	border-left: $border;
+	padding-top: 1px;
+
+	>[class*=col-] {
+		border: $border;
+		border-left: none;
+		margin-top: -1px;
+	}
+}

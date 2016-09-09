@@ -1,0 +1,225 @@
+/**
+  name: Speech Bubble
+  type: ui
+  desc: No modifiers and mixins need it for this component
+  examples:
+    Bubble:
+      include: bubble.html
+*/
+.speech-bubble {
+
+	&.reverce {
+	  left: auto;
+	  right: 0;
+
+	  &:before,
+	  &:after {
+	    left: auto;
+	    margin-left: auto;
+	    margin-right: -8px;
+	    right: 17px;
+	  };
+
+	  &:after {
+	    margin-right: -7px;
+	  };
+	}
+
+  left: 0;
+  position: absolute;
+
+  z-index: 3000;
+
+  background-color: $color-white;
+  top: 36px;
+
+  // corners
+  border-radius: $radius-button;
+  overflow: visible;
+
+  // border
+  border: $border;
+
+  // hide / show
+  visibility: hidden;
+
+  // shadow
+  box-shadow: $box-shadow-bubble;
+
+  // animate in
+  .csstransforms & {
+    transform: translateY(-$small-spacing-unit);
+    transition: opacity 50ms ease-out, transform 100ms ease-out;
+    opacity: 0;
+  }
+
+  &.is-open {
+    display: block;
+    opacity: 1;
+
+    &.is-loaded {
+      visibility: visible;
+    }
+
+    .csstransforms & {
+      transform: translateY(0);
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // main button syling
+
+  &__button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    padding: 0 $small-spacing-unit;
+
+    .icon {
+      line-height: $small-button-size;
+    }
+
+    .icon-arrow-down {
+      padding-left: $small-spacing-unit;
+      font-size: 30px;
+    }
+
+    height: $small-button-size;
+
+    background: $color-smoke-grey;
+    background-image: $gradient-white;
+
+    border: $border;
+
+    // corners
+    border-radius: $radius-button;
+    overflow: hidden;
+  }
+
+  // ----------------------------------------------------------------
+  // arrow
+
+  // arrow
+  @include at-least($bp-small) {
+
+    @include bubble-arrow;
+
+  }
+
+  // ----------------------------------------------------------------
+  // top bar
+
+  &__top-bar {
+
+    height: $base-button-size;
+    line-height: $base-button-size;
+
+    background: $color-smoke-grey;
+    background-image: $gradient-white;
+
+    padding-left: $base-spacing-unit;
+    padding-right: $base-spacing-unit;
+
+    text-align: center;
+
+    border-bottom: $border;
+
+    position: relative;
+
+    &.speech-bubble {
+      &__top-bar {
+        &--small {
+          line-height: $small-button-size;
+          height: $small-button-size;
+        }
+      }
+    }
+  }
+
+
+  // ----------------------------------------------------------------
+  // close button
+
+  &__close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    line-height: 1;
+    font-size: 10px;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+
+    &:hover,
+    &:focus {
+      color: $color-black;
+    }
+  }
+
+
+  // ----------------------------------------------------------------
+  // content
+
+  &__content {
+    max-height: 285px;
+    overflow-y: auto;
+
+    & > {
+      z-index: -1;
+      position: relative;
+    }
+
+    @include until($bp-medium) {
+      max-height: none;
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // mobile breakpoint
+
+  @include until($bp-medium) {
+    position: static;
+
+    transition: none;
+    box-shadow: none;
+
+    display: none;
+  }
+
+  &.action-menu {
+    @include bubble-arrow;
+
+    @include until($bp-medium) {
+      position: absolute;
+    }
+
+    &:before {
+      left: auto;
+      right: 17px;
+    }
+
+    &:after {
+      left: auto;
+      right: 18px;
+    }
+
+    .dropdown {
+      &__list {
+        a:hover {
+          background: $color-telenor-blue;
+          color: $color-white;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"success": "true",
+	"errorMessages": [],
+	"data": {
+		"data": [
+			{
+				"customerId": "1",
+				"customerName": "A",
+				"customerStatus": "Active",
+				"customerLegalAddress": "Mansfield Reformatory",
+				"customerRegistered": "tomorrow",
+				"selected": false
+			},
+			{
+				"customerId": "2",
+				"customerName": "B",
+				"customerStatus": "Suspended",
+				"customerLegalAddress": "Mansfield Reformatory",
+				"customerRegistered": "today",
+				"selected": false
+			}
+		],
+		"totalCount": 2,
+		"pageSize": 2,
+		"pageNumber": 1
+	}
+}

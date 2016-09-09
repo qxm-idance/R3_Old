@@ -1,0 +1,203 @@
+[class^="title--"] {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+[class^="title--"],[class*=" title--"] {
+    font-family:"telenorlight", sans-serif;
+    font-weight:normal;
+    display:block
+}
+[class^="title--"] strong,[class*=" title--"] strong {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+[class^="title--"] a:hover,[class*=" title--"] a:hover {
+    color:#038cd6
+}
+.title--xxxlarge {
+    font-size:12rem;
+    line-height:1
+}
+.title--huge {
+    font-size:5.25rem;
+    line-height:1
+}
+@media only screen and (max-width: 37.438em) {
+    .title--huge {
+        font-size:4.5rem;
+        line-height:1
+    }
+}.title--xxlarge {
+     font-size:4.5rem;
+     line-height:1
+ }
+@media only screen and (max-width: 37.438em) {
+    .title--xxlarge {
+        font-size:3.375rem;
+        line-height:1.1
+    }
+}.title--xlarge,.text--content h1 {
+     font-size:3.375rem;
+     line-height:1.1;
+     margin-left:-.06em
+ }
+@media only screen and (max-width: 37.438em) {
+    .title--xlarge,.text--content h1 {
+        font-size:2.75rem;
+        line-height:1
+    }
+}.title--large,.text--content h2 {
+     font-size:2.75rem;
+     line-height:1;
+     margin-left:-.075em
+ }
+.title--medium,.title--section,.text--content h3 {
+    font-size:2.25rem;
+    line-height:1;
+    margin-left:-.04em
+}
+.box--blue .title--medium,.title--section .title--medium,.box--yellow .title--medium,.box--yellow-light .title--medium,.box--purple .title--medium,.box--green .title--medium,.box--blue .title--section,.title--section .title--section,.box--yellow .title--section,.box--yellow-light .title--section,.box--purple .title--section,.box--green .title--section,.box--blue .text--content h3,.text--content .box--blue h3,.title--section .text--content h3,.text--content .title--section h3,.box--yellow .text--content h3,.text--content .box--yellow h3,.box--yellow-light .text--content h3,.text--content .box--yellow-light h3,.box--purple .text--content h3,.text--content .box--purple h3,.box--green .text--content h3,.text--content .box--green h3 {
+    font-size:1.313rem;
+    line-height:1.2
+}
+@media only screen and (min-width: 37.5em) {
+    .box--blue .title--medium,.title--section .title--medium,.box--yellow .title--medium,.box--yellow-light .title--medium,.box--purple .title--medium,.box--green .title--medium,.box--blue .title--section,.title--section .title--section,.box--yellow .title--section,.box--yellow-light .title--section,.box--purple .title--section,.box--green .title--section,.box--blue .text--content h3,.text--content .box--blue h3,.title--section .text--content h3,.text--content .title--section h3,.box--yellow .text--content h3,.text--content .box--yellow h3,.box--yellow-light .text--content h3,.text--content .box--yellow-light h3,.box--purple .text--content h3,.text--content .box--purple h3,.box--green .text--content h3,.text--content .box--green h3 {
+        font-size:2.75rem;
+        line-height:1
+    }
+}@media only screen and (max-width: 37.438em) {
+    .title--medium,.title--section,.text--content h3 {
+        font-size:1.875rem
+    }
+}.title--article {
+     font-size:2.25rem;
+     line-height:1;
+     line-height:1.25
+ }
+.title--banner-small {
+    font-size:1.313rem;
+    line-height:1.2;
+    font-family:"telenorlight", sans-serif;
+    font-weight:normal;
+    line-height:1
+}
+.title--banner-small strong {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.title--medium-small {
+    font-size:1.875rem;
+    line-height:1
+}
+.title--small,.sg-markdown h2,.sg-content__docs h2 {
+    font-family:"telenor", sans-serif;
+    font-weight:normal;
+    font-size:1.188rem;
+    line-height:1;
+    margin-bottom:10px
+}
+@media only screen and (min-width: 37.5em) {
+    .title--small,.sg-markdown h2,.sg-content__docs h2 {
+        font-size:1.313rem;
+        line-height:1.2
+    }
+}.title--xsmall {
+     font-size:1.188rem;
+     line-height:1;
+     font-family:"telenor", sans-serif;
+     font-weight:normal
+ }
+.title--xxsmall {
+    font-size:1rem;
+    line-height:1;
+    font-family:"telenor", sans-serif
+}
+.title--table {
+    font-size:1rem;
+    line-height:1;
+    font-family:"telenor", sans-serif;
+    font-weight:bold;
+    margin-bottom:10px
+}
+.title--block {
+    padding-bottom:0.625rem;
+    margin-top:3.125rem;
+    margin-bottom:1.25rem;
+    border-bottom:1px solid #b8b8b8
+}
+.title--multiline {
+    line-height:1.6em
+}
+.title--strong {
+    font-weight:700
+}
+.text--telenor {
+    font-family:"telenor", sans-serif;
+    font-weight:normal
+}
+.text--telenor-bold {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.text--telenor-light {
+    font-family:"telenorlight", sans-serif;
+    font-weight:normal
+}
+.text--telenor-light strong {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.text--xxxlarge {
+    font-size:12rem;
+    line-height:1
+}
+strong.text {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.text--xxlarge {
+    font-size:5.25rem;
+    line-height:1
+}
+strong.text {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.text--xlarge {
+    font-size:2.25rem;
+    line-height:1
+}
+strong.text {
+    font-family:"telenor", sans-serif;
+    font-weight:bold
+}
+.text--large {
+    font-size:1.188rem;
+    line-height:1
+}
+.text--med {
+    font-size:1rem;
+    line-height:1
+}
+.text--small,.text--content code,.sg-markdown code,.sg-content__docs code {
+    font-size:0.813rem;
+    line-height:.9375rem
+}
+.text--xsmall,.text--content small {
+    font-size:0.688rem;
+    line-height:1
+}
+.text--rider {
+    margin-bottom:10px
+}
+.text--feature {
+    font-size:3.375rem;
+    line-height:1.1;
+    font-family:"telenor", sans-serif;
+    font-weight:bold;
+    display:block;
+    color:#038cd6
+}
+.text--uppercase {
+    text-transform:uppercase
+}

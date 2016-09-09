@@ -1,0 +1,174 @@
+/**
+name: Icons
+type: ui
+desc: >
+      *.circle-outline*: Icons with circle
+
+      *&.circle-outline--middle*: For middle size
+
+      *&.circle-outline--small*: For small size
+
+      *.border-width-1*: Outline border width, only 1px available.
+
+
+      *.circle-background*: Icons with background circle. Avilable colors:
+
+      *&.blue*
+
+      *&.green*
+
+      *&.red*
+
+      *&.yellow*
+
+      *&.gray*
+
+      *&.white*
+examples:
+  - name: Icons
+    tmpl:
+        include: icons.html
+  - name: Icons with circle
+    tmpl:
+        include: icons-circle.html
+  - name: Icons with background circle
+    tmpl:
+        include: icons-circle-background.html
+*/
+
+%icon-vertical-align {
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+%icon-absolute-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circle-outline {
+	position: relative;
+	text-align: center;
+	box-sizing: border-box;
+	display: block;
+	width: 2em;
+	height: 2em;
+	line-height: 1;
+
+	&:before {
+		position: relative;
+		@extend %icon-vertical-align;
+	}
+
+	&:after {
+		content: "";
+		border-radius: 50%;
+		border: 0.02em;
+		border-style: solid;
+		position: absolute;
+		width: 2em;
+		height: 2em;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+	}
+
+	&.circle-outline--small {
+		width: 1.5em;
+		height: 1.5em;
+
+		&:after {
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+
+	&.circle-outline--middle {
+		width: 1.8em;
+		height: 1.8em;
+
+		&:after {
+			width: 1.8em;
+			height: 1.8em;
+		}
+	}
+}
+
+.border-width-1:after {
+	border-width: 1px;
+}
+
+.circle-background {
+	position: relative;
+	text-align: center;
+	box-sizing: border-box;
+	display: block;
+	width: 2em;
+	height: 2em;
+	line-height: 1;
+
+	&:before {
+		z-index: 5;
+		position: relative;
+		@extend %icon-vertical-align;
+	}
+
+	&:after {
+		content: "";
+		border-radius: 50%;
+		position: absolute;
+		width: 2em;
+		height: 2em;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+	}
+
+	&.with-border:after {
+		border: 1px solid $color-silver-grey;
+	}
+
+	&.blue:after {
+		background: $color-telenor-blue;
+	}
+
+	&.green:after {
+		background: $color-telenor-green;
+	}
+
+	&.red:after {
+		background: $color-telenor-red;
+	}
+
+	&.gray:after {
+		background: $color-paper-white;
+	}
+
+	&.white:after {
+		background: $color-white;
+	}
+
+	&.yellow:after {
+		background: $color-telenor-yellow;
+	}
+
+	&.yellow-light:after {
+		background: $color-yellow-light;
+	}
+
+	.icon {
+		z-index: 2;
+		@extend %icon-absolute-center;
+	}
+
+	&__label {
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		justify-content: center;
+		position: relative;
+	}
+}

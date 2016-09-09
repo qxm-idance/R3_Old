@@ -1,0 +1,35 @@
+<div class="grid-row">
+	<div class="col-md-6">
+		<span class="text-size--13">Normal dropdown</span>
+		<div class="dropdown" data-component="dropdown">
+			<div class="dropdown__label" role="button" data-toggle="dropdown">
+				<div class="text-truncate" data-selector="label">
+					Simlpe drop
+				</div>
+			</div>
+			<div class="dropdown__content" role="menu" data-component="Selfcare::list">
+				<ul class="dropdown__list">
+					<li><a href="#">Lorem ipsum</a></li>
+					<li><a href="#">Lorem ipsum</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<span class="text-size--13">Small dropdown</span>
+		<div class="dropdown dropdown--small" data-component="dropdown">
+			<div class="dropdown__label" role="button" data-toggle="dropdown">
+				<div class="text-truncate" data-selector="label">
+					Simlpe drop
+				</div>
+			</div>
+
+			<div class="dropdown__content" role="menu" data-component="Selfcare::list">
+				<ul class="dropdown__list">
+					<li><a href="#">Lorem ipsum</a></li>
+					<li><a href="#">Lorem ipsum</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

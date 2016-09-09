@@ -1,0 +1,14 @@
+<div class="section--negative box--blue padding-whole">
+	<ul class="form-item">
+		<li class="form-radio">
+			<input type="radio" disabled checked name="rad-negative-disabled"
+				   value="--some-value--" id="rad-negative-disabled-0">
+			<label for="rad-negative-disabled-0">Lorem ipsum bla bla 1</label>
+		</li>
+		<li class="form-radio ">
+			<input type="radio" disabled name="rad-negative-disabled"
+				   value="--some-value--" id="rad-negative-disabled-1">
+			<label for="rad-negative-disabled-1">Lorem ipsum bla bla 2</label>
+		</li>
+	</ul>
+</div>

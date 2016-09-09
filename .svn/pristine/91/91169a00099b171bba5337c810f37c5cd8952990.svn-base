@@ -1,0 +1,33 @@
+<div class="tabpanel" data-component="tab-panel">
+	<nav role="navigation">
+		<ul class="tabpanel__list clear flex" role="tablist">
+			<li class="tabpanel__tab" role="presentation">
+				<a href="#tabPanelFirst" class="tabpanel__link" role="tab">Panel 1</a>
+			</li>
+			<li class="tabpanel__tab" role="presentation">
+				<a href="#tabPanelSecond" class="tabpanel__link" role="tab">Panel 2</a>
+			</li>
+			<li class="tabpanel__tab" role="presentation">
+				<a href="#tabPanelThird" class="tabpanel__link" role="tab">Panel 3</a>
+			</li>
+			<li class="tabpanel__tab" role="presentation">
+				<a href="#tabPanelFourth" class="tabpanel__link" role="tab">Panel 4</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="leader">
+		<div id="tabPanelFirst" class="tabpanel__panel padding-whole border">
+			Panel content 1
+		</div>
+		<div id="tabPanelSecond" class="tabpanel__panel padding-whole border">
+			Panel content 2
+		</div>
+		<div id="tabPanelThird" class="tabpanel__panel padding-whole border">
+			Panel content 3
+		</div>
+		<div id="tabPanelFourth" class="tabpanel__panel padding-whole border">
+			Panel content 4
+		</div>
+	</div>
+</div>

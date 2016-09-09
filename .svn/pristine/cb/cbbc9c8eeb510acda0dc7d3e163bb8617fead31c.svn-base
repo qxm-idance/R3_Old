@@ -1,0 +1,12 @@
+import Vue from 'vue';
+import ServiceCallerPlugin from 'taurus/plugins/service';
+import App from './app';
+
+Vue.use(ServiceCallerPlugin);
+
+new Vue({
+  el: 'body',
+  components: {
+    App
+  }
+});

@@ -1,0 +1,17 @@
+{
+	"pageSize": 10,
+	"pageNumber": 1, //starts from 1
+	"sort": [ //optional parameters
+		{
+			"name": "column name",
+			"direction": "ASC" //possible values are ASC or DESC
+		}
+	],
+	"filters": [ //optional parameters
+		{
+			"type": "filter type", //possible values: containce, greater, lower
+			"name": "column name",
+			"value": "filter value" //could be {}, [] or ""
+		}
+	]
+}

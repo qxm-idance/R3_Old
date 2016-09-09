@@ -1,0 +1,175 @@
+/**
+  name: Tooltip
+  type: ui
+  modifiers:
+    --error: Tooltip for error
+    --blue: blue tooltip
+    --top: positioning tooltip to top
+    --left: positioning tooltip to left
+    --right: positioning tooltip to right
+  examples:
+    Short tip:
+      include: simple.html
+    Long tip:
+      include: long.html
+    Error tip:
+      include: error.html
+    Blue tip:
+      include: blue.html
+    Tip for input field:
+      include: for-input.html
+*/
+
+.tooltip {
+	$root: &;
+
+	font-size: 13px;
+	background: $color-paper-white;
+	border-radius: $radius-button;
+	padding: $small-spacing-unit;
+	color: $color-stone-grey;
+	line-height: 1.4;
+	text-align: left;
+	transition: opacity, transform 100ms ease-out;
+	border: $border;
+	pointer-events: none;
+	max-width: 320px;
+	box-shadow: $box-shadow-bubble;
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	z-index: 9999;
+	transform: translateY(-$small-spacing-unit);
+
+	&:before {
+		@include tn-triangle(10px, $color-silver-grey, top);
+		left: 50%;
+	}
+
+	&:after {
+		@include tn-triangle(8px, $color-paper-white, top);
+		left: 50%;
+	}
+
+	&--top {
+		&:after {
+			border-top-color: transparent;
+			border-bottom: 8px solid $color-graphite-black;
+			top: -8px;
+			bottom: auto;
+		}
+	}
+
+	&--right {
+		@include until($bp-medium) {
+			margin-left: 10px;
+		}
+
+		&:after {
+			right: 8px;
+			left: auto;
+			margin: 0;
+		}
+
+		&:before {
+			right: 6px;
+			left: auto;
+			margin: 0;
+		}
+	}
+
+	&--left {
+		@include until($bp-medium) {
+			margin-left: 5px;
+		}
+
+		&:after {
+			left: 8px;
+			margin: 0;
+		}
+
+		&:before {
+			left: 6px;
+			margin: 0;
+		}
+	}
+
+	&--error {
+		background: $color-error;
+		border: 1px solid $color-telenor-red;
+		color: $color-white;
+
+		&:before {
+			border-top-color: $color-telenor-red;
+		}
+
+		&:after {
+			border-top-color: $color-error;
+		}
+
+		&#{$root}--top:after {
+			border-bottom-color: $color-error;
+		}
+	}
+
+	&--blue {
+		box-shadow: none;
+		background-color: $color-telenor-blue;
+		color: $color-white;
+		border: 0;
+		padding: 8px 15px;
+
+		&:before {
+			display: none;
+		}
+
+		&:after {
+			@include tn-triangle(8px, $color-telenor-blue, top);
+			left: 50%;
+		}
+	}
+
+	&__trigger {
+		cursor: pointer;
+		display: inline-block;
+		font-size: 17px;
+		line-height: 1;
+		user-select: none;
+		vertical-align: middle;
+
+		&.icon-questionmark:before {
+			color: $color-steel-grey;
+		}
+
+		&.icon-error:before {
+			color: $color-error;
+			position: relative;
+		}
+
+		&.form-item {
+			display: block;
+		}
+		
+		&--validation {
+			display: none;
+			
+			@at-root .form-item--error & {
+				display: block;
+			}
+		}
+	}
+
+	.loader {
+		display: none;
+	}
+
+	&[data-loading="true"] {
+		.loader {
+			display: block;
+		}
+
+		#{$root}__content {
+			display: none;
+		}
+	}
+}

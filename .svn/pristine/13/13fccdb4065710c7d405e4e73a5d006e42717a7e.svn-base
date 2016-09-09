@@ -1,0 +1,55 @@
+<div class="range-slider leader"
+	data-component="range-slider"
+	data-alias="range"
+	data-from="10"
+	data-to="30">
+	<div class="range-slider__container">
+		<div class="range-slider__points">
+			<div class="range-slider__point range-slider__point--from" data-component="range-slider/point" data-alias="from">
+				<div class="tooltip tooltip--from" data-component="tooltip" role="tooltip">
+					<p></p>
+				</div>
+			</div>
+			<div class="range-slider__point range-slider__point--to" data-component="range-slider/point" data-alias="to">
+				<div class="tooltip tooltip--to" data-component="tooltip" role="tooltip">
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<ul class="range-slider__values">
+		<li>
+			<span class="range-slider__value-label">Months</span>
+			<span class="range-slider__value range-slider__value--empty">0</span>
+		</li>
+		<li><span class="range-slider__value range-slider__value--empty">1</span></li>
+		<li><span class="range-slider__value range-slider__value--empty">2</span></li>
+		<li><span class="range-slider__value range-slider__value--empty">3</span></li>
+		<li><span class="range-slider__value range-slider__value--empty">4</span></li>
+	</ul>
+
+	<div class="js-hidden">
+		<div data-component="range-slider/select" data-extensions="select" data-alias="fromSelect" class="form-select form-item--inline form-select--small">
+  	    <select name="test-slider-from" class="test-select-from">
+  	    	<option value="0" data-tooltip="0 kr.">0</option>
+  	    	<option value="10" data-tooltip="10 kr.">10</option>
+  	    	<option value="20" data-tooltip="20 kr.">20</option>
+  	    	<option value="30" data-tooltip="30 kr.">30</option>
+  	    	<option value="40" data-tooltip="40 kr.">40</option>
+  	    </select>
+  	    <div class="form-select__field">10</div>
+  	</div>
+
+  	<div data-component="range-slider/select" data-extensions="select" data-alias="toSelect" class="form-select form-item--inline form-select--small">
+  	    <select name="test-slider-to" class="test-select-to">
+  	    	<option value="0" data-tooltip="0 kr.">0</option>
+  	    	<option value="10" data-tooltip="10 kr.">10</option>
+  	    	<option value="20" data-tooltip="20 kr.">20</option>
+  	    	<option value="30" data-tooltip="30 kr.">30</option>
+  	    	<option value="40" data-tooltip="40 kr.">40</option>
+  	    </select>
+  	    <div class="form-select__field">20</div>
+  	</div>
+	</div>
+</div>

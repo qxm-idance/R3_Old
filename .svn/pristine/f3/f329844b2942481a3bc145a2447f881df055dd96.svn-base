@@ -1,0 +1,272 @@
+// Colors
+// --------------------------------------------------------------------------------
+
+//========================new done start==================================/
+
+// Grey scale
+$color-white:            #fff;
+$color-paper-white:      #f5f5f5;
+$color-ghost-white:      #f0f0f0;  /// nowhere used in project
+$color-smoke-grey:       #e8e8e8;
+$color-silver-grey:      #d1d1d1;
+$color-steel-grey:       #b8b8b8;
+$color-stone-grey:       #666;
+$color-graphite-black:   #474747;
+$color-black:            #000;
+
+//========================new done end==================================/
+
+
+//Telenor colors
+$color-telenor-blue: #038cd6;
+$color-telenor-blue-dark: #0278b8;  // border for blue buttons
+$color-telenor-blue-darker: #003758;  // bottom bar blue
+$color-telenor-blue-light: #80c4e8; //
+
+$color-telenor-blue-business: #02508d; // top-color for business pages
+$color-telenor-blue-dark-business: #02467c; // top-color for business pages
+$color-telenor-blue-darker-business: #002f4a; // bottom-color for business pages
+//002f4a
+
+$color-telenor-green: #43c682;
+$color-telenor-green-dark: #02a962;
+$color-telenor-yellow: #ffb900;
+
+$color-yellow-light: #fce173; // \message\_scss\_index.scss, _box.scss
+$color-yellow-dark: #e0a500; // _buttons.scss, _forms.scss, _block--usage-overview.scss
+
+$color-telenor-red: #db5451;
+$color-telenor-purple: #6b2377;
+
+// In use?
+$color-green: #23db00;
+$color-green-dark: #008e52;
+$color-red: #eb1c2b;  // abouttelenor.scss , _list-item.scss
+$color-red-light: #faf3f2; // _tables.scss
+$color-blue-dark: #0068a8; // _buttons.scss, _form-radio.scss
+$color-blue-white: #c0e2f5;
+$color-purple: #7f2a8e; // _list-item.scss, _abouttelenor.scss
+$color-yellow-green: #b8ec79; // _selectslider.scss,
+
+// Menu drilldown colors
+$color-blue-lighter: #b8d5e5; // _menus.scss
+$color-blue-spacer: #4da6d8;  // _menus.scss
+
+// Strokes
+$color-stroke-darkblue: #00619e;  // _dropdown.scss, _header.scss, _buttons.scss, _form-checkbox.scss, _form-checkbox-filter.scss, _form-radio.scss
+$color-stroke-darkerblue: #004773; // _block--content-raw-html.scss, _section--footer.scss, _menus.scss
+
+$color-stroke-darkerblue-business: #01365e; // for bottom fotter for business
+
+
+$color-stroke-purple: #651b66; // __buttons.scss
+$color-stroke-blackblue: #0f3b52; // _buttons.scss, _dropdown.scss
+
+// Text
+$color-text-blue-nav: #a7c1d1; // _lists.scss, _block--content-raw-html.scss, _section--footer.scss
+
+// Unique
+$color-error: #fe635f;
+
+// Gradients
+// ----------------------------------------------------------------
+// primary repesented in styleguide
+$gradient-blue:                       linear-gradient(180deg, #0296e5, #038cd6);
+$gradient-darkblue:                   linear-gradient(180deg, #0296e5, #0282c7);
+$gradient-yellow:                     linear-gradient(180deg, #fce173, #ffb900);
+$gradient-green:                      linear-gradient(180deg, #43c682, #02a962);
+$gradient-purple:                     linear-gradient(180deg, #6b2377, #651b66);
+$gradient-white-grey:                 linear-gradient(180deg, #fff, #e8e8e8);
+
+// displayed in sg
+$gradient-blueblue:                   linear-gradient(180deg, #59c9ef, #5376b6);
+$gradient-blueblue-promo:             linear-gradient(180deg, #00ace7,#365faa);
+$gradient-greenblue:                  linear-gradient(90deg, #43c682, #1db7bb, #038cd6);
+$gradient-yellowred:                  linear-gradient(180deg, #fff044, #f8b97a, #ee3d49);
+$gradient-pinkpurple:                 linear-gradient(180deg, #f37780, #e66cb9, #944ca0);
+
+// secondry
+$gradient-darkblue-button:            linear-gradient(180deg, #0068a8, #00619e);
+$gradient-greenblue-vertical:         linear-gradient(180deg, #8cc63f, #00b9de, #038cd6);
+$gradient-darkblue-button-dark:       linear-gradient(180deg, #0068a8, #005c96);
+$gradient-yellow-dark:                linear-gradient(180deg, #fce173, #f5b202);
+$gradient-white:                      linear-gradient(180deg, #fff, #f5f5f5);
+$gradient-grey:                       linear-gradient(180deg, #aaa, #d1d1d1);
+
+
+// Telenor base font family
+$base-font-family: telenor, Arial, Helvetica, sans-serif;
+
+// Sizes
+// --------------------------------------------------------------------------------
+
+// baseline and form elements
+$base-font-size: 16px;
+$base-button-size: 40px;
+$small-button-size: 32px;
+$micro-button-size: 20px;
+
+// spacing
+$xsmall-spacing-unit: 5px;
+$small-spacing-unit: 10px;
+$med-spacing-unit: 15px;
+$base-spacing-unit: 20px;
+$large-spacing-unit: 30px;
+$xlarge-spacing-unit: 40px;
+$xxlarge-spacing-unit: 45px;
+$section-spacing: 50px;
+$section-spacing-base: 60px;
+$section-spacing-medium: 80px;
+$section-spacing-large: 100px;
+$session-top-padding: 132px;
+
+// breakpoints
+$bp-xsmall: 320px;
+$bp-small: 480px;
+$bp-medium: 768px;
+$bp-large: 1024px;
+$bp-xl: 1280px;
+
+// side bar sizes
+$side-panel-width: 320px;
+
+// corner radiuses
+$radius-form-input: 3px;
+$radius-button: 3px;
+
+// Shadows
+// ----------------------------------------------------------------
+$box-shadow-bubble: 1px 1px 4px 0 rgba($color-black, .02);
+$box-shadow-downright: 3px 3px 5px rgba($color-black, .07);
+$box-shadow-left-right: 12px 0 25px -15px rgba(0, 0, 0, 0.7), -12px 0 25px -15px rgba(0, 0, 0, 0.7);
+
+// form shadows
+$shadow-form-input-error-micro: inset 0 0 0 1px $color-error;
+$shadow-form-input-error-small: inset 0 0 0 2px $color-error;
+$shadow-form-input-error: inset 0 0 0 2px $color-error;
+
+// Borders
+// --------------------------------------------------------------------------------
+$border: 1px solid $color-silver-grey;
+$border-light: 1px solid $color-smoke-grey;
+$border-negative: 1px solid rgba(255, 255, 255, .3);
+
+// form borders
+$border-form-input: 1px solid $color-silver-grey;
+$border-form-input-hover: 1px solid $color-steel-grey;
+$border-form-input-focus: 1px solid $color-telenor-blue;
+$border-form-negative-input-focus: 1px solid $color-stroke-darkblue;
+$border-form-negative-input-hover: 1px solid $color-stone-grey;
+$border-form-input-error: 1px solid $color-error;
+
+
+// Should be moved to trash (or delete)
+
+// Animation
+// ----------------------------------------------------------------
+$transition-form-all: all .125s; // should be removed or discussed during refactoring components
+
+/* Z-index
+--------------------------------------------------------------------------------*/
+$z-layers: (
+	extra-modal: 5000,
+	modal: 1000,
+	overlay: 800,
+	ui-top: 500,
+	ui-middle: 300,
+	placeholder: 1,
+	tooltip: 100
+);
+
+// typography settings
+$text-sizes: (
+	44: 50,
+	36: 42,
+	30: 38,
+	24: 32,
+	19: 28,
+	16: 25,
+	13: 18,
+	11: 15,
+
+	//additional font sizes
+	192: 198,
+	174: 180,
+	114: 120,
+	84: 90,
+	72: 76,
+	64: 72,
+	60: 68,
+	54: 60,
+	52: 58,
+	50: 56,
+	40: 39,
+	28: 32,
+	21: 30
+);
+
+// variables for helpers classes
+$text-colors-setup: (
+	// quotes are needed to fix compilation error for minified version (only white and yellow colors)
+	"white": $color-white,
+	blue: $color-telenor-blue,
+	blue-light: $color-telenor-blue-light,
+	"yellow": $color-telenor-yellow,
+	gray: $color-stone-grey,
+	gray-light: $color-silver-grey,
+	steel-grey: $color-steel-grey,
+	smoke-grey: $color-smoke-grey,
+	black-light: $color-graphite-black,
+	green: $color-telenor-green,
+	red: $color-telenor-red
+);
+
+$align-setup: (
+	top: top,
+	middle: middle,
+	bottom: bottom
+);
+
+$text-align-setup: (
+	left: left,
+	right: right,
+	center: center,
+	inherit: inherit
+);
+
+$display-setup: (
+	block: block,
+	inline: inline,
+	inline-block: inline-block
+);
+
+$float-setup: (
+	left: left,
+	right: right,
+	none: none
+);
+
+$spacing-setup: (
+	none: 0,
+	base: $base-spacing-unit,
+	xsmall: $xsmall-spacing-unit,
+	small: $small-spacing-unit,
+	med: $med-spacing-unit,
+	large: $large-spacing-unit,
+	xlarge: $xlarge-spacing-unit,
+	xxlarge: $xxlarge-spacing-unit,
+	section: $section-spacing,
+	section-base: $section-spacing-base,
+	huge: $section-spacing-medium
+);
+
+$font-weight: (
+	regular: normal,
+	light: 300,
+	bold: bold
+);
+
+$font-style: (
+	normal: normal,
+	italic: italic
+);

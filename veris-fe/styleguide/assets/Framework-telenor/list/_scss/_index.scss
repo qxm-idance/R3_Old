@@ -1,0 +1,60 @@
+/**
+name: List
+type: ui
+desc: >
+    # Structure
+
+    1. list needs required structure, use 'ul > li' structure with class '.list' for display default list view, and add class '.list' with needed modifier to change list view.
+
+    2. wrapping tag in examples just for clearer understanding, not necessarily to use.
+
+examples:
+  - name: Lists
+    tmpl:
+      include: lists.html
+  - name: List Default
+    tmpl:
+      include: list-default.html
+  - name: List Check
+    tmpl:
+      include: list-check.html
+  - name: List Check small
+    tmpl:
+      include: list-check-small.html
+  - name: List Check-bullet
+    tmpl:
+      include: list-check-bullet.html
+  - name: List Check-bullet white
+    tmpl:
+      include: list-check-bullet-white.html
+  - name: List Check-bullet gray
+    tmpl:
+      include: list-check-bullet-grey.html
+  - name: List Check-bullet gray-dark
+    tmpl:
+      include: list-check-bullet-grey-dark.html
+  - name: List divided blue
+    tmpl:
+      include: list-divided-blue.html
+  - name: List breadcrumbs
+    tmpl:
+      include: list-breadcrumbs.html
+  - name: List footer
+    tmpl:
+      include: list-footer.html
+  - name: List numeric
+    tmpl:
+      include: list-numeric.html
+  - name: List inline
+    tmpl:
+      include: list-inline.html
+  - name: List small
+    tmpl:
+      include: list-small.html
+  - name: List with no vertical spacing between li
+    tmpl:
+      include: list-no-vertical-spacing.html
+*/
+
+
+@import "lists";

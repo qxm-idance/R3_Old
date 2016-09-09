@@ -1,0 +1,114 @@
+
+/*checkbox all by-Emilie*/
+
+
+.form-checkbox label {
+    margin-bottom: 0;
+    padding-left: 1.7em;
+    margin-right: 25px
+}
+
+.form-checkbox label:before {
+    border-radius: 2px;
+    width: 8px;
+    height: 13px;
+    padding-top: 0px;
+    padding-left: 4px;
+    font-size: 13px;
+    line-height: 13px;
+    overflow: visible;
+    text-indent: -3px;
+    -webkit-transition: all 0.125s;
+    transition: all 0.125s;
+}
+.form-checkbox--small label {
+    padding-left: 1.6em;
+    margin-right: 15px
+}
+.form-checkbox input[type=checkbox]:focus+label:before {
+    background-color: #f5f5f5;
+    border: 1px solid #038cd6
+}
+.form-checkbox--small label:before{
+    width: 5px;
+    height: 8px;
+    padding-right: 0;
+    padding-left: 4px;
+    font-size: 11px;
+    line-height: 4px;
+    overflow: visible;
+    padding-top: 0;
+}
+/*checkbox-large*/
+.form-checkbox--large label{
+    padding-left:2.1rem;
+    padding-bottom:.8rem;
+    margin-right:35px;
+}
+.form-checkbox--large label:before{
+    width: 16px;
+    height: 21px;
+    font-size: 15px;
+    line-height: 22px;
+    top: 3px;
+    background: #f5f5f5;
+}
+.form-checkbox--large input[type=checkbox]:focus:checked+label:before {
+    background-color: #038cd6;
+    border-color: #0278b8
+}
+.form-checkbox--large input:checked+label:before{
+    background: #038cd6;
+    border-color: #038cd6;
+
+}
+/*checkbox disabled*/
+.form-checkbox--disable label:before {
+    visibility: hidden
+}
+
+.form-checkbox input[type=checkbox]:disabled+label {
+    color: #d1d1d1;
+    pointer-events: none
+}
+
+.form-checkbox input[type=checkbox]:disabled+label:before {
+    border-color: #e8e8e8
+}
+
+.form-checkbox input[type=checkbox]:disabled:checked+label:before {
+    border-color: transparent
+}
+
+/*section negative*/
+.section--negative{
+    color: #fff;
+    background:#038cd6;
+    padding:1.25rem
+}
+.section--negative .form-checkbox [type=checkbox]:checked ~ label:before{
+    color:#0278b8;
+    border-color: #fff;
+}
+.section--negative .form-checkbox--small [type=checkbox]:checked ~ label:before{
+    color:#474747;
+}
+.section--negative .form-checkbox input[type=checkbox]:active+label:before,
+.section--negative .form-checkbox input[type=checkbox]:focus+label:before {
+    border-color: #00619e;
+    background-color: #c0e2f5;
+}
+/*negative disable*/
+.section--negative .form-checkbox input[type=checkbox]:disabled+label {
+    color: #c0e2f5;
+    pointer-events: none;
+}
+.section--negative .form-checkbox input[type=checkbox]:disabled+label:before{
+    border-color: #c0e2f5;
+    background-color: transparent;
+}
+.section--negative .form-checkbox input[type=checkbox]:disabled:checked+label:before {
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+}

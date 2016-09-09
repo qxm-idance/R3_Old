@@ -1,0 +1,284 @@
+/**
+name: Preloader
+type: ui
+desc: >
+      Preloader it's additional styles which can be added to element if it needed.
+      You can extend it into your own styles with extend %loader
+examples:
+  - name: Preloader
+    tmpl: >
+        <div class="load-tester border box--blue">
+        	<span class="spinner"></span>
+        </div>
+*/
+
+
+// loader.
+// ----------------------------------------------
+%loader {
+
+	&--large {
+		margin-top: -7px;
+
+		&,
+		&:before,
+		&:after {
+			height: 10px;
+			width: 10px;
+		}
+
+		&:before {
+			left: -15px;
+		}
+
+		&:after {
+			left: 15px;
+		}
+	}
+
+	&,
+	&:before,
+	&:after {
+		animation-fill-mode: both;
+		animation: loader-white 1.3s infinite ease-in-out;
+		border-radius: 50%;
+		height: 5px;
+		width: 5px;
+	}
+
+	& {
+		animation-delay: .16s;
+		display: block;
+		font-size: 10px;
+		text-indent: -9999px;
+		margin-top: -3px;
+	}
+
+	&--grey {
+		animation-name: loader-grey;
+	}
+
+	&--blue {
+		&,
+		&:before,
+		&:after {
+			animation-name: loader-blue;
+		}
+	}
+
+	&--grey-dark {
+		&,
+		&:before,
+		&:after {
+			animation-name: loader-grey-dark;
+		}
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+	}
+
+	&:before {
+		left: -8px;
+	}
+
+	&:after {
+		left: 8px;
+		animation-delay: .32s;
+	}
+}
+
+@keyframes loader-white {
+	0%,
+	80%,
+	100% {
+		background-color: $color-white;
+	}
+
+	40% {
+		background-color: rgba(255, 255, 255, .35);
+	}
+}
+
+@keyframes loader-blue {
+	0%,
+	80%,
+	100% {
+		background-color: $color-telenor-blue;
+	}
+
+	40% {
+		background-color: rgba(255, 255, 255, .35);
+	}
+}
+
+@keyframes loader-grey {
+	0%,
+	80%,
+	100% {
+		background-color: $color-white;
+	}
+
+	40% {
+		background-color: $color-silver-grey;
+	}
+}
+
+// ----------------------------------------------------------------
+// Button loaders
+@keyframes button-loader--default {
+	0%,
+	80%,
+	100% {
+		background-color: rgba(71, 71, 71, .8);
+	}
+
+	40% {
+		background-color: rgba(71, 71, 71, .35);
+	}
+}
+
+@keyframes loader-grey-dark {
+	0%,
+	80%,
+	100% {
+		background-color: $color-steel-grey;
+	}
+
+	40% {
+	 background-color: $color-stone-grey;
+	}
+}
+
+// ----------------------------------------------------------------
+// load tester
+
+.load-tester {
+	position: relative;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+
+	.spinner {
+		@extend %loader;
+		@extend %loader--large;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+
+		&,
+		&:before,
+		&:after {
+			animation-name: loader-grey;
+		}
+	}
+
+	&--product-config {
+		vertical-align: top;
+		height: 10px;
+		margin: 3px 0 0;
+		width: auto;
+		display: none;
+
+		.product-container.is-loading & {
+			display: inline-block;
+		}
+
+		.spinner {
+			margin: 0 12px;
+			margin: 0 12px;
+			left: 0;
+			top: 0;
+			transform: translateX(0);
+
+			&,
+			&:before,
+			&:after {
+				height: 8px;
+				width: 8px;
+				animation-name: loader-grey-dark;
+			}
+
+			&:before {
+				left: -12px;
+			}
+
+			&:after {
+				left: 12px;
+			}
+		}
+	}
+
+	&--minibasket-product-calc {
+		height: 5px;
+		margin: 4px 5px 0 0;
+
+		.spinner {
+			margin: 0 9px;
+
+			&,
+			&:before,
+			&:after {
+				height: 5px;
+				width: 5px;
+			}
+
+			&:before {
+				left: -9px;
+			}
+
+			&:after {
+				left: 9px;
+			}
+		}
+	}
+}
+
+.spinner {
+
+	&--large {
+		@extend %loader;
+		@extend %loader--large;
+		position: relative;
+		display: inline-block;
+
+		&,
+		&:before,
+		&:after {
+			animation-name: loader-grey;
+		}
+	}
+}
+
+.load-large {
+
+	.spinner {
+		@extend %loader;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+
+		&,
+		&:before,
+		&:after {
+			height: 10px;
+			width: 10px;
+			animation-name: loader-grey;
+		}
+
+		&:before {
+			left: -20px;
+		}
+
+		&:after {
+			left: 20px;
+		}
+	}
+}

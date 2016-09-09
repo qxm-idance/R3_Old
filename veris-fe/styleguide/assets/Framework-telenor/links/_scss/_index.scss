@@ -1,0 +1,84 @@
+/**
+name: Links
+type: ui
+desc: >
+      Type of the links
+modifiers:
+   --default: inherit color from parent block
+   --underlined: Adds underline to link
+   --non-underlined: Removes underline from link on hover
+   --gray: Changes link color to $color-stone-grey(#666) 
+   --white: Changes link color to $color-white(#fff), (uses inside section--negative)
+   --bullet: Adds bullet/arrow to link
+   --profile: Uses for .link class - Adds 10px left margin when img beside
+examples:
+  - name: Simple global link
+    tmpl: >
+      <a href="#">link text here</a>
+  - name: Default link (div with class color-yellow used just for example )
+    tmpl: >
+      <div class="color-yellow"><a class="link--default" href="#">link text here</a></div>
+  - name: Simple underlined link
+    tmpl: >
+      <a class="link--underlined" href="#">link text here</a>
+  - name: Simple link with no underline on hover
+    tmpl: >
+      <a class="link--non-underlined" href="#">link text here</a>
+  - name: Gray link
+    tmpl: >
+      <a class="link--gray" href="#">link text here</a>
+  - name: White link (uses inside section--negative)
+    tmpl: >
+      <div class="section--negative box--blue padding-whole"><a class="link--white" href="#">link text here</a></div>
+  - name: Bullet link
+    tmpl: >
+      <a class="link--bullet" href="#">link text here</a>
+*/
+
+
+.link {
+	$root: &;
+
+	&--default {
+		color: inherit;
+	}
+
+	&--underlined {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&--non-underlined {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&--gray {
+		color: $color-stone-grey;
+	}
+
+	&--white {
+		color: $color-white;
+	}
+
+	&--bullet {
+		.section--negative & {
+			color: $color-white;
+		}
+
+		&:before {
+			@extend %icon-base-styles;
+			@include icon-bullet;
+
+			font-size: 7px;
+			margin-right: .6em;
+			vertical-align: middle;
+			position: relative;
+			top: -1px;
+		}
+	}
+}
