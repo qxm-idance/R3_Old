@@ -1,56 +1,181 @@
 <template>
-  <div role="tab" :class="prefixCls + '-item'">
-    <div
-      v-el:header
-      :class="prefixCls + '-header'"
-      @click="_handleItemClick">
-      <i class="arrow"></i>
-      {{{header}}}
-    </div>
-    <div :class="contentCls collapse__target" role="tabpanel">
-      <div :class="prefixCls + '-content-box'">
-        <slot></slot>
-      </div>
-    </div>
-  </div>
+<div :class="prefixCls">
+  <slot></slot>
+</div>
 </template>
+
 <script>
-  export default {
-    props: {
-      key: String,
-      prefixCls: String,
-      header: String,
-      isActive: {
-        type: Boolean,
-        default: false
-      }
-    },
-    ready () {
-      this._setAriaExpend(this.$els.header, this.isActive);
+import Panel from '../panel';
+
+export default {
+  props: defaultProps({
+    prefixCls: 'ant-collapse',
+    activeKey: oneOfType([String, Array]),
+    defaultActiveKey: oneOfType([String, Array]),
+    openAnimation: Object,
+    onChange () {},
+    accordion: false
+  }),
+
+  compiled () {
+    let { activeKey, accordion, defaultActiveKey } = this;
+    if (!accordion) {
+      defaultActiveKey = defaultActiveKey || [];
+    }
+    this.activeKey = activeKey || defaultActiveKey;
+
+    if (!this.openAnimation) {
+      this.openAnimation = openAnimation;
+    }
+  },
+
+  ready () {
+    this._mapPropsToChildComponent();
+  },
+
+  methods: {
+    _mapPropsToChildComponent () {
+      const activeKey = this._getActivityKey();
+      const self = this;
+      const $children = this.$el.querySelectorAll('[role="tab"]');
+      [...$children].forEach(($child, index) => {
+        const child = $child.__vue__;
+        const key = child.key || index;
+        const header = child.header;
+        let isActive = false;
+        if (self.accordion) {
+          isActive = activeKey === key;
+        } else {
+          isActive = activeKey.indexOf(key) > -1;
+        }
+        child.prefixCls = self.prefixCls;
+        child.openAnimation = self.openAnimation;
+        child.isActive = isActive;
+        child.onItemClick = self._handleClickItem.bind(this, key);
+      });
     },
 
-    watch: {
-      isActive (value) {
-        this._setAriaExpend(this.$els.header, value);
-      }
+    _setChildAcitve () {
+      const activeKey = this._getActivityKey();
+      const self = this;
+      const $children = this.$el.querySelectorAll('[role="tab"]');
+      [...$children].forEach(($child, index) => {
+        const child = $child.__vue__;
+        const key = child.key || index;
+        let isActive = false;
+        if (self.accordion) {
+          isActive = activeKey === key;
+        } else {
+          isActive = activeKey.indexOf(key) > -1;
+        }
+        child.isActive = isActive;
+      });
     },
 
-    computed: {
-      contentCls () {
-        var classes = `${this.prefixCls}-content`;
-        var activeClass = (this.isActive) ? 'collapse--closed' : '';
-        return classes + ' ' + activeClass;
+    _handleClickItem (key, e) {
+      const activeKey = this._getActivityKey();
+
+      if (this.accordion) {
+        this.activeKey = key === activeKey ? null : key;
+      } else {
+        const index = activeKey.indexOf(key);
+        const isActive = index > -1;
+
+        if (isActive) activeKey.splice(index, 1);
+        else activeKey.push(key);
+
+        this.activeKey = activeKey;
       }
+      this._setChildAcitve();
+      this.onChange(key);
     },
 
-    methods: {
-      _setAriaExpend (el, value) {
-        el.setAttribute('aria-expanded', value);
-      },
-      _handleItemClick () {
-        this.isActive = true;
+    _getActivityKey () {
+      let activeKey = this.activeKey;
+      const accordion = this.accordion;
+
+      if (accordion && Array.isArray(activeKey)) {
+        activeKey = activeKey[0];
       }
+
+      if (!accordion && !Array.isArray(activeKey)) {
+        activeKey = activeKey ? [activeKey] : [];
+      }
+
+      return activeKey;
     }
   }
-  </script>
-  
+};
+
+function oneOfType (validList, defaultValue) {
+  let validaObj = {};
+  validaObj.default = defaultValue;
+  validaObj.validator = function (value) {
+    if (value == null) return true;
+
+    for (let j = 0; j < validList.length; j++) {
+      const currentValid = validList[j];
+      let validName;
+      if (typeof currentValid === 'string') {
+        validName = currentValid;
+      } else {
+        validName = currentValid.name;
+      }
+      if (toString.call(value).indexOf(validName) > -1) {
+        return true;
+      }
+    }
+    return false;
+  };
+  return validaObj;
+}
+
+function defaultProps (props) {
+  for (const i in props) {
+    if (props.hasOwnProperty(i)) {
+      let defaultValue = props[i];
+
+      // 支持String， Number等类型
+      if (defaultValue && defaultValue.name && window[defaultValue.name] === defaultValue) {
+        props[i] = {
+          type: defaultValue,
+          default: null
+        };
+
+        continue;
+      }
+
+      let type = toString.call(defaultValue).replace('[object ', '').replace(']', '');
+
+      // 如果传进来的是vue的原生props对象的话
+      if (type === 'Object') {
+        if (defaultValue.type != null ||
+            defaultValue.default != null ||
+            defaultValue.validator != null ||
+            defaultValue.twoWay != null ||
+            defaultValue.required != null) {
+          continue;
+        }
+      }
+
+      // 支持 Object和Array的简洁声明方式
+      // Todo: 目前看来这样并没有什么卵用
+      if (type === 'Array' || type === 'Object') {
+        props[i] = {
+          type: window[type],
+          default: function () {
+            return defaultValue;
+          }
+        };
+        continue;
+      }
+
+      props[i] = {
+        type: window[type],
+        default: defaultValue
+      };
+    }
+  }
+  return props;
+}
+</script>
