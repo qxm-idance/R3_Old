@@ -8,53 +8,18 @@
     <link href="/assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <div id="collapse-demo-0" style="margin-bottom:50px"> 
-        <div class="ant-collapse">
-		  <div role="tab" class="ant-collapse-item">
-		  <div aria-expanded="true" class="ant-collapse-header">
-		    <i class="arrow"></i>    This is panel header 1<!--v-html-->  </div>
-		  <!--v-start--><div role="tabpanel" class="ant-collapse-content ant-collapse-content-active" style="display: block;">
-		      <div class="ant-collapse-content-box">
-		        <p>
-		          A dog is a type of domesticated animal.
-		          Known for its loyalty and faithfulness,
-		          it can be found as a welcome guest in many households across the world.
-		        </p>
-		      </div>
-		    </div><!--v-end--><!--v-component-->
-		</div><!--v-component-->
-		      <div role="tab" class="ant-collapse-item">
-		  <div aria-expanded="false" class="ant-collapse-header">
-		    <i class="arrow"></i>    This is panel header 2<!--v-html-->  </div>
-		  <!--v-start--><div role="tabpanel" class="ant-collapse-content" style="display: none;">
-		      <div class="ant-collapse-content-box">
-		        <p>
-		          A dog is a type of domesticated animal.
-		          Known for its loyalty and faithfulness,
-		          it can be found as a welcome guest in many households across the world.
-		        </p>
-		      </div>
-		    </div><!--v-end--><!--v-component-->
-		</div><!--v-component-->
-		      <div role="tab" class="ant-collapse-item">
-		  <div aria-expanded="false" class="ant-collapse-header">
-		    <i class="arrow"></i>    This is panel header 3<!--v-html-->  </div>
-		  <!--v-start--><div role="tabpanel" class="ant-collapse-content" style="display: none;">
-		      <div class="ant-collapse-content-box">
-		        <p>
-		          A dog is a type of domesticated animal.
-		          Known for its loyalty and faithfulness,
-		          it can be found as a welcome guest in many households across the world.
-		        </p>
-		      </div>
-		    </div><!--v-end--><!--v-component-->
-		</div><!--v-component-->
-		</div>
-    </div>
-    <div id="collapse-demo-1">
-    	<t-panel header="This is panel header 1" key="1">
-	        <p>{{text}}</p>
-	    </t-panel>
-    </div>  
+	<div id="collapse">
+	    <t-collapse :default-active-key="['1']" :active-key="3" :on-change="_onChange">
+	     	<t-panel header="+" key="1">
+	        	<p>{{text}}</p>
+	      	</t-panel>
+	      	<t-panel header="+" key="2">
+	       		<p>{{text}}</p>
+	      	</t-panel>
+	      	<t-panel header="This is panel header 3" key="3">
+	        	<p>{{text}}</p>
+	      	</t-panel>
+	    </t-collapse>
+	</div>
 </body>
 </html>

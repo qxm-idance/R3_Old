@@ -5,14 +5,13 @@
 </template>
 
 <script>
-import Panel from '../panel';
+// import Panel from '../panel';
 
 export default {
   props: defaultProps({
     prefixCls: 'ant-collapse',
     activeKey: oneOfType([String, Array]),
     defaultActiveKey: oneOfType([String, Array]),
-    openAnimation: Object,
     onChange () {},
     accordion: false
   }),
@@ -23,10 +22,6 @@ export default {
       defaultActiveKey = defaultActiveKey || [];
     }
     this.activeKey = activeKey || defaultActiveKey;
-
-    if (!this.openAnimation) {
-      this.openAnimation = openAnimation;
-    }
   },
 
   ready () {
@@ -38,8 +33,10 @@ export default {
       const activeKey = this._getActivityKey();
       const self = this;
       const $children = this.$el.querySelectorAll('[role="tab"]');
+      console.log($children);
       [...$children].forEach(($child, index) => {
         const child = $child.__vue__;
+        // console.log(child);
         const key = child.key || index;
         const header = child.header;
         let isActive = false;
@@ -159,7 +156,6 @@ function defaultProps (props) {
       }
 
       // 支持 Object和Array的简洁声明方式
-      // Todo: 目前看来这样并没有什么卵用
       if (type === 'Array' || type === 'Object') {
         props[i] = {
           type: window[type],

@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Panel from 'taurus/components/panel/panel';
+import Collapse from 'taurus/components/collapse/collapse';
 
 new Vue({
-  el: '#collapse-demo-1',
+  el: 'body',
   components: {
-    't-panel': Panel
+    't-panel': Panel,
+    't-collapse': Collapse
   },
   data: {
     key: 1,
