@@ -7,17 +7,27 @@
     <link href="/assets/css/all.css" rel="stylesheet">
     <link href="/assets/css/main.css" rel="stylesheet">
 </head>
+<style>
+	/*.wapper {
+		width:300px;
+		float: right;
+	}
+	.wapper .t-collapse-content {
+		margin-right: 300px;
+	}*/
+</style>
 <body>
-	<div id="collapse">
-	    <t-collapse :default-active-key="['1']" :active-key="3" :on-change="_onChange">
-	     	<t-panel header="+" key="1">
-	        	<p>{{text}}</p>
+	<div id="collapse" class="wapper">
+	    <t-collapse :default-active-key="['1']" :active-key="['2']" :on-change="_onChange" :accordion="true" >
+	     	<t-panel header="This is panel header 1" key="1">
+	     		<div slot="header">This is panel header 1-1</div>
+	        	<div slot="content">{{text1}}</div>
 	      	</t-panel>
-	      	<t-panel header="+" key="2">
-	       		<p>{{text}}</p>
+	      	<t-panel header="This is panel header 2" key="2">
+	       		<div slot="content">{{text2}}</div>
 	      	</t-panel>
 	      	<t-panel header="This is panel header 3" key="3">
-	        	<p>{{text}}</p>
+	        	<div slot="content">{{text3}}</div>
 	      	</t-panel>
 	    </t-collapse>
 	</div>

@@ -3,19 +3,15 @@
   <slot></slot>
 </div>
 </template>
-
 <script>
-// import Panel from '../panel';
-
 export default {
   props: defaultProps({
-    prefixCls: 'ant-collapse',
+    prefixCls: 't-collapse',
     activeKey: oneOfType([String, Array]),
     defaultActiveKey: oneOfType([String, Array]),
     onChange () {},
     accordion: false
   }),
-
   compiled () {
     let { activeKey, accordion, defaultActiveKey } = this;
     if (!accordion) {
@@ -23,7 +19,7 @@ export default {
     }
     this.activeKey = activeKey || defaultActiveKey;
   },
-
+ 
   ready () {
     this._mapPropsToChildComponent();
   },
@@ -32,6 +28,8 @@ export default {
     _mapPropsToChildComponent () {
       const activeKey = this._getActivityKey();
       const self = this;
+      console.log(self);
+      console.log(this.$options.props);
       const $children = this.$el.querySelectorAll('[role="tab"]');
       console.log($children);
       [...$children].forEach(($child, index) => {
@@ -46,7 +44,6 @@ export default {
           isActive = activeKey.indexOf(key) > -1;
         }
         child.prefixCls = self.prefixCls;
-        child.openAnimation = self.openAnimation;
         child.isActive = isActive;
         child.onItemClick = self._handleClickItem.bind(this, key);
       });
@@ -58,6 +55,7 @@ export default {
       const $children = this.$el.querySelectorAll('[role="tab"]');
       [...$children].forEach(($child, index) => {
         const child = $child.__vue__;
+        console.log(child.header);
         const key = child.key || index;
         let isActive = false;
         if (self.accordion) {
@@ -80,7 +78,6 @@ export default {
 
         if (isActive) activeKey.splice(index, 1);
         else activeKey.push(key);
-
         this.activeKey = activeKey;
       }
       this._setChildAcitve();
@@ -175,3 +172,44 @@ function defaultProps (props) {
   return props;
 }
 </script>
+<style>
+.t-collapse {
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+}
+.t-collapse > .t-collapse-item:first-child {
+    border-top: none;
+}
+.t-collapse > .t-collapse-item {
+    border-top: 1px solid #d9d9d9;
+}
+.t-collapse > .t-collapse-item > .t-collapse-header {
+    height: 38px;
+    line-height: 38px;
+    padding-left: 32px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    background-color: #f2f2f2;
+}
+.t-collapse > .t-collapse-item > .t-collapse-header .icon-arrow-down {
+  vertical-align: middle;
+}
+.t-collapse-content {
+    display: none;
+    overflow: hidden;
+    color: #666;
+    padding: 0 16px;
+    background-color: #fff;
+}
+.t-collapse-content-active {
+    display: block;
+}
+
+.t-collapse-content > .t-collapse-content-box {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.t-collapse-header[aria-expanded=true] {border-bottom: 1px solid #d9d9d9}
+</style>

@@ -10,13 +10,15 @@ new Vue({
   },
   data: {
     key: 1,
-    prefixCls: 'ant-collase',
+    prefixCls: 't-collase',
     isActive: false,
-    text: '1fsadfasfa'
+    text1: 'di yi ge',
+    text2: 'di er ge',
+    text3: 'di san ge'
   },
   methods: {
-    print: function () {
-      console.log('ttt');
+    _onChange: function (key) {
+      console.log(key);
     }
   }
 });

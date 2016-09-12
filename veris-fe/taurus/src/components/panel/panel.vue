@@ -4,14 +4,18 @@
     v-el:header
     :class="prefixCls + '-header'"
     @click="_handleItemClick">
-    <i class="arrow"></i>
-    {{header}}
+    <i class="icon-arrow-down">{{header}}</i>
+    <!-- <i class="{'icon-arrow-down':{{isActive}},'icon-arrow-down':{{!isActive}}}"></i>
+    {{header}} -->
+    <!-- <slot name="expanded" v-if="{{isActive}}"></slot>
+    <slot name="collapsed" v-if="{{!isActive}}"></slot> -->
+    <slot name="header"></slot>
   </div>
   <div
     :class="contentCls"
     role="tabpanel">
-    <div :class="prefixCls + '-content-box'">
-      <slot></slot>
+    <div :class="prefixCls + '-content-box' + ' padding-whole'">
+      <slot name="content"></slot>
     </div>
   </div>
 </div>
@@ -21,14 +25,11 @@
 export default {
   props: defaultProps({
     key: oneOfType([String, Number]),
-    prefixCls: 'ant-collapse',
-    // openAnimation: Object,
+    prefixCls: 't-collapse',
     header: oneOfType([String, Number]),
     isActive: false,
     onItemClick () {}
   }),
-
-  // components: { Animate },
 
   ready () {
     this._setAriaExpend(this.$els.header, this.isActive);
@@ -42,8 +43,9 @@ export default {
 
   computed: {
     contentCls () {
-      var cls = 'ant-collapse-content';
-      return (this.isActive ? cls + 'ant-collapse-content-active' : cls);
+      var cls = `${this.prefixCls}-content`;
+      // return (this.isActive ? cls + `${this.prefixCls}-content-active` : cls);
+      return (this.isActive ? cls + ' collapse__target ' + `${this.prefixCls}-content-active` : cls + '  collapse--closed');
     }
   },
 
@@ -130,3 +132,10 @@ function defaultProps (props) {
 
 </script>
 
+<style>
+  .trans {
+    transform:rotateX(90deg);
+    -webkit-transform:rotateX(90deg);
+    transform-origin:right top;
+  }
+</style>
