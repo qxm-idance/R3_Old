@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse Demo</title>
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link href="/assets/css/all.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+	<div id="collapse">
+		<t-button text="collapse" class="button--action" v-on:btn-click="expanded=!expanded"></t-button>
+		<p>{{btnText}}</p>
+	    <div v-collapse="expanded" class="padding-whole">
+	    	<p>123</p>
+	    	<p>346</p>
+	    	<p>789</p>
+	    </div>
+	</div>
+</body>
+</html>
