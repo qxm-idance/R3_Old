@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Button from 'taurus/components/button/button';
-import Collapse from 'taurus/directives/d-collapse/d-collapse';
+import Collapse from 'taurus/directives/collapse/collapse';
 
 // Vue.use(Collapse);
 
