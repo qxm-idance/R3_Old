@@ -9,7 +9,8 @@
 <body>
     <div id="defaultModal" style="margin-bottom:50px;">
         <button id="show-modal" @click="showModal= true">Default Modal</button>
-        <t-modal-box :show.sync="showModal" :size="sizeModal">
+        <!-- backdrop:true 点击空表处关闭,默认不关闭 -->
+        <t-modal-box :show.sync="showModal" :size="sizeModal" :backdrop="true">
             <div>
                 <p>i`m a default modal</p>
                 <p>i`m a default modal</p>
@@ -18,7 +19,7 @@
     </div>
     <div id="actionButtonModal">
         <button id="show-modal" @click="showActionModal= true">Action Button Modal</button>
-        <t-modal-box :show.sync="showActionModal" :size="sizeModal" v-ref:modal>
+        <t-modal-box :show.sync="showActionModal" :size="sizeModal"  v-ref:modal>
             <div>
                 <p>i`m a action-button-modal </p>
                 <p>i`m a action-button-modal </p>
