@@ -16,7 +16,7 @@ new Vue({
     expanded: {
       type: Boolean,
       twoway: true,
-      default: true
+      default: false
     }
   },
   data: {

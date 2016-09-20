@@ -1826,7 +1826,7 @@ examples:
 }
 
 .collapsing {
-  transition: height .35s ease;
+  transition: height 2s ease;
   height: 0;
   overflow: hidden;
 }
