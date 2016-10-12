@@ -5,7 +5,7 @@ import Collapse from 'taurus/directives/collapse/collapse';
 // Vue.use(Collapse);
 
 new Vue({
-  el: 'body',
+  el: '#collapse',
   directives: {
     Collapse
   },
@@ -16,7 +16,7 @@ new Vue({
     expanded: {
       type: Boolean,
       twoway: true,
-      default: false
+      default: true
     }
   },
   data: {

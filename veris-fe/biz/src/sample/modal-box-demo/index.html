@@ -12,6 +12,7 @@
         <!-- backdrop:true 点击空表处关闭,默认不关闭 -->
         <t-modal-box :show.sync="showModal" :size="sizeModal" :backdrop="true">
             <div>
+                <p>对话框的内容</p>
                 <p>i`m a default modal</p>
                 <p>i`m a default modal</p>
             </div>
@@ -27,6 +28,102 @@
                 <t-button text="Cancel" class="button--action" v-on:btn-click="onCancel"></t-button>
             </div>
         </t-modal-box>
-    </div>    
+    </div>
+    <!-- <div>
+        <div class="modal-box__overlay modal-box--is-open">
+            <div class="modal-box--with-action-buttons modal-box__content gradient-line padding-whole--none modal-box--size-small">
+                <div class="modal-box__close-btn icon icon-document"></div>
+                <div class="modal-box__container text--center">
+                    <div class="modal-box__icon-box modal-box__icon-box--blue trailer">
+                        <span class="icon icon-document"></span>
+                    </div>
+                    <div class="text-size--13 leader--xlarge">
+                        <p class="text-size--30 text-light trailer">Remove Agreement </p>
+                        <p class="trailer--small">Are you sure you want to remove the agreement from your cart? </p>
+                        <p class="trailer">The atreement cleared.</p>
+                    </div>
+                    <ul class="modal-box__action-buttons">
+                        <li>
+                            <form action="">
+                                <button class="button button--default">
+                                    <span class="button-text">Cancel</span>
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="">
+                                <button class="button button--action">
+                                    <span class="button__text">Remote</span>
+                                </button>
+                            </form>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div id="action-modal-success-overlay" class="modal-box__overlay modal-box--is-open">
+        <div class="modal-box--with-action-buttons modal-box__content gradient-line padding-whole--none modal-box--size-small">
+            <div class="modal-box__close-btn icon icon-check"></div>
+            <div class="modal-box__container text--center">
+                <div class="modal-box__icon-box modal-box__icon-box--blue trailer">
+                    <span class="icon icon-check"></span>
+                </div>
+                <div class="text-size--13 leader--xlarge trailer">
+                    <p class="text-size--30 text-light trailer">Confirm email address:</p>
+                    <div class="form-item form-item--small">
+                        <input type="text" placeholder="test3339@test.dk">
+                    </div>
+                </div>
+                <ul class="modal-box__action-buttons">
+                    <li>
+                        <form action="">
+                            <button class="button button--default">
+                                <span class="button-text">Cancel</span>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <button class="button button--action">
+                                <span class="button__text">Remote</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+    <div id="action-modal-fail-overlay" class="modal-box__overlay modal-box--is-open">
+        <div class="modal-box--with-action-buttons modal-box__content gradient-line padding-whole--none modal-box--size-small">
+            <div class="modal-box__close-btn icon icon-reject"></div>
+            <div class="modal-box__container text--center">
+                <div class="modal-box__icon-box modal-box__icon-box--blue trailer">
+                    <span class="icon icon-reject"></span>
+                </div>
+                <div class="text-size--13 leader--xlarge">
+                    <p class="text-size--30 text-light trailer">Already a customer of telenor? </p>
+                    <p class="trailer">log in or continue as new customer.</p>
+                </div>
+                <ul class="modal-box__action-buttons">
+                    <li>
+                        <form action="">
+                            <button class="button button--default">
+                                <span class="button-text">Continued as New Customer</span>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="">
+                            <button class="button button--accept">
+                                <span class="button__label icon--right icon-arrow-next">Log In</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1831,6 +1831,21 @@ examples:
   overflow: hidden;
 }
 
+
+// .collapse-transition {
+//   transition: all .3s ease;
+//   height: 329px;
+//   padding: 10px;
+//   background-color: #eee;
+//   overflow: hidden;
+// }
+
+// .collapse-enter, .collapse-leave {
+//   height: 0;
+//   padding: 0 10px;
+//   opacity: 0;
+// }
+
 .is-hidden, .form-checkbox [type=checkbox], .form-radio [type=radio],
 .is-collapsed {
   height: 0;
